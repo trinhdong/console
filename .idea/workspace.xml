@@ -1,7 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86a24b3a-9570-42a6-82d1-f6452454aebd" name="Default Changelist" comment="" />
+    <list default="true" id="86a24b3a-9570-42a6-82d1-f6452454aebd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/Gemfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/Gruntfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/.stylelintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/browsers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/bs-commonjs-generator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/bs-glyphicons-data-generator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/bs-lessdoc-parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/bs-raw-files-generator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/change-version.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/configBridge.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/generate-sri.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/grunt/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/.jscsrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/affix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/scrollspy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/transition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/alerts.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/badges.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/bootstrap.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/breadcrumbs.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/button-groups.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/buttons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/carousel.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/close.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/code.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/component-animations.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/dropdowns.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/forms.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/glyphicons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/grid.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/input-groups.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/jumbotron.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/labels.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/list-group.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/media.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/alerts.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/background-variant.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/border-radius.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/buttons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/center-block.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/clearfix.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/forms.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/gradients.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/grid-framework.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/grid.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/hide-text.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/image.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/labels.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/list-group.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/nav-divider.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/nav-vertical-align.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/opacity.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/pagination.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/panels.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/progress-bar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/reset-filter.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/reset-text.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/resize.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/responsive-visibility.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/size.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/tab-focus.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/table-row.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/text-emphasis.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/text-overflow.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/mixins/vendor-prefixes.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/modals.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/navbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/navs.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/normalize.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/pager.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/pagination.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/panels.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/popovers.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/print.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/progress-bars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/responsive-embed.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/responsive-utilities.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/scaffolding.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/tables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/thumbnails.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/tooltip.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/type.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/utilities.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/less/wells.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/nuget/MyGet.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/nuget/bootstrap.less.nuspec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/nuget/bootstrap.nuspec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/package.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/License.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/css/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/js/dataTables.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/datatables.net-bs/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/css/font-awesome.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/AdminLTE.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/AdminLTE.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/adminlte.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/adminlte.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-bootstrap-social.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-bootstrap-social.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-fullcalendar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-fullcalendar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-without-plugins.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/alt/AdminLTE-without-plugins.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/_all-skins.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/_all-skins.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-black-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-black-light.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-black.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-black.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-blue-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-blue-light.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-blue.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-green-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-green-light.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-green.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-green.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-purple-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-purple-light.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-purple.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-purple.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-red-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-red-light.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-red.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-red.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-yellow-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-yellow-light.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-yellow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/css/skins/skin-yellow.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/License.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/css/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/js/dataTables.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net-bs/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net/License.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net/js/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/datatables.net/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/avatar04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/avatar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/avatar3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/avatar5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/credit/american-express.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/credit/cirrus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/credit/mastercard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/credit/mestro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/credit/paypal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/credit/paypal2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/credit/visa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/default-50x50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/photo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/photo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/photo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/photo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user1-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user2-160x160.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user3-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user4-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user5-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user6-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user7-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/img/user8-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/js/adminlte.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/js/adminlte.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/js/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dist/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/layouts/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/layouts/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/js/pages/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dist/js/pages/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/js/pages/dashboard2.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dist/js/pages/dashboard2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/pages/tables/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AdminLTE-2.4.10/pages/tables/data.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,14 +304,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_29_050554_create_categories_table.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/AdminLTE-2.4.10/pages/tables/data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="654">
+              <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/footer.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+              <folding>
+                <element signature="n#footer#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="110" selection-start-line="16" selection-start-column="110" selection-end-line="16" selection-end-column="110" />
             </state>
           </provider>
         </entry>
@@ -54,13 +370,19 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_053038_create_product_types_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_063416_create_pets_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_080010_create_orders_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_05_29_050554_create_categories_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_080114_create_order_details_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_054419_create_products_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_081904_create_comments_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_082632_create_admin_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_29_083601_create_news_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_05_29_050554_create_categories_table.php" />
+        <option value="$PROJECT_DIR$/resources/AdminLTE-2.4.10/pages/tables/data.html" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layouts/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/dist/datatables.net/js/jquery.dataTables.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layouts/index.blade.php" />
       </list>
     </option>
   </component>
@@ -179,22 +501,6 @@
             <path>
               <item name="console" type="b2602c69:ProjectViewProjectNode" />
               <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="console" type="b2602c69:ProjectViewProjectNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="console" type="b2602c69:ProjectViewProjectNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="console" type="b2602c69:ProjectViewProjectNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -202,6 +508,21 @@
               <item name="console" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="console" type="b2602c69:ProjectViewProjectNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="console" type="b2602c69:ProjectViewProjectNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -211,11 +532,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/1.Projects/1.2.Localization/console" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Tourdulich" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projects\console\resources\dist\css" />
+      <recent name="C:\wamp64\www\Projects\console\resources\dist" />
+      <recent name="C:\wamp64\www\Projects\console\resources\dist\js" />
+      <recent name="C:\wamp64\www\Projects\console\resources\AdminLTE-2.4.10\dist" />
+      <recent name="C:\wamp64\www\Projects\console\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -249,25 +579,29 @@
       <workItem from="1559129189409" duration="2158000" />
       <workItem from="1559233575203" duration="662000" />
       <workItem from="1559367750153" duration="601000" />
-      <workItem from="1559388124271" duration="1926000" />
+      <workItem from="1559388124271" duration="3190000" />
+      <workItem from="1559492306194" duration="1701000" />
+      <workItem from="1559573670101" duration="658000" />
+      <workItem from="1559638147986" duration="615000" />
+      <workItem from="1559705931491" duration="4332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20676000" />
+    <option name="totallyTimeSpent" value="29246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="bottom" id="Run" order="6" />
@@ -402,12 +736,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AdminLTE-2.4.10/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="162" column="24" lean-forward="true" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AdminLTE-2.4.10/pages/UI/buttons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_29_050554_create_categories_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
+        <state relative-caret-position="544">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="110" selection-start-line="16" selection-start-column="110" selection-end-line="16" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/js/adminlte.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/js/pages/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AdminLTE-2.4.10/dist/bootstrap/js/tab.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/css/dataTables.bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="150" selection-start-line="5" selection-start-column="150" selection-end-line="5" selection-end-column="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/datatables.net/js/jquery.dataTables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AdminLTE-2.4.10/pages/tables/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="n#footer#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AdminLTE-2.4.10/bower_components/font-awesome/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/dist/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
