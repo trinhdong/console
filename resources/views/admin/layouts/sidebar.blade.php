@@ -19,22 +19,25 @@
               </span>
             </div>
         </form>
-        <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview active">
-                <a href="#">
-                    <i class="fa fa-table"></i> <span>Tables</span>
-                    <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                    <li class="active"><a href="data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-                </ul>
-            </li>
-            <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+
+        <ul class="sidebar-menu">
+            @foreach(SCREEN_OPTIONS as $menuType => $menus)
+                <li class="header">{{$menuType}}</li>
+                @if($menuType === SCREEN_TYPE_CONSOLE)
+                    <li class="treeview active">
+                        <a href="/admin/categories/index">
+                            <i class="glyphicon glyphicon-home"></i> <span>Home</span>
+                        </a>
+                    </li>
+                @endif
+                @foreach($menus as $route => $option)
+                    <li class="treeview">
+                        <a href="admin/{{$route}}">
+                            <i class="glyphicon glyphicon-{{$option[1]}}"></i> <span>{{$option[0]}}</span>
+                        </a>
+                    </li>
+                @endforeach
+            @endforeach
         </ul>
     </section>
 </aside>

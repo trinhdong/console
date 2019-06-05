@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('admin.layouts.index');
+    return view('welcome');
+});
+
+Route::group(['prefix'=>'admin'],function() {
+    Route::group(['prefix' => 'categories'], function () {
+
+        Route::get('/', 'CategoryController@index');
+        Route::get('index', 'CategoryController@index');
+    });
 });

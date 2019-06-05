@@ -10,4 +10,4 @@
         </a>
     </nav>
 </header>
-@include('admin.layouts.menu')
+@include('admin.layouts.sidebar')
