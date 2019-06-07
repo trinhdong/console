@@ -7,8 +7,12 @@ use App\Category;
 
 class CategoryController extends Controller
 {
-    public function index() {
-        $categories = Category::all();
+
+    public function index(Request $request) {
+        $categories = Category::searchQuery(
+            $request->input('id') ?? '',
+            $request->input('category') ?? ''
+        );
         return view('admin.categories.index', ['categories' => $categories]);
     }
 

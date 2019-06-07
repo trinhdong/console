@@ -22,7 +22,7 @@
                         <div class="box-body">
                             <form method="get" accept-charset="utf-8" novalidate="novalidate"
                                   class="search-form border"
-                                  action="">
+                                  action="/admin/categories/">
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-2">
                                         <label for="">ID</label>
@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="description-name">Danh mục</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="category" class="form-control">
                                     </div>
                                 </div>
                                 @include('admin.elements.button.search')
