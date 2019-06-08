@@ -1,0 +1,1 @@
+{{Html::link(url()->current().'/delete/'.$id, 'Xóa', ['class' => 'btn btn-success btn-sm','method' => 'delete', 'confirm' => 'Bạn có chắc muốn xóa!'])}}

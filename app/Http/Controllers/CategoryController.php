@@ -16,8 +16,12 @@ class CategoryController extends Controller
         return view('admin.categories.index', ['categories' => $categories]);
     }
 
-    public function add() {
-
+    public function add(Request $request) {
+        $category = new Category([
+            'category_name' => $request->input('category')
+        ]);
+        $category->save();
+        return redirect('admin/categories')->with( 'success', 'Thêm danh mục thành công' );
     }
 
     public function edit() {

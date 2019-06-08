@@ -16,9 +16,22 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix'=>'admin'],function() {
+    Route::group(['prefix' => 'pets'], function () {
+
+        Route::get('/', 'PetController@index');
+        Route::get('add', function () {
+            return view('admin.pets.add');
+        });
+        Route::post('add', 'PetController@add');
+        Route::get('/delete/{id}', 'PetController@delete');
+    });
     Route::group(['prefix' => 'categories'], function () {
 
         Route::get('/', 'CategoryController@index');
-        Route::get('index', 'CategoryController@index');
+        Route::get('add', function () {
+            return view('admin.categories.add');
+        });
+        Route::post('add', 'CategoryController@add');
+        Route::get('/delete/{id}', 'CategoryController@delete');
     });
 });

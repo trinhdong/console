@@ -6,12 +6,12 @@
         <section class="content-header">
             <h1>
                 <i class="glyphicon glyphicon-book"></i>
-                Categories
+                Thú cưng
                 <small>List</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="admin/categories/index"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li class="active"></i>Categories</li>
+                <li><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li class="active"></i>Thú cưng</li>
             </ol>
         </section>
 
@@ -31,15 +31,15 @@
                         <div class="box-body">
                             <form method="get" accept-charset="utf-8" novalidate="novalidate"
                                   class="search-form border"
-                                  action="/admin/categories/">
+                                  action="/admin/pets/">
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-2">
                                         {!! Form::label('ID') !!}
                                         {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
                                     </div>
                                     <div class="col-md-6">
-                                        {!! Form::label('Tên danh mục') !!}
-                                        {!! Form::text('category_name', '', ['class' => 'form-control']) !!}
+                                        {!! Form::label('Tên thú cưng') !!}
+                                        {!! Form::text('pet_name', '', ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 @include('admin.elements.button.search')
@@ -51,7 +51,7 @@
             <div class="row margin-bottom">
                 @include('admin.elements.button.add')
             </div>
-            @if($categories->isEmpty())
+            @if($pets->isEmpty())
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="box">
@@ -70,17 +70,21 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Tên danh mục</th>
+                                    <th>Tên Thú cưng</th>
                                     <th>Ngày tạo</th>
+                                    <th>Tác vụ</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
-                                @foreach($categories as $category)
+                                @foreach($pets as $pet)
                                     <tr>
-                                        <td>{{$category->id}}</td>
-                                        <td>{{$category->category_name}}</td>
-                                        <td>{{$category->created_at}}</td>
+                                        <td>{{$pet->id}}</td>
+                                        <td>{{$pet->pet_name}}</td>
+                                        <td>{{$pet->created_at}}</td>
+                                        <td width="250">
+                                            @include('admin.elements.button.delete', ['id' => $pet->id])
+                                            @include('admin.elements.button.edit', ['id' => $pet->id])
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

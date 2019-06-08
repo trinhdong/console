@@ -1,0 +1,1 @@
+{{Html::link(url()->current().'/edit/'.$id, 'Chỉnh sửa', ['class' => 'btn btn-primary btn-sm'])}}
