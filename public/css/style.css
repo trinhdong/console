@@ -1,0 +1,174 @@
+
+.search-form .row div[class^=col-md-] {
+    display: flex;
+}
+
+.search-form .row div[class^=col-md-].text-right {
+    display: inline-block;
+}
+
+.search-form input,
+.search-form select {
+    width: 183px;
+    display: inline-block;
+    float: left;
+}
+
+.search-form label {
+    float: left;
+    height: 34px;
+    padding-top: 8px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search-form .checkbox label,
+.search-form .radio-menu label {
+    margin-right: 25px;
+}
+
+.search-form .row .checkbox label {
+    display: inline-block;
+    padding-left: 0;
+}
+
+.search-form .checkbox-menu label,
+.search-form .radio-menu label {
+    cursor: pointer;
+}
+
+.search-form .form-control[type=radio] {
+    margin-left: 0;
+}
+
+.search-form div.picker .form-control {
+    margin-right: 0;
+}
+
+.datepicker-dropdown {
+    z-index: 10000 !important;
+}
+
+.search-form .form-control[type=checkbox].label-left {
+    float: right;
+    margin-left: 27px;
+}
+
+.form-control.width-150 {
+    max-width: 174px;
+}
+
+.form-control.width-200 {
+    max-width: 200px;
+}
+
+.form-control.width-250 {
+    max-width: 250px;
+}
+
+.form-control.width-400 {
+    max-width: 400px;
+}
+
+.form-control.width-600 {
+    max-width: 600px;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.form-control[type=checkbox],
+.form-control[type=radio] {
+    position: relative !important;
+    box-shadow: none;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 0 5px 0 20px;
+}
+
+.form-control[type=checkbox] {
+    appearance: checkbox;
+    -webkit-appearance: checkbox;
+}
+
+.form-control[type=radio] {
+    appearance: radio;
+    -webkit-appearance: radio;
+}
+
+.form-control[picker=date] {
+    width: 110px;
+}
+
+.form-control[picker=datetime] {
+    width: 156px;
+}
+
+.form-control[picker=week] {
+    width: 188px;
+}
+
+.form-control[picker=month] {
+    width: 88px;
+}
+.float-none {
+    float: none;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.padding-left-0 {
+    padding-left: 0;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.margin-left-15 {
+    margin-left: 15px;
+}
+
+.margin-left-35 {
+    margin-left: 35px;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-top-25 {
+    margin-top: 25px;
+}
+
+.margin-right-12 {
+    margin-right: 12px;
+}
+
+.margin-right-25 {
+    margin-right: 25px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.margin-bottom-25 {
+    margin-bottom: 25px;
+}

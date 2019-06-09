@@ -1,0 +1,1 @@
+{{Html::link($url.'edit/'.$id, 'Sửa', ['class' => 'btn btn-primary btn-sm'])}}
