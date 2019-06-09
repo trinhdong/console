@@ -28,6 +28,7 @@ Route::group(['prefix'=>'admin'],function() {
         });
         Route::post('edit/{id}', 'PetController@edit');
         Route::get('delete/{id}', 'PetController@delete');
+        Route::get('view/{id}', 'PetController@view');
     });
     Route::group(['prefix' => 'categories'], function () {
 
@@ -43,5 +44,6 @@ Route::group(['prefix'=>'admin'],function() {
         });
         Route::post('edit/{id}', 'CategoriesController@edit');
         Route::get('delete/{id}', 'CategoryController@delete');
+        Route::get('view/{id}', 'CategoryController@view');
     });
 });

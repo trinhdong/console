@@ -35,7 +35,7 @@
                             {!! Form::open(['method' => 'POST', 'url' => 'admin/categories/edit/'.$category->id, 'enctype' => 'multipart/form-data']) !!}
                             <div class="form-group">
                                 {!! Form::label('Tên thú cưng') !!}
-                                {!! Form::select('pet_name', ['' => 'Chọn thú cưng',$pets], $category->pet_id == key($pets) ? 'selected' : '', ['class' => 'form-control width-400']) !!}
+                                {!! Form::select('pet_id', ['' => 'Chọn thú cưng'] + $pets, $category->id, ['class' => 'form-control width-400', 'id' => 'pet_id']) !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::label('Tên danh mục') !!}

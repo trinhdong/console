@@ -1,1 +1,1 @@
-{{Html::link($url.'edit/'.$id, 'Chỉnh sửa', ['class' => 'btn btn-primary btn-sm'])}}
+{{Html::link($url.'edit/'.$id, 'Sửa', ['class' => 'btn btn-primary btn-sm'])}}

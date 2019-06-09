@@ -71,7 +71,7 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tên Thú cưng</th>
+                                        <th>Thú cưng</th>
                                         <th>Ngày tạo</th>
                                         <th>Tác vụ</th>
                                     </tr>
@@ -82,9 +82,10 @@
                                             <td>{{$pet->id}}</td>
                                             <td>{{$pet->pet_name}}</td>
                                             <td>{{$pet->created_at}}</td>
-                                            <td width="250">
-                                                @include('admin.elements.button.delete', ['url' => 'admin/pets/', 'id' => $pet->id])
+                                            <td width="150">
+                                                @include('admin.elements.button.view', ['url' => 'admin/pets/', 'id' => $pet->id])
                                                 @include('admin.elements.button.edit', ['url' => 'admin/pets/', 'id' => $pet->id])
+                                                @include('admin.elements.button.delete', ['url' => 'admin/pets/', 'id' => $pet->id])
                                             </td>
                                         </tr>
                                     @endforeach

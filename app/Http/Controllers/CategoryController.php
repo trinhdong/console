@@ -33,8 +33,8 @@ class CategoryController extends Controller
 
     public function view($id)
     {
-        $pet = Category::find($id);
-        return view('admin.categories.view', compact($pet));
+        $category = Category::find($id);
+        return view('admin.categories.view', compact('category'));
     }
 
     public function delete($id)

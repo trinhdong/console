@@ -29,7 +29,7 @@ class PetController extends Controller
 
     public function view($id) {
         $pet = Pet::find($id);
-        return view('admin.pets.view', compact($pet));
+        return view('admin.pets.view', compact('pet'));
     }
 
     public function delete ($id) {

@@ -86,9 +86,10 @@
                                         <td>{{$category->category_name}}</td>
                                         <td>{{$category->pets->pet_name}}</td>
                                         <td>{{$category->created_at}}</td>
-                                        <td width="250">
-                                            @include('admin.elements.button.delete', ['url' => 'admin/categories/', 'id' => $category->id])
+                                        <td width="150">
+                                            @include('admin.elements.button.view', ['url' => 'admin/categories/', 'id' => $category->id])
                                             @include('admin.elements.button.edit', ['url' => 'admin/categories/', 'id' => $category->id])
+                                            @include('admin.elements.button.delete', ['url' => 'admin/categories/', 'id' => $category->id])
                                         </td>
                                     </tr>
                                 @endforeach

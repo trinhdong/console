@@ -1,0 +1,1 @@
+{{Html::link($url.'view/'.$id, 'Xem', ['class' => 'btn btn-success btn-sm'])}}
