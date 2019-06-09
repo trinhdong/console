@@ -29,9 +29,10 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-body">
-                            <form method="get" accept-charset="utf-8" novalidate="novalidate"
-                                  class="search-form border"
-                                  action="/admin/categories/">
+                            {!! Form::open(['class' => 'search-form border',
+                                            'method' => 'GET', 'url' => 'admin/categories',
+                                            'accept-charset' => 'utf-8',
+                                            'novalidate' => 'novalidate']) !!}
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-2">
                                         {!! Form::label('ID') !!}
@@ -43,13 +44,13 @@
                                     </div>
                                 </div>
                                 @include('admin.elements.button.search')
-                            </form>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row margin-bottom">
-                @include('admin.elements.button.add')
+                @include('admin.elements.button.add', ['url' => 'admin/categories'])
             </div>
             @if($categories->isEmpty())
                 <div class="row">
@@ -62,6 +63,7 @@
                     </div>
                 </div>
             @else
+
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
@@ -71,7 +73,9 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Tên danh mục</th>
+                                    <th>Thú cưng</th>
                                     <th>Ngày tạo</th>
+                                    <th>Tác vụ</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -80,7 +84,12 @@
                                     <tr>
                                         <td>{{$category->id}}</td>
                                         <td>{{$category->category_name}}</td>
+                                        <td>{{$category->pets->pet_name}}</td>
                                         <td>{{$category->created_at}}</td>
+                                        <td width="250">
+                                            @include('admin.elements.button.delete', ['url' => 'admin/categories/', 'id' => $category->id])
+                                            @include('admin.elements.button.edit', ['url' => 'admin/categories/', 'id' => $category->id])
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

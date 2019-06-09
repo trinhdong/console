@@ -29,27 +29,28 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-body">
-                            <form method="get" accept-charset="utf-8" novalidate="novalidate"
-                                  class="search-form border"
-                                  action="/admin/pets/">
-                                <div class="row">
-                                    <div class="col-md-3 col-md-offset-2">
-                                        {!! Form::label('ID') !!}
-                                        {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
-                                    </div>
-                                    <div class="col-md-6">
-                                        {!! Form::label('Tên thú cưng') !!}
-                                        {!! Form::text('pet_name', '', ['class' => 'form-control']) !!}
-                                    </div>
+                            {!! Form::open(['class' => 'search-form border',
+                                            'method' => 'GET', 'url' => 'admin/pets',
+                                            'accept-charset' => 'utf-8',
+                                            'novalidate' => 'novalidate']) !!}
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-2">
+                                    {!! Form::label('ID') !!}
+                                    {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
                                 </div>
-                                @include('admin.elements.button.search')
-                            </form>
+                                <div class="col-md-6">
+                                    {!! Form::label('Tên thú cưng') !!}
+                                    {!! Form::text('pet_name', '', ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                            @include('admin.elements.button.search')
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row margin-bottom">
-                @include('admin.elements.button.add')
+                @include('admin.elements.button.add', ['url' => 'admin/pets'])
             </div>
             @if($pets->isEmpty())
                 <div class="row">
@@ -62,37 +63,37 @@
                     </div>
                 </div>
             @else
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="box">
-                        <div class="box-body">
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Tên Thú cưng</th>
-                                    <th>Ngày tạo</th>
-                                    <th>Tác vụ</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($pets as $pet)
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
                                     <tr>
-                                        <td>{{$pet->id}}</td>
-                                        <td>{{$pet->pet_name}}</td>
-                                        <td>{{$pet->created_at}}</td>
-                                        <td width="250">
-                                            @include('admin.elements.button.delete', ['id' => $pet->id])
-                                            @include('admin.elements.button.edit', ['id' => $pet->id])
-                                        </td>
+                                        <th>ID</th>
+                                        <th>Tên Thú cưng</th>
+                                        <th>Ngày tạo</th>
+                                        <th>Tác vụ</th>
                                     </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($pets as $pet)
+                                        <tr>
+                                            <td>{{$pet->id}}</td>
+                                            <td>{{$pet->pet_name}}</td>
+                                            <td>{{$pet->created_at}}</td>
+                                            <td width="250">
+                                                @include('admin.elements.button.delete', ['url' => 'admin/pets/', 'id' => $pet->id])
+                                                @include('admin.elements.button.edit', ['url' => 'admin/pets/', 'id' => $pet->id])
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endif
         </section>
     </div>

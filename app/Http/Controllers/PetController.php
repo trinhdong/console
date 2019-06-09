@@ -18,15 +18,18 @@ class PetController extends Controller
 
     public function add(PetRequest $request) {
         Pet::create($request->all());
-        return back()->with( 'success', 'Thêm thú cưng thành công' );
+        return redirect('admin/pets')->with( 'success', 'Thêm thú cưng thành công' );
     }
 
-    public function edit() {
-
+    public function edit($id, PetRequest $request) {
+        $pet = Pet::find($id);
+        $pet->update($request->all());
+        return redirect('admin/pets')->with( 'success', 'Cập nhật thú cưng thành công' );
     }
 
-    public function view() {
-
+    public function view($id) {
+        $pet = Pet::find($id);
+        return view('admin.pets.view', compact($pet));
     }
 
     public function delete ($id) {
