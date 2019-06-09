@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
+use App\Pet;
 use Illuminate\Http\Request;
 use App\Category;
 
@@ -13,9 +14,11 @@ class CategoryController extends Controller
     {
         $categories = Category::searchQuery(
             $request->input('id') ?? '',
-            $request->input('category') ?? ''
+            $request->input('category') ?? '',
+            $request->input('pet_id') ?? ''
         );
-        return view('admin.categories.index', ['categories' => $categories]);
+        $pets = Pet::pluck('pet_name', 'id')->toArray();
+        return view('admin.categories.index', ['categories' => $categories, 'pets' => $pets]);
     }
 
     public function add(CategoryRequest $request)

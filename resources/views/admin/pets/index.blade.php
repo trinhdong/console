@@ -35,7 +35,7 @@
                                             'novalidate' => 'novalidate']) !!}
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-2">
-                                    {!! Form::label('ID') !!}
+                                    {!! Form::label('pet_id', 'ID') !!}
                                     {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
                                 </div>
                                 <div class="col-md-6">

@@ -11,7 +11,7 @@ class PetController extends Controller
     public function index(Request $request) {
         $pets = Pet::searchQuery(
             $request->input('id') ?? '',
-            $request->input('pet_name') ?? ''
+            $request->input('pet_name') ?? '',
         );
         return view('admin.pets.index', ['pets' => $pets]);
     }

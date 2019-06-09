@@ -26,6 +26,14 @@
                 </div>
                 <div class="box box-body">
                     <div class="col-md-3">
+                        {!! Form::label('Thú cưng') !!}
+                    </div>
+                    <div class="col-md-9">
+                        <p>{{$category->pets->pet_name}}</p>
+                    </div>
+                </div>
+                <div class="box box-body">
+                    <div class="col-md-3">
                         {!! Form::label('Tên danh mục') !!}
                     </div>
                     <div class="col-md-9">
@@ -37,7 +45,7 @@
                         {!! Form::label('Ngày tạo') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$pet->created_at}}</p>
+                        <p>{{$category->created_at}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -45,7 +53,7 @@
                         {!! Form::label('Ngày cập nhật') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$pet->updated_at}}</p>
+                        <p>{{$category->updated_at}}</p>
                     </div>
                 </div>
             </div>

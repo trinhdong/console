@@ -25,7 +25,7 @@
                 </div>
                 <div class="box box-body">
                     <div class="col-md-3">
-                        {!! Form::label('Tên danh mục') !!}
+                        {!! Form::label('Thú cưng') !!}
                     </div>
                     <div class="col-md-9">
                         <p>{{$pet->pet_name}}</p>

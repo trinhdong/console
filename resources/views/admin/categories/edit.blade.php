@@ -28,6 +28,7 @@
                     @endif
                 </div>
             </div>
+            {{--{{dd($category->pets)}}--}}
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
@@ -35,7 +36,7 @@
                             {!! Form::open(['method' => 'POST', 'url' => 'admin/categories/edit/'.$category->id, 'enctype' => 'multipart/form-data']) !!}
                             <div class="form-group">
                                 {!! Form::label('Tên thú cưng') !!}
-                                {!! Form::select('pet_id', ['' => 'Chọn thú cưng'] + $pets, $category->id, ['class' => 'form-control width-400', 'id' => 'pet_id']) !!}
+                                {!! Form::select('pet_id', ['' => 'Chọn thú cưng'] + $pets, $category->pets->id, ['class' => 'form-control width-400']) !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::label('Tên danh mục') !!}

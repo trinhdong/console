@@ -12,13 +12,16 @@ class Category extends Model
 //    protected $guarded = ['pet_name'];
     protected $fillable = ['category_name', 'pet_id'];
 
-    public static function searchQuery(string $id = '', string $category = '') {
+    public static function searchQuery(string $id = '', string $category = '', string $pet_id = '') {
         $query = Category::query();
         if ($id) {
             $query->where(['id' => $id]);
         }
         if ($category != '') {
             $query->where('category_name', 'LIKE', '%' . $category . '%');
+        }
+        if ($pet_id != '') {
+            $query->where(['pet_id' => $pet_id]);
         }
         $query->orderBy('id','DESC');
         return $query->get();

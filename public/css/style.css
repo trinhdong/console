@@ -113,3 +113,62 @@ textarea.form-control {
 .form-control[picker=month] {
     width: 88px;
 }
+.float-none {
+    float: none;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.padding-left-0 {
+    padding-left: 0;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.margin-left-15 {
+    margin-left: 15px;
+}
+
+.margin-left-35 {
+    margin-left: 35px;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-top-25 {
+    margin-top: 25px;
+}
+
+.margin-right-12 {
+    margin-right: 12px;
+}
+
+.margin-right-25 {
+    margin-right: 25px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.margin-bottom-25 {
+    margin-bottom: 25px;
+}
