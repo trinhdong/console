@@ -1,7 +1,6 @@
 @extends('admin.layouts.index')
 
 @section('content')
-{{--{{dd($pets)}}{{exit}}--}}
     <div class="content-wrapper">
         <section class="content-header margin-bottom">
             <h1>

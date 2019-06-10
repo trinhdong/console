@@ -10,7 +10,7 @@
                 <small>List</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="admin/categories/index"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                 <li class="active"></i>Categories</li>
             </ol>
         </section>

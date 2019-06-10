@@ -17,14 +17,14 @@ class PetController extends Controller
     }
 
     public function add(PetRequest $request) {
-        Pet::create($request->all());
-        return redirect('admin/pets')->with( 'success', 'Thêm thú cưng thành công' );
+        Pet::createOrFail($request->all());
+        return redirect('admin/pets')->with(Controller::notification(ADD));
     }
 
     public function edit($id, PetRequest $request) {
         $pet = Pet::find($id);
         $pet->update($request->all());
-        return redirect('admin/pets')->with( 'success', 'Cập nhật thú cưng thành công' );
+        return redirect('admin/pets')->with(Controller::notification(EDIT));
     }
 
     public function view($id) {
@@ -34,6 +34,6 @@ class PetController extends Controller
 
     public function delete ($id) {
         Pet::destroy($id);
-        return back()->with('success','Xóa thú cưng thành công');
+        return back()->with(Controller::notification(DELETE));
     }
 }

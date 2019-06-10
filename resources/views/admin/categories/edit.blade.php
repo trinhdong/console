@@ -28,7 +28,6 @@
                     @endif
                 </div>
             </div>
-            {{--{{dd($category->pets)}}--}}
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">

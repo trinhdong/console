@@ -42,7 +42,7 @@ Route::group(['prefix'=>'admin'],function() {
             $pets = \App\Pet::pluck('pet_name', 'id')->toArray();
             return view('admin.categories.edit', ['category' => \App\Category::findOrFail($id), 'pets' => $pets]);
         });
-        Route::post('edit/{id}', 'CategoriesController@edit');
+        Route::post('edit/{id}', 'CategoryController@edit');
         Route::get('delete/{id}', 'CategoryController@delete');
         Route::get('view/{id}', 'CategoryController@view');
     });
