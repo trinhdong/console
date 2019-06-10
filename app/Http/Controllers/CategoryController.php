@@ -29,7 +29,7 @@ class CategoryController extends Controller
 
     public function edit($id, CategoryRequest $request)
     {
-        $category = Pet::find($id);
+        $category = Category::find($id);
         $category->update($request->all());
         return redirect('admin/categories')->with(Controller::notification(EDIT));
     }
