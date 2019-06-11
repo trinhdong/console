@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
     public function add(CategoryRequest $request)
     {
-        Category::createOrFail($request->all());
+        Category::create($request->all());
         return redirect('admin/categories')->with(Controller::notification(ADD));
     }
 

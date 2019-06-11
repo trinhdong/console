@@ -24,15 +24,17 @@ class PetRequest extends FormRequest
     public function rules()
     {
         return [
-            'pet_name' => 'required|unique:pets'
+            'pet_name' => 'required|unique:pets|min:2|max:15'
         ];
     }
 
     public function messages()
     {
         return [
-            'pet_name.required' => 'Bạn chưa nhập tên thú cưng!',
-            'pet_name.unique' => 'Tên thú cưng đã tôn tại!'
+            'pet_name.required' => 'Vui lòng nhập tên thú cưng!',
+            'pet_name.unique' => 'Tên thú cưng đã tôn tại!',
+            'pet_name.min' =>  'Tên thú cưng không được nhỏ hơn 2 ký tự',
+            'pet_name.max' =>  'Tên thú cưng không được lớn hơn 15 ký tự'
         ];
     }
 }

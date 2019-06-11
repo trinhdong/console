@@ -13,31 +13,37 @@ class Controller extends BaseController
 
     public static function notification($notification = '')
     {
-        if ($notification == ADD) {
+        if ($notification === ADD) {
             return array(
                 'message' => 'Thêm thành công!',
                 'alert-type' => 'success'
             );
         }
-        if ($notification == DELETE) {
+        if ($notification === DELETE) {
             return array(
                 'message' => 'Xóa thành công!',
+                'alert-type' => 'success'
+            );
+        }
+        if ($notification === DELETE_ERROR) {
+            return array(
+                'message' => 'Không thể xóa!',
                 'alert-type' => 'error'
             );
         }
-        if ($notification == EDIT) {
+        if ($notification === EDIT) {
             return array(
                 'message' => 'Sửa thành công!',
                 'alert-type' => 'success'
             );
         }
-        if ($notification == INFO) {
+        if ($notification === INFO) {
             return array(
                 'message' => 'Thông tin!',
                 'alert-type' => 'info'
             );
         }
-        if ($notification == WARNING) {
+        if ($notification === WARNING) {
             return array(
                 'message' => 'Gặp lỗi!!!',
                 'alert-type' => 'warning'

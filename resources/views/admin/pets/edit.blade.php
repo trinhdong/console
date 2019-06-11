@@ -19,15 +19,16 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-body">
-                            {!! Form::open(['method' => 'POST', 'url' => 'admin/pets/edit/'.$pet->id, 'enctype' => 'multipart/form-data']) !!}
+                            {!! Form::open(['method' => 'POST', 'url' => 'admin/pets/edit/'.$pet->id,'id' => 'pet_form', 'role' => 'form', 'enctype' => 'multipart/form-data']) !!}
                             <div class="form-group">
                                 {!! Form::label('Tên thú cưng') !!}
                                 {!! Form::text('pet_name', $pet->pet_name, [
                                 'class' => 'form-control width-400',
-                                'placeholder' => 'Nhập tên thú cưng',
-                                'minlength' => '2',
-                                'maxlength' => '100'
+                                'placeholder' => 'Nhập tên thú cưng'
                                 ]) !!}
+                                @if ($errors->has('pet_name'))
+                                    <p class="help is-danger">{{ $errors->first('pet_name') }}</p>
+                                @endif
                             </div>
                             @include('admin.elements.button.save_edit')
                             {!! Form::close() !!}
@@ -39,3 +40,4 @@
     </div>
 
 @endsection
+@include('admin.elements.script.error')

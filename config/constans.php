@@ -12,3 +12,4 @@ const EDIT = 'edit';
 const DELETE = 'delete';
 const INFO = 'info';
 const WARNING = 'warning';
+const DELETE_ERROR = 'delete_error';

@@ -27,7 +27,7 @@ Route::group(['prefix'=>'admin'],function() {
             return view('admin.pets.edit', ['pet' => \App\Pet::findOrFail($id)]);
         });
         Route::post('edit/{id}', 'PetController@edit');
-        Route::get('delete/{id}', 'PetController@delete');
+        Route::delete('delete/{id}', 'PetController@delete');
         Route::get('view/{id}', 'PetController@view');
     });
     Route::group(['prefix' => 'categories'], function () {
@@ -43,7 +43,7 @@ Route::group(['prefix'=>'admin'],function() {
             return view('admin.categories.edit', ['category' => \App\Category::findOrFail($id), 'pets' => $pets]);
         });
         Route::post('edit/{id}', 'CategoryController@edit');
-        Route::get('delete/{id}', 'CategoryController@delete');
+        Route::delete('delete/{id}', 'CategoryController@delete');
         Route::get('view/{id}', 'CategoryController@view');
     });
 });

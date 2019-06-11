@@ -17,7 +17,7 @@ class PetController extends Controller
     }
 
     public function add(PetRequest $request) {
-        Pet::createOrFail($request->all());
+        Pet::create($request->all());
         return redirect('admin/pets')->with(Controller::notification(ADD));
     }
 
@@ -33,7 +33,11 @@ class PetController extends Controller
     }
 
     public function delete ($id) {
-        Pet::destroy($id);
+        $pet = Pet::find($id);
+        if ($pet->categories() !== null) {
+            return back()->with(Controller::notification(DELETE_ERROR));
+        }
+        $pet->delete();
         return back()->with(Controller::notification(DELETE));
     }
 }
