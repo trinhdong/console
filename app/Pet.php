@@ -8,6 +8,7 @@ class Pet extends Model
 {
     protected $table = 'pets';
     protected $primaryKey = 'id';
+//    protected $guarded = [];
     protected $fillable = array('pet_name');
 
     public static function searchQuery(string $id = '', string $pet = '')
