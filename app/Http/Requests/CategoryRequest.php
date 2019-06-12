@@ -24,15 +24,19 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_name' => 'required|unique:categories'
+            'category_name' => 'required|unique:categories|min:3|max:50',
+            'pet_id' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'category_name.required' => 'Bạn chưa nhập tên danh mục!',
-            'category_name.unique' => 'Tên danh mục đã tôn tại!'
+            'category_name.required' => 'Vui lòng nhập tên danh mục!',
+            'category_name.unique' => 'Tên danh mục đã tôn tại!',
+            'category_name.min' => 'Tên danh mục không được nhỏ hơn 3 ký tự',
+            'category_name.max' => 'Tên danh mục không được lớn hơn 50 ký tự',
+            'pet_id.required' => 'Vui lòng chọn thú cưng!',
         ];
     }
 }

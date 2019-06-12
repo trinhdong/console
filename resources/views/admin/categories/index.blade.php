@@ -5,12 +5,12 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                <i class="glyphicon glyphicon-book"></i>
+                <i class="glyphicon glyphicon-piggy-bank"></i>
                 Categories
                 <small>List</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="admin/categories/index"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                 <li class="active"></i>Categories</li>
             </ol>
         </section>

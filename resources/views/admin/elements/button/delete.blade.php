@@ -1,1 +1,10 @@
-{{Html::link($url.'delete/'.$id, 'Xóa', ['class' => 'btn btn-danger btn-sm','method' => 'delete', 'confirm' => 'Bạn có chắc muốn xóa!'])}}
+{{Html::link($url.'delete/'.$id, 'Xóa', ['class' => 'btn_delete btn btn-danger btn-sm', 'method' => 'delete'])}}
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('.btn_delete').on('click', function () {
+                return confirm('Bạn có chắc muốn xóa?');
+            });
+        })
+    </script>
+@endsection
