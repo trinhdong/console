@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('admin.home');
+    });
 
-Route::group(['prefix'=>'admin'],function() {
     Route::group(['prefix' => 'pets'], function () {
-
         Route::get('/', 'PetController@index');
         Route::get('add', function () {
             return view('admin.pets.add');
@@ -27,11 +26,11 @@ Route::group(['prefix'=>'admin'],function() {
             return view('admin.pets.edit', ['pet' => \App\Pet::findOrFail($id)]);
         });
         Route::post('edit/{id}', 'PetController@edit');
-        Route::delete('delete/{id}', 'PetController@delete');
+        Route::get('delete/{id}', 'PetController@delete');
         Route::get('view/{id}', 'PetController@view');
     });
-    Route::group(['prefix' => 'categories'], function () {
 
+    Route::group(['prefix' => 'categories'], function () {
         Route::get('/', 'CategoryController@index');
         Route::get('add', function () {
             $pets = \App\Pet::pluck('pet_name', 'id')->toArray();
@@ -43,24 +42,24 @@ Route::group(['prefix'=>'admin'],function() {
             return view('admin.categories.edit', ['category' => \App\Category::findOrFail($id), 'pets' => $pets]);
         });
         Route::post('edit/{id}', 'CategoryController@edit');
-        Route::delete('delete/{id}', 'CategoryController@delete');
+        Route::get('delete/{id}', 'CategoryController@delete');
         Route::get('view/{id}', 'CategoryController@view');
     });
-   
-    Route::group(['prefix' => 'typeproduct'], function (){
-        Route::get('/', 'TypeProductController@index');
+
+    Route::group(['prefix' => 'product_types'], function () {
+        Route::get('/', 'ProductTypeController@index');
         Route::get('add', function () {
             $categories = \App\Category::pluck('category_name', 'id')->toArray();
-            return view('admin.typeproduct.add',['categories' => $categories]);
+            return view('admin.product_types.add', ['categories' => $categories]);
         });
-        Route::post('add', 'TypeProductController@add');
-        Route::get('edit/{id}', function ($id){
-            $categories = \App\Category::pluck('category_name','id')->toArray();
-            return view('admin.typeproduct.edit',['product_types' => \App\TypeProduct::findOrFail($id), 'categories' => $categories
+        Route::post('add', 'ProductTypeController@add');
+        Route::get('edit/{id}', function ($id) {
+            $categories = \App\Category::pluck('category_name', 'id')->toArray();
+            return view('admin.product_types.edit', ['productType' => \App\ProductType::findOrFail($id), 'categories' => $categories
             ]);
-        }); 
-        Route::post('edit/{id}', 'TypeProductController@edit');
-        Route::get('view/{id}', 'TypeProductController@view');
-        Route::get('delete/{id}', 'TypeProductController@delete');
+        });
+        Route::post('edit/{id}', 'ProductTypeController@edit');
+        Route::get('delete/{id}', 'ProductTypeController@delete');
+        Route::get('view/{id}', 'ProductTypeController@view');
     });
 });

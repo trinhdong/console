@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         $categories = Category::searchQuery(
             $request->input('id') ?? '',
-            $request->input('category') ?? '',
+            $request->input('category_name') ?? '',
             $request->input('pet_id') ?? ''
         );
         $pets = Pet::pluck('pet_name', 'id')->toArray();

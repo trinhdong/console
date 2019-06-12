@@ -5,12 +5,12 @@
     <div class="content-wrapper">
         <section class="content-header margin-bottom">
             <h1>
-                <i class="glyphicon glyphicon-book"></i>
-                TypeProduct
+                <i class="glyphicon glyphicon-th-list"></i>
+                Loại sản phẩm
                 <small>View</small>
             </h1>
             <ol class="breadcrumb">
-                @include('admin.elements.button.back', ['url' => 'admin/typeproduct'])
+                @include('admin.elements.button.back', ['url' => 'admin/product_types'])
             </ol>
         </section>
         <section class="content">
@@ -20,7 +20,7 @@
                         {!! Form::label('ID') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$product_types->id}}</p>
+                        <p>{{$productType->id}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -28,15 +28,15 @@
                         {!! Form::label('Tên loại') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$product_types->type_name}}</p>
+                        <p>{{$productType->type_name}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
                     <div class="col-md-3">
-                        {!! Form::label('Mã danh mục') !!}
+                        {!! Form::label('Tên danh mục') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$product_types->category_id}}</p>
+                        <p>{{$productType->categories->category_name}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -44,7 +44,7 @@
                         {!! Form::label('Ngày tạo') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$product_types->created_at}}</p>
+                        <p>{{$productType->created_at}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -52,7 +52,7 @@
                         {!! Form::label('Ngày cập nhật') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$product_types->updated_at}}</p>
+                        <p>{{$productType->updated_at}}</p>
                     </div>
                 </div>
             </div>

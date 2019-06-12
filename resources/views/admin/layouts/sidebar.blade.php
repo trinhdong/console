@@ -22,14 +22,14 @@
 
         <ul class="sidebar-menu">
             @foreach(SCREEN_OPTIONS as $menuType => $menus)
-                {{--<li class="header">{{$menuType}}</li>--}}
-                {{--@if($menuType === SCREEN_TYPE_CONSOLE)--}}
-                    {{--<li class="treeview active">--}}
-                        {{--<a href="/admin/categories/index">--}}
-                            {{--<i class="glyphicon glyphicon-home"></i> <span>Home</span>--}}
-                        {{--</a>--}}
-                    {{--</li>--}}
-                {{--@endif--}}
+                <li class="header">{{$menuType}}</li>
+                @if($menuType === SCREEN_TYPE_CONSOLE)
+                    <li class="treeview active">
+                        <a href="/admin">
+                            <i class="glyphicon glyphicon-home"></i> <span>Home</span>
+                        </a>
+                    </li>
+                @endif
                 @foreach($menus as $route => $option)
                     <li class="treeview">
                         <a href="admin/{{$route}}">
