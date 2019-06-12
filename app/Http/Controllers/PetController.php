@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\PetRequest;
 use App\Pet;
 use Illuminate\Http\Request;
@@ -33,11 +34,11 @@ class PetController extends Controller
     }
 
     public function delete ($id) {
-        $pet = Pet::find($id);
-        if ($pet->categories() !== null) {
-            return back()->with(Controller::notification(DELETE_ERROR));
+        $categories = Category::query()->where('pet_id', '=', $id)->get();
+        if ($categories->isEmpty()) {
+            Pet::destroy($id);
+            return back()->with(Controller::notification(DELETE));
         }
-        $pet->delete();
-        return back()->with(Controller::notification(DELETE));
+        return back()->with(Controller::notification(DELETE_ERROR));
     }
 }

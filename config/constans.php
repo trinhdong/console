@@ -2,7 +2,7 @@
 
 const SCREEN_OPTIONS = [
     'CONSOLE' => [
-        'pets' => ['Thú cưng', 'book'],
+        'pets' => ['Thú cưng', 'piggy-bank'],
         'categories' => ['Categories', 'book']
     ]
 ];

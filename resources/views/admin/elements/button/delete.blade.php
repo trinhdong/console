@@ -1,4 +1,10 @@
-{{ Form::open(['style' => 'display:none', 'method' => 'POST', 'url' => $url.'delete/'.$id, 'onsubmit' => 'return ConfirmDelete()']) }}
-{!! method_field('delete') !!}
-{{ Form::close() }}
-{{Html::link('#', 'Xóa', ['class' => 'btn btn-danger btn-sm'])}}
+{{Html::link($url.'delete/'.$id, 'Xóa', ['class' => 'btn_delete btn btn-danger btn-sm', 'method' => 'delete'])}}
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('.btn_delete').on('click', function () {
+                return confirm('Bạn có chắc muốn xóa?');
+            });
+        })
+    </script>
+@endsection
