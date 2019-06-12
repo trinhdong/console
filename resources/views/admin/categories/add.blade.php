@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <section class="content-header margin-bottom">
             <h1>
-                <i class="glyphicon glyphicon-piggy-bank"></i>
+                <i class="glyphicon glyphicon-book"></i>
                 Categories
                 <small>Add</small>
             </h1>
