@@ -3,8 +3,7 @@
 const SCREEN_OPTIONS = [
     'CONSOLE' => [
         'pets' => ['Thú cưng', 'piggy-bank'],
-        'categories' => ['Categories', 'book'],
-        'typeproduct' =>['TypeProduct', 'book']
+        'categories' => ['Categories', 'book']
     ]
 ];
 const SCREEN_TYPE_CONSOLE = 'CONSOLE';
