@@ -1,4 +1,4 @@
-{{Html::link($url.'delete/'.$id, 'Xóa', ['class' => 'btn_delete btn btn-danger btn-sm', 'method' => 'delete'])}}
+{{Html::link($url.'delete/'.$id, 'Xóa', ['class' => 'btn_delete btn btn-danger btn-sm', 'method' => 'get'])}}
 @section('script')
     <script>
         $(document).ready(function () {
