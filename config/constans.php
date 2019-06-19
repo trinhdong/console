@@ -4,7 +4,8 @@ const SCREEN_OPTIONS = [
     'CONSOLE' => [
         'pets' => ['Thú cưng', 'piggy-bank'],
         'categories' => ['Danh mục', 'book'],
-        'product_types' => ['Loại sản phẩm', 'th-list']
+        'product_types' => ['Loại sản phẩm', 'th-list'],
+        'products' => ['Sản phẩm', 'th-list']
     ]
 ];
 const SCREEN_TYPE_CONSOLE = 'CONSOLE';

@@ -62,4 +62,21 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('delete/{id}', 'ProductTypeController@delete');
         Route::get('view/{id}', 'ProductTypeController@view');
     });
+
+    Route::group(['prefix' => 'products'], function () {
+        Route::get('/', 'ProductController@index');
+        Route::get('add' , function () {
+            $productTypes = \App\ProductType::pluck('type_name', 'id')->toArray();
+            return view('admin.products.add', ['productTypes' => $productTypes]);
+        });
+        Route::post('add' , 'ProductController@add');
+        Route::get('edit/{id}' , function ($id) {
+            $productTypes = \App\ProductType::pluck('type_name', 'id')->toArray();
+            return view('admin.products.edit', ['products' => \App\Product::findOrFail($id), 'productTypes' => $productTypes
+            ]);
+        });
+        Route::post('edit/{id}' , 'ProductController@edit');
+        Route::get('view/{id}', 'ProductController@view');
+        Route::get('delete/{id}', 'ProductController@delete');
+    });
 });

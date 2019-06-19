@@ -113,6 +113,7 @@ textarea.form-control {
 .form-control[picker=month] {
     width: 88px;
 }
+
 .float-none {
     float: none;
 }
