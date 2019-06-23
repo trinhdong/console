@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('index' ,[
+    'as' => 'home',
+    'uses' => 'PageController@getIndex'
+]);
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('admin.home');
