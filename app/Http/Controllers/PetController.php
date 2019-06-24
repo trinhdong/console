@@ -34,8 +34,8 @@ class PetController extends Controller
     }
 
     public function delete ($id) {
-        $categories = Category::query()->where('pet_id', '=', $id)->get();
-        if ($categories->isEmpty()) {
+        $categories = Category::query()->where('pet_id', '=', $id)->first();
+        if (empty($categories)) {
             Pet::destroy($id);
             return back()->with(Controller::notification(DELETE));
         }

@@ -2,9 +2,10 @@
 
 const SCREEN_OPTIONS = [
     'CONSOLE' => [
+        'admin-users' => ['Quản trị viên', 'user'],
         'pets' => ['Thú cưng', 'piggy-bank'],
         'categories' => ['Danh mục', 'book'],
-        'product_types' => ['Loại sản phẩm', 'th-list']
+        'product-types' => ['Loại sản phẩm', 'th-list'],
     ]
 ];
 const SCREEN_TYPE_CONSOLE = 'CONSOLE';
@@ -14,3 +15,5 @@ const DELETE = 'delete';
 const INFO = 'info';
 const WARNING = 'warning';
 const DELETE_ERROR = 'delete_error';
+const LOGIN = 'login';
+const PASSWORD_ERROR = 'password_error';

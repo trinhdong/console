@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductType extends Model
 {
     protected $table = 'product_types';
+    protected $primaryKey = 'id';
     protected $fillable = array('type_name', 'category_id');
 
     public static function searchQuery($id = '', $typeName = '', $categoryId = '')

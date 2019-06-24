@@ -21,7 +21,7 @@
                     <div class="box">
                         <div class="box-body">
                             {!! Form::open(['class' => 'search-form',
-                                            'method' => 'GET', 'url' => 'admin/product_types',
+                                            'method' => 'GET', 'url' => 'admin/product-types',
                                             'accept-charset' => 'utf-8',
                                             'novalidate' => 'novalidate']) !!}
                             <div class="row">
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="row margin-bottom">
-                @include('admin.elements.button.add',['url' => 'admin/product_types'])
+                @include('admin.elements.button.add',['url' => 'admin/product-types'])
             </div>
             @if($productTypes->isEmpty())
                 <div class="row">
@@ -80,9 +80,9 @@
                                             <td>{{$productType->categories->pets->pet_name}}</td>
                                             <td>{{$productType->categories->category_name}}</td>
                                             <td width="150">
-                                                @include('admin.elements.button.view', ['url' => 'admin/product_types/', 'id' => $productType->id])
-                                                @include('admin.elements.button.edit', ['url' => 'admin/product_types/', 'id' => $productType->id])
-                                                @include('admin.elements.button.delete', ['url' => 'admin/product_types/', 'id' => $productType->id])
+                                                @include('admin.elements.button.view', ['url' => 'admin/product-types/', 'id' => $productType->id])
+                                                @include('admin.elements.button.edit', ['url' => 'admin/product-types/', 'id' => $productType->id])
+                                                @include('admin.elements.button.delete', ['url' => 'admin/product-types/', 'id' => $productType->id])
                                             </td>
                                         </tr>
                                     @endforeach
