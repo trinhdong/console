@@ -25,7 +25,8 @@ class ProductTypeRequest extends FormRequest
     {
         return [
             'type_name' => 'required|unique:product_types|min:3|max:50',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'pet_id' => 'required'
         ];
     }
 
@@ -37,6 +38,7 @@ class ProductTypeRequest extends FormRequest
             'type_name.min' => 'Tên danh mục không được nhỏ hơn 3 ký tự',
             'type_name.max' => 'Tên danh mục không được lớn hơn 50 ký tự',
             'category_id.required' => 'Vui lòng chọn danh mục!',
+            'pet_id.required' => 'Vui lòng chọn thú cưng!',
         ];
     }
 }

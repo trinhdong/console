@@ -11,14 +11,14 @@ class Pet extends Model
 //    protected $guarded = [];
     protected $fillable = array('pet_name');
 
-    public static function searchQuery($id = '', $pet = '')
+    public static function searchQuery($id = '', $petName = '')
     {
         $query = Pet::query();
         if ($id !== '') {
             $query->where(['id' => $id]);
         }
-        if ($pet !== '') {
-            $query->where('pet_name', 'LIKE', '%' . $pet . '%');
+        if ($petName !== '') {
+            $query->where('pet_name', 'LIKE', '%' . $petName . '%');
         }
         $query->orderBy('id', 'DESC');
         return $query->get();

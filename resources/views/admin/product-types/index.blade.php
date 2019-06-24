@@ -5,13 +5,13 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                <i class="glyphicon glyphicon-piggy-bank"></i>
-                Thú cưng
+                <i class="glyphicon glyphicon-th-list"></i>
+                Loại sản phẩm
                 <small>List</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li class="active"></i>Thú cưng</li>
+                <li class="active"></i>Loại sản phẩm</li>
             </ol>
         </section>
 
@@ -20,18 +20,22 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-body">
-                            {!! Form::open(['class' => 'search-form border',
-                                            'method' => 'GET', 'url' => 'admin/pets',
+                            {!! Form::open(['class' => 'search-form',
+                                            'method' => 'GET', 'url' => 'admin/product-types',
                                             'accept-charset' => 'utf-8',
                                             'novalidate' => 'novalidate']) !!}
                             <div class="row">
-                                <div class="col-md-3 col-md-offset-2">
-                                    {!! Form::label('id', 'ID') !!}
-                                    {!! Form::number('pet_id', '', ['class' => 'form-control', 'min' => 1]) !!}
+                                <div class="col-md-3 col-md-offset-1">
+                                    {!! Form::label('type_id', 'ID') !!}
+                                    {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
                                 </div>
-                                <div class="col-md-6">
-                                    {!! Form::label('Tên thú cưng') !!}
-                                    {!! Form::text('pet_name', '', ['class' => 'form-control']) !!}
+                                <div class="col-md-3">
+                                    {!! Form::label('Danh mục') !!}
+                                    {!! Form::select('category_id', ['' => '---------------'] + $categories, null, ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::label('Tên loại') !!}
+                                    {!! Form::text('type_name', '', ['class' => 'form-control']) !!}
                                 </div>
                             </div>
                             @include('admin.elements.button.search')
@@ -41,9 +45,9 @@
                 </div>
             </div>
             <div class="row margin-bottom">
-                @include('admin.elements.button.add', ['url' => 'admin/pets'])
+                @include('admin.elements.button.add',['url' => 'admin/product-types'])
             </div>
-            @if($pets->isEmpty())
+            @if($productTypes->isEmpty())
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="box">
@@ -62,21 +66,23 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Loại sản phẩm</th>
                                         <th>Thú cưng</th>
-                                        <th>Ngày tạo</th>
-                                        <th>Tác vụ</th>
+                                        <th>Danh mục</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($pets as $pet)
+                                    @foreach($productTypes as $productType)
                                         <tr>
-                                            <td>{{$pet->id}}</td>
-                                            <td>{{$pet->pet_name}}</td>
-                                            <td>{{$pet->created_at}}</td>
+                                            <td>{{$productType->id}}</td>
+                                            <td>{{$productType->type_name}}</td>
+                                            <td>{{$productType->categories->pets->pet_name}}</td>
+                                            <td>{{$productType->categories->category_name}}</td>
                                             <td width="150">
-                                                @include('admin.elements.button.view', ['url' => 'admin/pets/', 'id' => $pet->id])
-                                                @include('admin.elements.button.edit', ['url' => 'admin/pets/', 'id' => $pet->id])
-                                                @include('admin.elements.button.delete', ['url' => 'admin/pets/', 'id' => $pet->id])
+                                                @include('admin.elements.button.view', ['url' => 'admin/product-types/', 'id' => $productType->id])
+                                                @include('admin.elements.button.edit', ['url' => 'admin/product-types/', 'id' => $productType->id])
+                                                @include('admin.elements.button.delete', ['url' => 'admin/product-types/', 'id' => $productType->id])
                                             </td>
                                         </tr>
                                     @endforeach

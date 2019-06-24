@@ -14,6 +14,14 @@ Route::get('index' ,[
     'as' => 'home',
     'uses' => 'PageController@getIndex'
 ]);
+
+Route::get('/', function () {
+    return view('admin.login');
+});
+
+Route::post('/', 'AdminUserController@login');
+Route::get('/logout', 'AdminUserController@logout');
+
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('admin.home');
@@ -49,16 +57,21 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('view/{id}', 'CategoryController@view');
     });
 
-    Route::group(['prefix' => 'product_types'], function () {
+    Route::group(['prefix' => 'product-types'], function () {
         Route::get('/', 'ProductTypeController@index');
         Route::get('add', function () {
             $categories = \App\Category::pluck('category_name', 'id')->toArray();
-            return view('admin.product_types.add', ['categories' => $categories]);
+            $pets = \App\Pet::pluck('pet_name', 'id')->toArray();
+            return view('admin.product-types.add', ['categories' => $categories, 'pets' => $pets]);
         });
         Route::post('add', 'ProductTypeController@add');
         Route::get('edit/{id}', function ($id) {
+            $pets = \App\Pet::pluck('pet_name', 'id')->toArray();
             $categories = \App\Category::pluck('category_name', 'id')->toArray();
-            return view('admin.product_types.edit', ['productType' => \App\ProductType::findOrFail($id), 'categories' => $categories
+            return view('admin.product-types.edit', [
+                'productType' => \App\ProductType::findOrFail($id),
+                'categories' => $categories,
+                'pets' => $pets
             ]);
         });
         Route::post('edit/{id}', 'ProductTypeController@edit');
@@ -81,5 +94,22 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('edit/{id}' , 'ProductController@edit');
         Route::get('view/{id}', 'ProductController@view');
         Route::get('delete/{id}', 'ProductController@delete');
+    });
+    Route::group(['prefix' => 'admin-users'], function () {
+        Route::get('/', 'AdminUserController@index');
+        Route::get('add', function () {
+            return view('admin.admin-users.add');
+        });
+        Route::post('add', 'AdminUserController@add');
+        Route::get('edit/{id}', function ($id) {
+            return view('admin.admin-users.edit', ['adminUser' => \App\AdminUser::findOrFail($id)]);
+        });
+        Route::post('edit/{id}', 'AdminUserController@edit');
+        Route::get('delete/{id}', 'AdminUserController@delete');
+        Route::get('view/{id}', 'AdminUserController@view');
+    });
+
+    Route::group(['prefix' => 'ajax'], function () {
+        Route::get('categories/{petId}', 'AjaxController@getCategoriesByPetId');
     });
 });
