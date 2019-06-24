@@ -10,10 +10,29 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('index' ,[
+Route::get('/' ,[
     'as' => 'home',
     'uses' => 'PageController@getIndex'
 ]);
+Route::get('producttype', [
+    'as' =>'producttype',
+    'uses' => 'PageController@getProducts'
+]);
+Route::get('productdetails' , [
+    'as' => 'productdetails',
+    'uses' => 'PageController@getProductDetails'
+]);
+Route::get('contact' , [
+    'as' => 'contact',
+    'uses' => 'PageController@getContact'
+]);
+
+
+
+
+
+
+
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('admin.home');
