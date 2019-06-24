@@ -5,13 +5,13 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                <i class="glyphicon glyphicon-piggy-bank"></i>
-                Thú cưng
+                <i class="glyphicon glyphicon-user"></i>
+                Quản trị viên
                 <small>List</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li class="active"></i>Thú cưng</li>
+                <li class="active"></i>Quản trị viên</li>
             </ol>
         </section>
 
@@ -21,17 +21,21 @@
                     <div class="box">
                         <div class="box-body">
                             {!! Form::open(['class' => 'search-form border',
-                                            'method' => 'GET', 'url' => 'admin/pets',
+                                            'method' => 'GET', 'url' => 'admin/admin-users',
                                             'accept-charset' => 'utf-8',
                                             'novalidate' => 'novalidate']) !!}
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-2">
-                                    {!! Form::label('id', 'ID') !!}
-                                    {!! Form::number('pet_id', '', ['class' => 'form-control', 'min' => 1]) !!}
+                                    {!! Form::label('user_id', 'ID') !!}
+                                    {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
                                 </div>
-                                <div class="col-md-6">
-                                    {!! Form::label('Tên thú cưng') !!}
-                                    {!! Form::text('pet_name', '', ['class' => 'form-control']) !!}
+                                <div class="col-md-3">
+                                    {!! Form::label('Tên') !!}
+                                    {!! Form::text('name', '', ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::label('Email') !!}
+                                    {!! Form::email('email', '', ['class' => 'form-control']) !!}
                                 </div>
                             </div>
                             @include('admin.elements.button.search')
@@ -41,9 +45,9 @@
                 </div>
             </div>
             <div class="row margin-bottom">
-                @include('admin.elements.button.add', ['url' => 'admin/pets'])
+                @include('admin.elements.button.add', ['url' => 'admin/admin-users'])
             </div>
-            @if($pets->isEmpty())
+            @if($adminUsers->isEmpty())
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="box">
@@ -62,21 +66,23 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Thú cưng</th>
+                                        <th>Tên</th>
+                                        <th>Email</th>
                                         <th>Ngày tạo</th>
                                         <th>Tác vụ</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($pets as $pet)
+                                    @foreach($adminUsers as $adminUser)
                                         <tr>
-                                            <td>{{$pet->id}}</td>
-                                            <td>{{$pet->pet_name}}</td>
-                                            <td>{{$pet->created_at}}</td>
+                                            <td>{{$adminUser->id}}</td>
+                                            <td>{{$adminUser->name}}</td>
+                                            <td>{{$adminUser->email}}</td>
+                                            <td>{{$adminUser->created_at}}</td>
                                             <td width="150">
-                                                @include('admin.elements.button.view', ['url' => 'admin/pets/', 'id' => $pet->id])
-                                                @include('admin.elements.button.edit', ['url' => 'admin/pets/', 'id' => $pet->id])
-                                                @include('admin.elements.button.delete', ['url' => 'admin/pets/', 'id' => $pet->id])
+                                                @include('admin.elements.button.view', ['url' => 'admin/admin-users/', 'id' => $adminUser->id])
+                                                @include('admin.elements.button.edit', ['url' => 'admin/admin-users/', 'id' => $adminUser->id])
+                                                @include('admin.elements.button.delete', ['url' => 'admin/admin-users/', 'id' => $adminUser->id])
                                             </td>
                                         </tr>
                                     @endforeach

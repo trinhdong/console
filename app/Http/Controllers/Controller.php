@@ -49,5 +49,17 @@ class Controller extends BaseController
                 'alert-type' => 'warning'
             );
         }
+        if ($notification === LOGIN) {
+            return array(
+                'message' => 'Đăng nhập thành công!',
+                'alert-type' => 'success'
+            );
+        }
+        if ($notification === PASSWORD_ERROR) {
+            return array(
+                'message' => 'Vui lòng nhập chính xác mật khẩu hiện tại!',
+                'alert-type' => 'error'
+            );
+        }
     }
 }

@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="dist/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="dist/css/_all-skins.min.css">
     <link rel="stylesheet" href="dist/toastr/toastr.min.css">
-    <link rel="stylesheet" href="dist/toastr/toastr.min.map">
     @yield('css')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -26,8 +25,8 @@
 </div>
 <script src="dist/js/jquery.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
-<script src="dist/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="dist/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="dist/js/jquery.dataTables.min.js"></script>
+<script src="dist/js/dataTables.bootstrap.min.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
 <script src="dist/toastr/toastr.min.js"></script>
 <script src="dist/js/jquery.validate.min.js"></script>
@@ -81,6 +80,8 @@
 </script>
 
 @yield('script')
+@yield('ajax')
+@yield('validate')
 
 </body>
 </html>
