@@ -7,6 +7,7 @@ use App\Http\Requests\ProductTypeRequest;
 use App\Pet;
 use Illuminate\Http\Request;
 use App\ProductType;
+use App\Product;
 
 class ProductTypeController extends Controller
 {
