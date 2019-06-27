@@ -15,9 +15,13 @@ Route::get('/' ,[
     'uses' => 'PageController@getIndex'
 ]);
 
-Route::get('producttype', [
+Route::get('producttype/{id}', [
     'as' =>'producttype',
-    'uses' => 'PageController@getProducts'
+    'uses' => 'PageController@getProductstype'
+]);
+Route::get('productsbytype/{category_id}/{id}', [
+    'as' =>'productsbytype',
+    'uses' => 'PageController@getProductsByType'
 ]);
 Route::get('productdetails' , [
     'as' => 'productdetails',

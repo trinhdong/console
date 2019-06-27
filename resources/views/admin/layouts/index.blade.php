@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin | PetShop</title>
-    <base href="{{asset('')}}" target="_blank, _self, _parent, _top">
+    <base href="{{asset('')}}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">

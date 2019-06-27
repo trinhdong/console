@@ -22,6 +22,7 @@ class ProductController extends Controller
         $products->product_type_id = $request->product_type_id;
         $products->quantity = $request->quantity;
         $products->price = $request->price;
+        $products->promotion_price = $request->promotion_price;
         $products->description = $request->description;
         $products->product_type_id = $request->product_type_id;
          if($request->hasFile('image'))
@@ -49,6 +50,7 @@ class ProductController extends Controller
         $products->product_type_id = $request->product_type_id;
         $products->quantity = $request->quantity;
         $products->price = $request->price;
+        $products->promotion_price = $request->promotion_price;
         $products->description = $request->description;
         $products->product_type_id = $request->product_type_id;
          if($request->hasFile('image'))
