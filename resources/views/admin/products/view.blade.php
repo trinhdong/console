@@ -73,6 +73,14 @@
                 </div>
                 <div class="box box-body">
                     <div class="col-md-3">
+                        {!! Form::label('Giá khuyến mãi') !!}
+                    </div>
+                    <div class="col-md-9">
+                        <p>{{number_format ( $products->promotion_price , 0 , "." , "," )}}</p>
+                    </div>
+                </div>
+                <div class="box box-body">
+                    <div class="col-md-3">
                         {!! Form::label('Ngày tạo') !!}
                     </div>
                     <div class="col-md-9">
