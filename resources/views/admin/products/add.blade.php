@@ -54,9 +54,16 @@
 	                            'placeholder' => 'Nhập giá tiền'
 	                            ]) !!}
 	                        </div>
+                            <div class="form-group">
+                                {!! Form::label('Giá khuyến mãi') !!}
+                                {!! Form::text('promotion_price', '', [
+                                'class' => 'form-control width-400',
+                                'placeholder' => 'Nhập giá tiền khuyến mãi'
+                                ]) !!}
+                            </div>
 	                        <div class="form-group">
                                 {!! Form::label('Mô tả sản phẩm') !!}
-                                {!! Form::text('description', '', [
+                                {!! Form::textarea('description', '', [
                                 'class' => 'form-control width-400',
                                 'minlength' => '50',
                                 'maxlength' => '500'

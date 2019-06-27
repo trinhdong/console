@@ -60,8 +60,9 @@
 								@endforeach
 									
 							</div>
-						</div> <!-- .beta-products-list -->
-								<div class="row">{{$new_products->links()}}</div>
+						</div> 
+						{{-- phân trang --}}
+								{!!$new_products->links()!!}
 						<div class="space50">&nbsp;</div>
 
 						<div class="beta-products-list">
@@ -72,15 +73,18 @@
 							</div>
 							<div class="row">
 								@foreach($new_products as $new)
-								<div class="col-sm-3">
+									<div class="col-sm-3">
 									<div class="single-item">
+										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+
 										<div class="single-item-header">
 											<a href="product.html"><img src="../source/assets/dest/images/products/suatam/{{$new->image}}" alt=""></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$new->product_name}}</p>
 											<p class="single-item-price">
-												<span>{{number_format ( $new->price , 0 , "." , "," )}}</span>
+												<span class="flash-del">{{number_format ( $new->price , 0 , "." , "," )}}</span>
+												<span class="flash-sale">{{number_format ( $new->promotion_price , 0 , "." , "," )}}</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -92,6 +96,8 @@
 								</div>
 								@endforeach
 							</div>
+							{{-- phân trang --}}
+								{!!$new_products->links()!!}
 							<div class="space40">&nbsp;</div>
 						</div> <!-- .beta-products-list -->
 					</div>
