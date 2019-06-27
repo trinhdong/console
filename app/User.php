@@ -5,11 +5,14 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $primaryKey = 'id';
+    protected $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +39,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getUserInfoByUserId($id)
+    {
+        return DB::table('users')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.*',  'orders.id as order_id', 'orders.total_price as order_total', 'orders.status as order_status')
+            ->where('users.id', '=', $id)
+            ->first();
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Order', 'user_id', 'id');
+    }
 }

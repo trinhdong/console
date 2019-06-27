@@ -24,7 +24,7 @@
             @foreach(SCREEN_OPTIONS as $menuType => $menus)
                 <li class="header">{{$menuType}}</li>
                 @if($menuType === SCREEN_TYPE_CONSOLE)
-                    <li class="treeview active">
+                    <li class="active treeview">
                         <a href="/admin">
                             <i class="glyphicon glyphicon-home"></i> <span>Home</span>
                         </a>
@@ -35,6 +35,13 @@
                         <a href="admin/{{$route}}">
                             <i class="glyphicon glyphicon-{{$option[1]}}"></i> <span>{{$option[0]}}</span>
                         </a>
+                        {{--@if($route === 'orders')--}}
+                            {{--<ul style="display: block !important;" class="treeview-menu">--}}
+                                {{--<li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Chưa xử lý</a>--}}
+                                {{--</li>--}}
+                                {{--<li><a href="index2.html"><i class="fa fa-circle-o"></i>Đã xử lý</a></li>--}}
+                            {{--</ul>--}}
+                        {{--@endif--}}
                     </li>
                 @endforeach
             @endforeach

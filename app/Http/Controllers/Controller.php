@@ -61,5 +61,11 @@ class Controller extends BaseController
                 'alert-type' => 'error'
             );
         }
+        if ($notification === ORDER_SUCCESS) {
+            return array(
+                'message' => 'Cập nhật thành công!',
+                'alert-type' => 'success'
+            );
+        }
     }
 }

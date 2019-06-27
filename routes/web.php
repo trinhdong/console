@@ -121,7 +121,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('delete/{id}', 'AdminUserController@delete');
         Route::get('view/{id}', 'AdminUserController@view');
     });
-
+    Route::group(['prefix' => 'orders'], function () {
+        Route::get('/', 'AdminOrderController@index');
+        Route::get('view/{id}', 'AdminOrderController@view');
+        Route::post('update/{id}', 'AdminOrderController@update');
+    });
     Route::group(['prefix' => 'ajax'], function () {
         Route::get('categories/{petId}', 'AjaxController@getCategoriesByPetId');
     });
