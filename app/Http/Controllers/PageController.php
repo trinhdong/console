@@ -31,12 +31,18 @@ class PageController extends Controller
             ->select('products.product_name','products.id')
             ->where('products.product_type_id', $id)
             ->get();
-        $product_by_type = Product::where('product_type_id', $id)->get();    
-        return view('page.products_by_type',compact('category_id', 'product_type' , 'products', 'product_by_type'));
+        $product_by_type = Product::where('product_type_id', $id)->get(); 
+        //Lấy tên loại sản phẩm
+        $products_type = ProductType::where('id', $id)->first(); 
+        return view('page.products_by_type',compact('category_id', 'product_type' , 'products', 'product_by_type', 'products_type'));
     }
-    public function getProductDetails()
+    public function getProductDetails(Request $request)
     {
-    	return view('page.products_details');
+        $products_details = Product::where('id',$request->id)->first();
+        $new_products = Product::orderBy('product_name', 'desc')->paginate(4);
+        $sptt = Product::where('product_type_id', $products_details->product_type_id)->paginate(3);
+        $rand_products =Product::inRandomOrder()->take(100)->get();
+    	return view('page.products_details', compact('products_details', 'new_products', 'sptt', 'rand_products'));
     }
     public function getContact()
     {

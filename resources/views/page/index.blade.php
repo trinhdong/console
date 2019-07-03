@@ -42,23 +42,24 @@
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img src="../source/assets/dest/images/products/suatam/{{$new->image}}" alt=""></a>
+											<a href="{{route('productdetails', $new->id)}}"><img src="../source/assets/dest/images/products/suatam/{{$new->image}}" alt=""></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$new->product_name}}</p>
 											<p class="single-item-price">
-												<span>{{number_format ( $new->price , 0 , "." , "," )}}</span>
+												<span>{{number_format ($new->price)}} ₫</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="beta-btn primary" href="{{route('productdetails', $new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
 								</div>
 								@endforeach
-									
+									</div>
+								</div>
 							</div>
 						</div> 
 						{{-- phân trang --}}
@@ -83,8 +84,8 @@
 										<div class="single-item-body">
 											<p class="single-item-title">{{$new->product_name}}</p>
 											<p class="single-item-price">
-												<span class="flash-del">{{number_format ( $new->price , 0 , "." , "," )}}</span>
-												<span class="flash-sale">{{number_format ( $new->promotion_price , 0 , "." , "," )}}</span>
+												<span class="flash-del">{{number_format ($new->price)}} ₫</span>
+												<span class="flash-sale">{{number_format ( $new->promotion_price)}} ₫</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
