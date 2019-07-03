@@ -15,6 +15,7 @@
 	<link rel="stylesheet" title="style" href="../source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="../source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="../source/assets/dest/css/huong-style.css">
+	<link rel="shortcut icon" type="image/jpg" href="../source/assets/dest/images/logo.jpg"/>
 </head>
 <body>
 
