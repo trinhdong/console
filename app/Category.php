@@ -28,6 +28,14 @@ class Category extends Model
         return $query->get();
     }
 
+    public static function getCategoryByPetId($petId)
+    {
+        return Category::query()
+            ->where(['pet_id' => $petId])
+            ->pluck('category_name','id')
+            ->toArray();
+    }
+
     public function pets()
     {
         return $this->belongsTo('App\Pet', 'pet_id', 'id');

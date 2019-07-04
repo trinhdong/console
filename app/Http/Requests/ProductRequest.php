@@ -24,12 +24,14 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            /*'product_name' => 'required|unique:products|min:3|max:100',*/
+            'product_name' => 'required|unique:products|min:3|max:100',
+            'pet_id' => 'required',
         ];
     }
     public function messages()
     {
         return [
+            'pet_id' => 'Vui lòng chọn thú cưng',
             'product_name.required' => 'Vui lòng nhập tên sản phẩm!',
             'product_name.unique' => 'Tên sản phẩm đã tôn tại!',
             'product_name.min' => 'Tên danh mục không được nhỏ hơn 3 ký tự',

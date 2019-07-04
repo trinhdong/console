@@ -17,7 +17,7 @@
 
         <section class="content">
             <div class="row margin-bottom">
-                @include('admin.elements.button.add',['url' => 'admin/products'])
+                @include('admin.elements.button.add',['url' => 'admin/products', 'step' => 1])
             </div>
             @if($products->isEmpty())
                 <div class="row">
