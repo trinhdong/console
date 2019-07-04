@@ -12,23 +12,37 @@ class Category extends Model
 //    protected $guarded = ['pet_name'];
     protected $fillable = ['category_name', 'pet_id'];
 
-    public static function searchQuery(string $id = '', string $category = '', string $pet_id = '') {
+    public static function searchQuery($id = '', $categoryName = '', $petId = '')
+    {
         $query = Category::query();
-        if ($id) {
+        if ($id !== '') {
             $query->where(['id' => $id]);
         }
-        if ($category != '') {
-            $query->where('category_name', 'LIKE', '%' . $category . '%');
+        if ($categoryName !== '') {
+            $query->where('category_name', 'LIKE', '%' . $categoryName . '%');
         }
-        if ($pet_id != '') {
-            $query->where(['pet_id' => $pet_id]);
+        if ($petId !== '') {
+            $query->where(['pet_id' => $petId]);
         }
-        $query->orderBy('id','DESC');
+        $query->orderBy('id', 'DESC');
         return $query->get();
+    }
+
+    public static function getCategoryByPetId($petId)
+    {
+        return Category::query()
+            ->where(['pet_id' => $petId])
+            ->pluck('category_name','id')
+            ->toArray();
     }
 
     public function pets()
     {
         return $this->belongsTo('App\Pet', 'pet_id', 'id');
+    }
+
+    public function productTypes()
+    {
+        return $this->hasMany('App\ProductType', 'category_id', 'id');
     }
 }

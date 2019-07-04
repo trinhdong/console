@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Pet;
+use App\ProductType;
 use Illuminate\Http\Request;
 use App\Category;
 
@@ -14,7 +15,7 @@ class CategoryController extends Controller
     {
         $categories = Category::searchQuery(
             $request->input('id') ?? '',
-            $request->input('category') ?? '',
+            $request->input('category_name') ?? '',
             $request->input('pet_id') ?? ''
         );
         $pets = Pet::pluck('pet_name', 'id')->toArray();
@@ -42,7 +43,11 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-        Category::destroy($id);
-        return back()->with(Controller::notification(DELETE));
+        $productType = ProductType::query()->where('category_id', '=', $id)->first();
+        if (empty($productType)) {
+            Pet::destroy($id);
+            return back()->with(Controller::notification(DELETE));
+        }
+        return back()->with(Controller::notification(DELETE_ERROR));
     }
 }

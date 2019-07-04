@@ -11,21 +11,26 @@ class Pet extends Model
 //    protected $guarded = [];
     protected $fillable = array('pet_name');
 
-    public static function searchQuery(string $id = '', string $pet = '')
+    public static function searchQuery($id = '', $petName = '')
     {
         $query = Pet::query();
-        if ($id) {
+        if ($id !== '') {
             $query->where(['id' => $id]);
         }
-        if ($pet != '') {
-            $query->where('pet_name', 'LIKE', '%' . $pet . '%');
+        if ($petName !== '') {
+            $query->where('pet_name', 'LIKE', '%' . $petName . '%');
         }
-        $query->orderBy('id','DESC');
+        $query->orderBy('id', 'DESC');
         return $query->get();
     }
 
     public function categories()
     {
         return $this->hasMany('App\Category', 'pet_id', 'id');
+    }
+
+    public function productTypes()
+    {
+        return $this->hasManyThrough('App\ProductType', 'App\Category','pet_id', 'category_id', 'id');
     }
 }

@@ -5,12 +5,12 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                <i class="glyphicon glyphicon-book"></i>
+                <i class="glyphicon glyphicon-piggy-bank"></i>
                 Thú cưng
                 <small>List</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                 <li class="active"></i>Thú cưng</li>
             </ol>
         </section>
@@ -26,8 +26,8 @@
                                             'novalidate' => 'novalidate']) !!}
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-2">
-                                    {!! Form::label('pet_id', 'ID') !!}
-                                    {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
+                                    {!! Form::label('id', 'ID') !!}
+                                    {!! Form::number('pet_id', '', ['class' => 'form-control', 'min' => 1]) !!}
                                 </div>
                                 <div class="col-md-6">
                                     {!! Form::label('Tên thú cưng') !!}

@@ -5,26 +5,17 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                <i class="glyphicon glyphicon-piggy-bank"></i>
+                <i class="glyphicon glyphicon-book"></i>
                 Categories
                 <small>List</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                 <li class="active"></i>Categories</li>
             </ol>
         </section>
 
         <section class="content">
-            <div class="row">
-                <div class="col-lg-12">
-                    @if(session('success'))
-                        <div class="alert alert-success">
-                            {{session('success')}}
-                        </div>
-                    @endif
-                </div>
-            </div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
@@ -34,19 +25,17 @@
                                             'accept-charset' => 'utf-8',
                                             'novalidate' => 'novalidate']) !!}
                             <div class="row">
-                                <div class="col-md-3 col-md-offset-2">
+                                <div class="col-md-3 col-md-offset-1">
                                     {!! Form::label('category_id', 'ID') !!}
                                     {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
                                 </div>
-                                <div class="col-md-6">
-                                    {!! Form::label('Tên danh mục') !!}
-                                    {!! Form::text('category_name', '', ['class' => 'form-control']) !!}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 col-md-offset-2 margin-top-15">
+                                <div class="col-md-3">
                                     {!! Form::label('Thú cưng') !!}
                                     {!! Form::select('pet_id', ['' => '---------------'] + $pets, null, ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::label('Tên danh mục') !!}
+                                    {!! Form::text('category_name', '', ['class' => 'form-control']) !!}
                                 </div>
                             </div>
                             @include('admin.elements.button.search')
