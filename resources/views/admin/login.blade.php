@@ -21,7 +21,7 @@
     <div class="login-box-body">
         <h2 class="login-box-msg">Đăng nhập</h2>
 
-        {!! Form::open(['method' => 'POST', 'url' => '/', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::open(['method' => 'POST', 'url' => '/login', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group has-feedback">
             {!! Form::email('email', '', ['class' => 'form-control', 'placeholder' => 'Email']) !!}
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

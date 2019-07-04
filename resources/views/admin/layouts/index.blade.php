@@ -82,6 +82,7 @@
 @yield('script')
 @yield('ajax')
 @yield('validate')
+@yield('script_order')
 
 </body>
 </html>
