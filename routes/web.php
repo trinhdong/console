@@ -23,7 +23,7 @@ Route::get('productsbytype/{category_id}/{id}', [
     'as' =>'productsbytype',
     'uses' => 'PageController@getProductsByType'
 ]);
-Route::get('productdetails' , [
+Route::get('productdetails/{id}' , [
     'as' => 'productdetails',
     'uses' => 'PageController@getProductDetails'
 ]);

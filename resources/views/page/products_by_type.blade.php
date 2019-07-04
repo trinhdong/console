@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="{{route('home')}}">Home</a> / <span>Sản phẩm</span>
+					<a href="{{route('home')}}">Home</a> / <span>Sản Phẩm</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -28,7 +28,7 @@
 					</div>
 					<div class="col-sm-9">
 						<div class="beta-products-list">
-							<h4>Sản Phẩm Theo Loại</h4>
+							<h4>{{$products_type->type_name}}</h4>
 							<div class="beta-products-details">
 								<p class="pull-left">Tìm thấy {{count($product_by_type)}} sản phẩm</p></p>
 								<div class="clearfix"></div>
@@ -44,7 +44,7 @@
 										<div class="single-item-body">
 											<p class="single-item-title">{{$pbt->product_name}}</p>
 											<p class="single-item-price">
-												<span>{{number_format ( $pbt->price , 0 , "." , "," )}}</span>
+												<span>{{number_format ($pbt->price)}} ₫</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
