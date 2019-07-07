@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pet extends Model
 {
     protected $table = 'pets';
+    public $timestamps = false;
     protected $primaryKey = 'id';
-//    protected $guarded = [];
     protected $fillable = array('pet_name');
 
     public static function searchQuery($id = '', $petName = '')

@@ -43,7 +43,11 @@ class ProductTypeController extends Controller
 
     public function delete($id)
     {
-        ProductType::destroy($id);
-        return back()->with(Controller::notification(DELETE));
+        $product = Product::query()->where('product_type_id', '=', $id)->first();
+        if (empty($product)) {
+            ProductType::destroy($id);
+            return back()->with(Controller::notification(DELETE));
+        }
+        return back()->with(Controller::notification(DELETE_ERROR));
     }
 }

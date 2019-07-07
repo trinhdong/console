@@ -5,7 +5,7 @@
     <div class="content-wrapper">
         <section class="content-header margin-bottom">
             <h1>
-                <i class="glyphicon glyphicon-th-list"></i>
+                <i class="glyphicon glyphicon-th"></i>
                 Sản Phẩm
                 <small>View</small>
             </h1>
@@ -33,18 +33,18 @@
                 </div>
                 <div class="box box-body">
                     <div class="col-md-3">
-                        {!! Form::label('Hình sản phẩm') !!}
+                        {!! Form::label('Thú cưng') !!}
                     </div>
                     <div class="col-md-9">
-                        <p><img width="320px" src="source/images/products/{{$products->image}}"></p>
+                        <p>{{$products->productTypes->categories->pets->pet_name}}</p>
                     </div>
                 </div>
-                 <div class="box box-body">
+                <div class="box box-body">
                     <div class="col-md-3">
-                        {!! Form::label('Mô tả sản phẩm') !!}
+                        {!! Form::label('Danh mục') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$products->description}}</p>
+                        <p>{{$products->productTypes->categories->category_name}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -53,6 +53,14 @@
                     </div>
                     <div class="col-md-9">
                         <p>{{$products->productTypes->type_name}}</p>
+                    </div>
+                </div>
+                <div class="box box-body">
+                    <div class="col-md-3">
+                        {!! Form::label('Hình sản phẩm') !!}
+                    </div>
+                    <div class="col-md-9">
+                        <p><img width="320px" src="source/images/products/{{$products->image}}"></p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -85,6 +93,14 @@
                     </div>
                     <div class="col-md-9">
                         <p>{{$products->created_at}}</p>
+                    </div>
+                </div>
+                <div class="box box-body">
+                    <div class="col-md-3">
+                        {!! Form::label('Ngày cập nhật') !!}
+                    </div>
+                    <div class="col-md-9">
+                        <p>{{$products->updated_at}}</p>
                     </div>
                 </div>
             </div>

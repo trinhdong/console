@@ -6,7 +6,7 @@
         <section class="content-header margin-bottom">
             <h1>
                 <i class="glyphicon glyphicon-user"></i>
-                Thú cưng
+                Quản trị viên
                 <small>Add</small>
             </h1>
             <ol class="breadcrumb">

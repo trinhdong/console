@@ -17,9 +17,15 @@ class AdminOrderController extends Controller
     public function index()
     {
         $users = User::query()
-            ->orderBy('id', 'desc')
-            ->get();
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.*',  'orders.id as order_id', 'orders.status as order_status')
+            ->orderBy('id', 'desc');
+        if ($_GET['status'] == 'confirmed') {
+            $users = $users->where('orders.status', '<>', 0)->get();
+            return view('admin.orders.index_confirmed', compact('users'));
+        }
 
+        $users = $users->where('orders.status', '==', 0)->get();
         return view('admin.orders.index', compact('users'));
     }
 

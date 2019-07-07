@@ -216,7 +216,7 @@ textarea.form-control {
 }
 
 input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: #222d32;
 }
 
 .checkmark:after {

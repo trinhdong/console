@@ -7,7 +7,6 @@ const SCREEN_OPTIONS = [
         'categories' => ['Danh mục', 'book'],
         'product-types' => ['Loại sản phẩm', 'th-list'],
         'products' => ['Sản phẩm', 'th'],
-        'orders' => ['Quản lý hóa đơn', 'shopping-cart']
     ]
 ];
 const SCREEN_TYPE_CONSOLE = 'CONSOLE';

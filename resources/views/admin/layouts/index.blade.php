@@ -30,6 +30,13 @@
 <script src="dist/js/adminlte.min.js"></script>
 <script src="dist/toastr/toastr.min.js"></script>
 <script src="dist/js/jquery.validate.min.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace("editor1",
+        {
+            height: 500
+        });
+</script>
 <script>
     toastr.options = {
         "closeButton": false,
