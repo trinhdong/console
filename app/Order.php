@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Order extends Model
 {
     protected $table = 'orders';
+    public $timestamps = false;
     protected $primaryKey = 'id';
 
     public static function getOrderInfoByUserId($id)

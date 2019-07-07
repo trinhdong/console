@@ -27,7 +27,7 @@ class Controller extends BaseController
         }
         if ($notification === DELETE_ERROR) {
             return array(
-                'message' => 'Không thể xóa!',
+                'message' => 'Không được phép xóa!',
                 'alert-type' => 'error'
             );
         }

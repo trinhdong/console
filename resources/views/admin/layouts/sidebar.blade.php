@@ -35,16 +35,23 @@
                         <a href="admin/{{$route}}">
                             <i class="glyphicon glyphicon-{{$option[1]}}"></i> <span>{{$option[0]}}</span>
                         </a>
-                        {{--@if($route === 'orders')--}}
-                            {{--<ul style="display: block !important;" class="treeview-menu">--}}
-                                {{--<li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Chưa xử lý</a>--}}
-                                {{--</li>--}}
-                                {{--<li><a href="index2.html"><i class="fa fa-circle-o"></i>Đã xử lý</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
                     </li>
                 @endforeach
             @endforeach
+            <li class="treeview active">
+                <a>
+                    <i class="glyphicon glyphicon-shopping-cart"></i> <span>Quản lý đơn hàng</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="admin/orders?status=unconfirmed"><i class="fa fa-circle-o"></i> Đơn hàng
+                            chưa xử lý</a></li>
+                    <li><a href="admin/orders?status=confirmed"><i class="fa fa-circle-o"></i> Đơn hàng đã xử lý</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

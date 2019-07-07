@@ -5,7 +5,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                <i class="glyphicon glyphicon-th-list"></i>
+                <i class="glyphicon glyphicon-th"></i>
                 Product
                 <small>List</small>
             </h1>
@@ -16,6 +16,34 @@
         </section>
 
         <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-body">
+                            {!! Form::open(['class' => 'search-form',
+                                            'method' => 'GET', 'url' => 'admin/products',
+                                            'accept-charset' => 'utf-8',
+                                            'novalidate' => 'novalidate']) !!}
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1">
+                                    {!! Form::label('product_id', 'ID') !!}
+                                    {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::label('Tên sản phẩm') !!}
+                                    {!! Form::number('id', '', ['class' => 'form-control', 'min' => 1]) !!}
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::label('Loại sản phẩm') !!}
+                                    {!! Form::select('type_id', ['' => '---------------'] + $productTypes, null, ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                            @include('admin.elements.button.search')
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row margin-bottom">
                 @include('admin.elements.button.add',['url' => 'admin/products', 'step' => 1])
             </div>
