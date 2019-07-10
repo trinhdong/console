@@ -138,7 +138,8 @@ box-sizing:border-box
 }
 
 small {
-font-size:11px
+font-size:11px;
+float:right
 }
 /* ==========================================================================
     2. TYPOGRAPHY

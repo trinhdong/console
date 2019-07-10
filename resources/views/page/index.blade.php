@@ -12,18 +12,17 @@
 													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="../source/assets/dest/images/slide/{{$sl->image}}" data-src="../source/assets/dest/images/slide/{{$sl->image}}" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('../source/assets/dest/images/slide/{{$sl->image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
 													</div>
 												</div>
-
-						        </li>
+											</li>
 						        @endforeach
 								</ul>
 							</div>
 						</div>
+				</div>
 
 						<div class="tp-bannertimer"></div>
 					</div>
 				</div>
 				<!--slider-->
-	</div>
 	<div class="container">
 		<div id="content" class="space-top-none">
 			<div class="main-content">
