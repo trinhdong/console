@@ -32,6 +32,32 @@ Route::get('contact' , [
     'uses' => 'PageController@getContact'
 ]);
 
+Route::get('search', [
+    'as' =>  'search',
+    'uses' => 'PageController@getSearch'
+]); 
+Route::get('dangnhap', [
+    'as' => 'dangnhap',
+    'uses' => 'PageController@getLogin'
+]);
+Route::post('dangnhap', [
+    'as' => 'dangnhap',
+    'uses' => 'PageController@postLogin'
+]);
+Route::get('dangki', [
+    'as' => 'dangki',
+    'uses' => 'PageController@getSignin'
+]);
+Route::post('dangki', [
+    'as' => 'dangki',
+    'uses' => 'PageController@postSignin'
+]);
+Route::get('dangxuat', [
+    'as' => 'dangxuat',
+    'uses' => 'PageController@getLogout'
+]);
+
+
 Route::get('/login', function () {
     return view('admin.login');
 });

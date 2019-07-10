@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Slide;
 use App\Product;
 use App\ProductType;
+use App\User;
+use Hash;
+use Auth;
+
 class PageController extends Controller
 {
     public function getIndex()
@@ -13,7 +17,7 @@ class PageController extends Controller
     	$slide = Slide::all();
     	$new_products = Product::orderBy('product_name', 'desc')->paginate(4);
         //$rand_products =Product::inRandomOrder();
-    	return view('page.index',['slide' => $slide], ['new_products' => $new_products]);
+    	return view('page.index',['slide' => $slide], ['new_products' =>$new_products]);
     }
     public function getProductstype($id)
     {
@@ -47,5 +51,86 @@ class PageController extends Controller
     public function getContact()
     {
     	return view('page.contact');
+    }
+    public function getSearch(Request $request)
+    {
+        $products = Product::where('product_name', 'like', '%'.$request->key.'%')
+                                    ->orWhere('price', $request->key)
+                                    ->get();
+        return view('page.search', compact('products'));
+    }
+    public function getLogin()
+    {
+        return view('page.login');
+    }
+    public function postLogin(Request $request)
+    {
+        $this->validate($request,
+            [
+                'email' => 'required|email',
+                'password' => 'required|min:6|max:20'
+            ],
+            [
+                'email.required' =>'Vui lòng nhập email',
+                'email.email' =>'Email bạn nhập không hợp lệ',
+                'password.required' => 'Vui lòng nhập mật khẩu',
+                'password.min' =>'Mật khẩu phải chứa ít nhất 6 kí tự',
+                'password.max' => 'Mật khẩu không vượt quá 20 kí tự'
+            ]);
+
+        $login = array('email' => $request->email, 'password' => $request->password);
+        if(Auth::attempt($login)){
+            return redirect('/')->with(['flag'=>'success', 'message'=>'Đăng nhập thành công']);
+        }
+        else{
+        return redirect()->back()->with(['flag'=>'danger', 'message'=>'Đăng nhập thất bại']);
+        }
+    }
+    public function getSignin()
+    {
+        return view('page.signup');
+    }
+    public function postSignin(Request $request)
+    {
+        $this->validate($request,
+            [
+                'email' => 'required|unique:users,email',
+                'fullname' => 'required',
+                'password' => 'required|min:6|max:20',  
+                'password2' => 'required|same:password',
+                'adress' => 'required',
+                'phone'=>'required|min:9|max:10'
+            ],
+
+            [
+                'email.required' => 'Vui lòng nhập email',
+                'email.email' =>'Không đúng định dạng email',
+                'email.unique' => 'Email đã tồn tại, mời nhập lại',
+                'password.required' => 'Vui lòng nhập password',
+                'fullname.required' => 'Vui lòng nhập họ tên',
+                'password2.same' => 'Mật khẩu không trùng khớp, mời nhập lại',
+                'password.min' => 'Mật khẩu phải chứa ít nhất 6 kí tự',
+                'adress.required' => 'Vui lòng nhập địa chỉ',
+                'name.required' => 'Vui lòng nhập họ tên',
+                'phone.min'=>'Số điện thoại không hợp lệ',
+                'phone.max'=>'Số điện thoại không hợp lệ'
+            ]);
+        $users = new User;
+        $users->name = $request->fullname;
+        $users->email = $request->email;
+        $users->phone = $request->phone;
+        $users->password = Hash::make($request->password); 
+        $users->address = $request->adress;
+        $users->sex = $request->sex;
+        $users->phone = $request->phone;
+
+        $users->save();
+
+        return redirect('/')->with('thanhcong', 'Đăng kí thành công');
+
+    }
+    public function getLogout(){
+        Auth::logout();
+        return redirect('/');
     }
 }
