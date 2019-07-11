@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> 131 Nguyễn Cư Trinh, Phường Nguyễn Cư Trinh Quận 1</a></li>
+						<li><a href=""><i class="fa fa-home"></i> 180 Cao Lỗ, Phường 4, Quận 8, Tp.Hồ Chí Minh</a></li>
 						<li><a href=""><i class="fa fa-phone"></i> 0901 316 300</a></li>
 					</ul>
 				</div>

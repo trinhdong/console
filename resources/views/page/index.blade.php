@@ -105,6 +105,6 @@
 
 
 			</div> <!-- .main-content -->
-		</div> <!-- #content -->
+			<!-- #content -->
 
 @endsection

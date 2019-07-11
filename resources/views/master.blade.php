@@ -23,7 +23,7 @@
 	<div class="rev-slider">
 			@yield('content')
 	</div> <!-- .container -->
-
+			
 			@include('footer')
 
 
