@@ -19,13 +19,16 @@ class PageController extends Controller
         //$rand_products =Product::inRandomOrder();
     	return view('page.index',['slide' => $slide], ['new_products' =>$new_products]);
     }
+
     public function getProductstype($id)
     {
         $category_id = $id;
-        $rand_products =Product::inRandomOrder()->take(100)->get();
+        $get_id_type = ProductType::where('category_id' , $category_id)->pluck('id');
+        $rand_products = Product::whereIn('product_type_id', $get_id_type)->get();
         $product_type = ProductType::where('category_id' , $id)->get();
-    	return view('page.products_type' , compact('rand_products', 'product_type' , 'category_id'));
+    	return view('page.products_type' , compact('rand_products', 'product_type', 'category_id'));
     }
+
     public function getProductsByType($category_id, $id)
     {
         //truyền id của category vào để lấy được type_name của product_type
@@ -40,6 +43,7 @@ class PageController extends Controller
         $products_type = ProductType::where('id', $id)->first(); 
         return view('page.products_by_type',compact('category_id', 'product_type' , 'products', 'product_by_type', 'products_type'));
     }
+
     public function getProductDetails(Request $request)
     {
         $products_details = Product::where('id',$request->id)->first();
@@ -48,10 +52,12 @@ class PageController extends Controller
         $rand_products =Product::inRandomOrder()->take(100)->get();
     	return view('page.products_details', compact('products_details', 'new_products', 'sptt', 'rand_products'));
     }
+
     public function getContact()
     {
     	return view('page.contact');
     }
+
     public function getSearch(Request $request)
     {
         $products = Product::where('product_name', 'like', '%'.$request->key.'%')
@@ -59,10 +65,12 @@ class PageController extends Controller
                                     ->get();
         return view('page.search', compact('products'));
     }
+
     public function getLogin()
     {
-        return view('page.login');
+        return view('auth.passwords.login');
     }
+
     public function postLogin(Request $request)
     {
         $this->validate($request,
@@ -78,7 +86,7 @@ class PageController extends Controller
                 'password.max' => 'Mật khẩu không vượt quá 20 kí tự'
             ]);
 
-        $login = array('email' => $request->email, 'password' => $request->password);
+        $login = array('email' => $request->input('email'), 'password' => $request->input('password'));
         if(Auth::attempt($login)){
             return redirect('/')->with(['flag'=>'success', 'message'=>'Đăng nhập thành công']);
         }
@@ -86,10 +94,12 @@ class PageController extends Controller
         return redirect()->back()->with(['flag'=>'danger', 'message'=>'Đăng nhập thất bại']);
         }
     }
+
     public function getSignin()
     {
         return view('page.signup');
     }
+
     public function postSignin(Request $request)
     {
         $this->validate($request,
@@ -116,11 +126,11 @@ class PageController extends Controller
                 'phone.max'=>'Số điện thoại không hợp lệ'
             ]);
         $users = new User;
-        $users->name = $request->fullname;
-        $users->email = $request->email;
-        $users->phone = $request->phone;
+        $users->name = $request->input('fullname');
+        $users->email = $request->input('email');
+        $users->phone = $request->input('phone');
         $users->password = Hash::make($request->password); 
-        $users->address = $request->adress;
+        $users->address = $request->input('adress');
         $users->sex = $request->sex;
         $users->phone = $request->phone;
 
@@ -129,6 +139,7 @@ class PageController extends Controller
         return redirect('/')->with('thanhcong', 'Đăng kí thành công');
 
     }
+
     public function getLogout(){
         Auth::logout();
         return redirect('/');
