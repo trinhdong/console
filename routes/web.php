@@ -32,10 +32,13 @@ Route::get('contact' , [
     'uses' => 'PageController@getContact'
 ]);
 
-Route::get('search', [
+/*Route::get('search', [
     'as' =>  'search',
     'uses' => 'PageController@getSearch'
-]); 
+]);*/ 
+Route::get('search', 'PageController@getSearch');
+Route::post('search', 'PageController@getSearchAjax')->name('search');
+
 Route::get('dangnhap', [
     'as' => 'dangnhap',
     'uses' => 'PageController@getLogin'

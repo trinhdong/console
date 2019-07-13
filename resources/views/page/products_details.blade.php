@@ -20,7 +20,7 @@
 				<div class="col-sm-9">
 					<div class="row">
 						<div class="col-sm-4">
-							<img src="../source/assets/dest/images/products/suatam/{{$products_details->image}}" width="300px" height="350px" alt="">
+							<img src="../source/assets/dest/images/products/{{$products_details->image}}" width="300px" height="350px" alt="">
 						</div>
 						<div class="col-sm-8">
 							<div class="single-item-body">
@@ -39,7 +39,7 @@
 							<div class="space20">&nbsp;</div>
 
 							<div class="single-item-desc">
-								<p>{{$products_details->description}}</p>
+								<p>{!!$products_details->description!!}</p>
 							</div>
 							<div class="space20">&nbsp;</div>
 
@@ -70,13 +70,13 @@
 					<div class="space50">&nbsp;</div>
 					<div class="beta-products-list">
 						<h4>Sản Phẩm Tương Tự </h4>
-
+						<p class="pull-left">Tìm thấy {{count($sptt)}} sản phẩm</p>
 						<div class="row">
 							@foreach($sptt as $tt)
 							<div class="col-sm-4">
 								<div class="single-item">
 									<div class="single-item-header">
-										<a href="{{route('productdetails', $tt->id)}}"><img src="../source/assets/dest/images/products/suatam/{{$tt->image}}" alt=""></a>
+										<a href="{{route('productdetails', $tt->id)}}"><img src="../source/assets/dest/images/products/{{$tt->image}}" alt=""></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$tt->product_name}}</p>
@@ -102,6 +102,7 @@
 					{{-- phân trang --}}
 								{!!$new_products->links()!!}
 				</div>
+				<div class="space50">&nbsp;</div>
 				<div class="col-sm-3 aside">
 					<div class="widget">
 						<h3 class="widget-title">Sản Phẩm Pet Shop</h3>
@@ -109,12 +110,12 @@
 							@foreach($rand_products as $rd)
 							<div class="beta-sales beta-lists">
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="{{route('productdetails', $rd->id)}}"><img src="../source/assets/dest/images/products/suatam/{{$rd->image}}" alt=""></a>
+									<a class="pull-left" href="{{route('productdetails', $rd->id)}}"><img src="../source/assets/dest/images/products/{{$rd->image}}" alt=""></a>
 									<div class="media-body">
 										<div>
 											{{$rd->product_name}}
 										</div>
-										<span class="beta-sales-price">{{number_format($rd->price)}}</span>
+										<span class="beta-sales-price">{{number_format($rd->price)}} ₫</span>
 									</div>
 								</div>
 							</div>
@@ -130,7 +131,7 @@
 							<div class="beta-sales beta-lists">
 								@foreach($new_products as $new)
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="{{route('productdetails', $rd->id)}}"><img src="../source/assets/dest/images/products/suatam/{{$new->image}}" alt=""></a>
+									<a class="pull-left" href="{{route('productdetails', $rd->id)}}"><img src="../source/assets/dest/images/products/{{$new->image}}" alt=""></a>
 									<div class="media-body">
 										<div>{{$new->product_name}}</div>
 										<span class="beta-sales-price">{{number_format($new->price)}} ₫</span>
@@ -141,8 +142,7 @@
 							</div>
 						</div>
 					</div> 
-					<!-- best sellers widget -->	
+				</div>	<!-- best sellers widget -->	
 		</div> <!-- #content -->
 	</div>
-</div>
 	@endsection

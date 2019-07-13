@@ -35,7 +35,7 @@
                             @endif
                             <div class="form-group">
                                 {!! Form::label('Hình sản phẩm') !!}
-                                <p><img width="320px" src="source/images/products/{{$products->image}}"></p>
+                                <p><img width="320px" src="../source/assets/dest/images/products/{{$products->image}}"></p>
                                 <p><input type="file" name="image"></p>
                             </div>
                             @if ($errors->has('image'))

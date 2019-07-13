@@ -7,7 +7,7 @@
 	<base href="{{asset('')}}">
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="../source/assets/dest/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../source/assets/dest/vendors/colorbox/example3/colorbox.css">
 	<link rel="stylesheet" href="../source/assets/dest/rs-plugin/css/settings.css">
@@ -16,6 +16,9 @@
 	<link rel="stylesheet" href="../source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="../source/assets/dest/css/huong-style.css">
 	<link rel="shortcut icon" type="image/jpg" href="../source/assets/dest/images/logo.jpg"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -53,5 +56,6 @@
 		)
 	})
 	</script>
+	@yield('search_ajax')
 </body>
 </html>

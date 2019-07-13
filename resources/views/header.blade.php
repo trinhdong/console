@@ -28,13 +28,23 @@
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
-					<div class="beta-comp">
+					<!-- <div class="beta-comp">
 						<form role="search" method="get" id="searchform" action="{{route('search')}}">
-					        <input type="text" value="" name="key" id="s" placeholder="Tìm kiếm sản phẩm..." />
-					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+					        <input type="text" name="country_name" id="country_name" class="form-control input-lg" placeholder="Bạn muốn tìm gì cho bé hôm nay?"/>
+					    						<div id="countryList"><br>
+					    						</div>
 						</form>
-					</div>
-
+					</div> -->
+				<div class="row"> 
+  					<div class="col-md-6"> 
+  				 <div class="search-box"> 
+   					 <form class="search-form" action="{{route('search')}}"> 
+   					 	<input class="form-control" name="product_name" id="product_name" placeholder="Tìm kiếm sản phẩm" type="text"> 
+     				<button class="btn btn-link search-btn"> <i class="glyphicon glyphicon-search"></i> 
+     				</button> 
+    				</form> 
+   				</div> 
+  			</div> 
 					<div class="beta-comp">
 						<div class="cart">
 							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
@@ -110,3 +120,32 @@
 			</div> <!-- .container -->
 		</div> <!-- .header-bottom -->
 	</div> <!-- #header -->
+	@section('search_ajax')
+    <script>
+  $(document).ready(function(){
+
+   $('#product_name').keyup(function(){ //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
+    var query = $(this).val(); //lấy gía trị ng dùng gõ
+    if(query != '') //kiểm tra khác rỗng thì thực hiện đoạn lệnh bên dưới
+    {
+     var _token = $('input[name="_token"]').val(); // token để mã hóa dữ liệu
+     $.ajax({
+      url:"{{ route('search') }}", // đường dẫn khi gửi dữ liệu đi 'search' là tên route mình đặt bạn mở route lên xem là hiểu nó là cái j.
+      method:"POST", // phương thức gửi dữ liệu.
+      data:{query:query, _token:_token},
+      success:function(data){ //dữ liệu nhận về
+       $('#countryList').fadeIn();  
+       $('#countryList').html(data); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là countryList
+     }
+   });
+   }
+ });
+
+   $(document).on('click', 'li', function(){  
+    $('#product_name').val($(this).text());  
+    $('#countryList').fadeOut();  
+  });  
+
+ });
+</script>
+@endsection

@@ -60,7 +60,7 @@
                         {!! Form::label('Hình sản phẩm') !!}
                     </div>
                     <div class="col-md-9">
-                        <p><img width="320px" src="source/images/products/{{$products->image}}"></p>
+                        <p><img width="320px" src="../source/assets/dest/images/products/{{$products->image}}"></p>
                     </div>
                 </div>
                 <div class="box box-body">

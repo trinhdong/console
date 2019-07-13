@@ -39,7 +39,7 @@
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img src="../source/assets/dest/images/products/suatam/{{$pbt->image}}" alt=""></a>
+											<a href="{{route('productdetails', $pbt->id)}}"><img src="../source/assets/dest/images/products/{{$pbt->image}}" alt=""></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$pbt->product_name}}</p>
@@ -49,7 +49,7 @@
 										</div>
 										<div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="beta-btn primary" href="{{route('productdetails', $pbt->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
@@ -57,6 +57,7 @@
 								@endforeach
 								
 							</div>
+							{!!$product_by_type->links()!!}
 						</div> <!-- .beta-products-list -->
 
 						<div class="space50">&nbsp;</div>

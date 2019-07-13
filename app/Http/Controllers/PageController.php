@@ -24,7 +24,7 @@ class PageController extends Controller
     {
         $category_id = $id;
         $get_id_type = ProductType::where('category_id' , $category_id)->pluck('id');
-        $rand_products = Product::whereIn('product_type_id', $get_id_type)->get();
+        $rand_products = Product::whereIn('product_type_id', $get_id_type)->paginate(8);
         $product_type = ProductType::where('category_id' , $id)->get();
     	return view('page.products_type' , compact('rand_products', 'product_type', 'category_id'));
     }
@@ -38,7 +38,7 @@ class PageController extends Controller
             ->select('products.product_name','products.id')
             ->where('products.product_type_id', $id)
             ->get();
-        $product_by_type = Product::where('product_type_id', $id)->get(); 
+        $product_by_type = Product::where('product_type_id', $id)->paginate(8); 
         //Lấy tên loại sản phẩm
         $products_type = ProductType::where('id', $id)->first(); 
         return view('page.products_by_type',compact('category_id', 'product_type' , 'products', 'product_by_type', 'products_type'));
@@ -49,7 +49,7 @@ class PageController extends Controller
         $products_details = Product::where('id',$request->id)->first();
         $new_products = Product::orderBy('product_name', 'desc')->paginate(4);
         $sptt = Product::where('product_type_id', $products_details->product_type_id)->paginate(3);
-        $rand_products =Product::inRandomOrder()->take(100)->get();
+        $rand_products =Product::inRandomOrder()->take(6)->get();
     	return view('page.products_details', compact('products_details', 'new_products', 'sptt', 'rand_products'));
     }
 
@@ -60,15 +60,34 @@ class PageController extends Controller
 
     public function getSearch(Request $request)
     {
-        $products = Product::where('product_name', 'like', '%'.$request->key.'%')
-                                    ->orWhere('price', $request->key)
-                                    ->get();
+        $products = Product::where('product_name', $request->product_name)->get();
+
         return view('page.search', compact('products'));
+    }
+
+    public function getSearchAjax(Request $request)
+    {
+        if($request->get('query'))
+        {
+            $query = $request->get('query');
+            $data = DB::table('products')
+            ->where('product_name', 'LIKE', "%{$query}%")
+            ->get();
+            $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+            foreach($data as $row)
+            {
+               $output .= '
+               <li><a href="data/'. $row->id .'">'.$row->product_name.'</a></li>
+               ';
+           }
+           $output .= '</ul>';
+           echo $output;
+       }
     }
 
     public function getLogin()
     {
-        return view('auth.passwords.login');
+        return view('page.login');
     }
 
     public function postLogin(Request $request)

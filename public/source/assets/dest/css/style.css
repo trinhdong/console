@@ -258,10 +258,59 @@ line-height:100px
 font-weight:700
 }
 
+.search-box {  
+display: inline-block;  
+width: 100%;  
+border-radius: 3px;  
+padding: 1px 55px 4px 15px;  
+position: relative;  
+background: #fff;  
+border: 1px solid #ddd;  
+-webkit-transition: all 200ms ease-in-out;  
+-moz-transition: all 200ms ease-in-out;  
+transition: all 200ms ease-in-out;
+height:37px;
+width: 300px;
+right: 69px
+}
+ 
+.search-box.hovered, .search-box:hover, .search-box:active {  
+border: 1px solid #aaa;
+}
+ 
+.search-box input[type=text] { 
+ border: none;  
+box-shadow: none;  
+display: inline-block;  
+padding: 0;  
+background: transparent;
+}
+ 
+.search-box input[type=text]:hover, .search-box input[type=text]:focus, .search-box input[type=text]:active {  
+box-shadow: none;
+}
+ 
+.search-box .search-btn {  
+position: absolute;  
+right: 2px;  
+top: 2px;  
+color: #aaa;  
+border-radius: 3px;  
+font-size: 16px;  
+padding: 5px 10px 1px;  
+-webkit-transition: all 200ms ease-in-out;  
+-moz-transition: all 200ms ease-in-out;  
+transition: all 200ms ease-in-out;
+}
+ 
+.search-box .search-btn:hover {  
+color: #fff;  
+background-color: #0277B8;
 .boxsize {
 -webkit-box-sizing:border-box;
 -moz-box-sizing:border-box;
 box-sizing:border-box
+		}
 }
 
 img.i100 {
@@ -801,7 +850,6 @@ color:#000
 input[type="text"],input[type="email"],input[type="url"],textarea {
 width:100%;
 border:1px solid #e1e1e1;
-height:37px;
 padding:0 12px
 }
 
@@ -1283,7 +1331,8 @@ text-transform:uppercase;
 border:1px solid #e1e1e1;
 padding-left:20px;
 border-left:3px solid #606366;
-color:#606366
+color:#606366;
+line-height: 40px
 }
 
 .aside ul li {
@@ -1545,7 +1594,8 @@ float:left
     6.3 BETA CART
 ============================================================================= */
 .cart {
-border:1px solid #e1e1e1;
+background: #fff;	
+border:1px solid #ddd;
 height:37px;
 line-height:37px;
 padding:0 10px;
@@ -1572,12 +1622,14 @@ padding-right:0
 
 .cart-body {
 position:absolute;
-right:15px;
+right:79px;
 z-index:100;
 background:#fff;
 border:1px solid #e1e1e1;
 padding:0 10px 10px;
-cursor:default
+cursor:default;
+width: 400px;
+
 }
 
 .cart-item {
@@ -1878,7 +1930,12 @@ margin-bottom:20px
 
 .single-item-title {
 font-size:15px;
-margin-bottom:5px
+margin-top:10px;
+margin-bottom: 10px;
+display: block;
+overflow: hidden;
+height: 16px;
+line-height: 15px;
 }
 
 .single-item-price {
