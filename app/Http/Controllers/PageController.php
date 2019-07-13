@@ -164,4 +164,26 @@ class PageController extends Controller
         }
         return redirect('dat-hang');
     }
+
+    public function getSearch(Request $request)
+    {
+        $products = Product::where('product_name', $request->input('product_name'))->get();
+        return view('page.search', compact('products'));
+    }
+
+    public function getSearchAjax(Request $request)
+    {
+        if ($request->get('query')) {
+            $query = $request->get('query');
+            $data = DB::table('products')
+                ->where('product_name', 'LIKE', "%{$query}%")
+                ->get();
+            $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+            foreach ($data as $row) {
+                $output .= '<li><a href="data/' . $row->id . '">' . $row->product_name . '</a></li>';
+            }
+            $output .= '</ul>';
+            echo $output;
+        }
+    }
 }

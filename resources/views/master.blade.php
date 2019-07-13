@@ -41,8 +41,8 @@
 <script src="../source/assets/dest/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 <script src="../source/assets/dest/js/waypoints.min.js"></script>
 <script src="../source/assets/dest/js/wow.min.js"></script>
-<!--customjs-->
 <script src="../source/assets/dest/js/custom2.js"></script>
+{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>--}}
 <script>
     $(document).ready(function ($) {
         $(window).scroll(function () {
@@ -56,5 +56,6 @@
     })
 </script>
 @yield('script')
+@yield('search_ajax')
 </body>
 </html>

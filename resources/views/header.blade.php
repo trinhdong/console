@@ -30,8 +30,8 @@
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp">
-                    <form role="search" method="get" id="searchform" action="/">
-                        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..."/>
+                    <form role="search" method="" id="searchform" action="{{url('search')}}">
+                        <input type="text" value="" name="product_name" id="product_name" placeholder="Nhập từ khóa..."/>
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                     </form>
                 </div>
@@ -65,3 +65,28 @@
         </div>
     </div>
 </div>
+@section('search_ajax')
+    <script>
+        $(document).ready(function () {
+            $('#product_name').keyup(function () {
+                var query = $(this).val();
+                if (query != '') {
+                    var _token = $('input[name="_token"]').val();
+                    $.ajax({
+                        url: "{{ url('search') }}",
+                        method: "POST",
+                        data: {query: query, _token: _token},
+                        success: function (data) {
+                            $('#countryList').fadeIn();
+                            $('#countryList').html(data);
+                        }
+                    });
+                }
+            });
+            $(document).on('click', 'li', function () {
+                $('#product_name').val($(this).text());
+                $('#countryList').fadeOut();
+            });
+        });
+    </script>
+@endsection

@@ -24,6 +24,9 @@ Route::get('lien-he', 'PageController@getContact');
 Route::post('login-checkout', 'PageController@loginCheckout');
 Route::post('sign-up', 'PageController@signUpCheckout');
 
+Route::get('search', 'PageController@getSearch');
+Route::post('search', 'PageController@getSearchAjax')->name('search');
+
 Route::get('/login', function () {
     return view('admin.login');
 });
