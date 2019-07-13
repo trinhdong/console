@@ -24,7 +24,7 @@
             @foreach(SCREEN_OPTIONS as $menuType => $menus)
                 <li class="header">{{$menuType}}</li>
                 @if($menuType === SCREEN_TYPE_CONSOLE)
-                    <li class="active treeview">
+                    <li class=" treeview">
                         <a href="/admin">
                             <i class="glyphicon glyphicon-home"></i> <span>Home</span>
                         </a>
@@ -39,7 +39,7 @@
                 @endforeach
             @endforeach
             <li class="treeview active">
-                <a id="menu_order" href="javascript:void " onclick="toggleMenu()">
+                <a id="menu_order" href="javascript:void" onclick="toggleMenu()">
                     <i class="glyphicon glyphicon-shopping-cart"></i> <span>Quản lý đơn hàng</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
