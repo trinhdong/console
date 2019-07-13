@@ -52,7 +52,7 @@
                                             <td>{{$user->address}}</td>
                                             <td>{{$user->created_at}}</td>
                                             <td id="status"
-                                                style="color: orange">{{ $user->status == 1 ? 'Chưa xử lý' : '' }}</td>
+                                                style="color: orange">{{ $user->status == 0 ? 'Chưa xử lý' : '' }}</td>
                                             <td width="100">
                                                 @include('admin.elements.button.view', ['url' => 'admin/orders/', 'id' => $user->id])
                                                 @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->id])

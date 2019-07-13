@@ -10,31 +10,31 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/' ,[
-    'as' => 'home',
-    'uses' => 'PageController@getIndex'
-]);
+Route::get('dang-nhap', 'PageController@getLogin');
+Route::post('dang-nhap', 'PageController@postLogin');
+Route::get('dang-ky', 'PageController@getSignUp');
+Route::post('dang-ky', 'PageController@postSignUp');
+Route::get('dang-xuat', 'PageController@getLogout');
 
-Route::get('producttype/{id}', [
-    'as' =>'producttype',
-    'uses' => 'PageController@getProductstype'
-]);
-Route::get('productsbytype/{category_id}/{id}', [
-    'as' =>'productsbytype',
-    'uses' => 'PageController@getProductsByType'
-]);
-Route::get('productdetails/{id}' , [
-    'as' => 'productdetails',
-    'uses' => 'PageController@getProductDetails'
-]);
-Route::get('contact' , [
-    'as' => 'contact',
-    'uses' => 'PageController@getContact'
-]);
+Route::get('/' , 'PageController@index');
+Route::get('danh-muc/{id}/{categoryName}', 'PageController@categories');
+Route::get('loai-san-pham/{id}/{productTypeName}', 'PageController@productTypes');
+Route::get('chi-tiet-san-pham/{id}/{productName}', 'PageController@productDetail');
+Route::get('lien-he', 'PageController@getContact');
+Route::post('login-checkout', 'PageController@loginCheckout');
+Route::post('sign-up', 'PageController@signUpCheckout');
 
 Route::get('/login', function () {
     return view('admin.login');
 });
+
+Route::get('mua-hang/{id}/{productName}','CartController@addProductCart');
+Route::get('delete/{id}', 'CartController@deleteProductCart');
+Route::get('update', 'CartController@updateProductCart');
+Route::get('gio-hang', 'CartController@Cart');
+
+Route::get('dat-hang', 'CartController@getCheckOut');
+Route::post('dat-hang', 'CartController@postCheckOut');
 
 Route::post('/login', 'AdminUserController@login');
 Route::get('/logout', 'AdminUserController@logout');
@@ -136,6 +136,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'AdminOrderController@index');
         Route::get('view/{id}', 'AdminOrderController@view');
         Route::post('update/{id}', 'AdminOrderController@update');
+        Route::get('delete/{id}', 'AdminOrderController@delete');
     });
     Route::group(['prefix' => 'ajax'], function () {
         Route::get('categories/{petId}', 'AjaxController@getCategoriesByPetId');

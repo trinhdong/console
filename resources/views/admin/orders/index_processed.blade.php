@@ -34,7 +34,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>STT</th>
                                         <th>Tên khách hàng</th>
                                         <th>Email</th>
                                         <th>Địa chỉ</th>
@@ -44,17 +44,17 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($users as $user)
+                                    @foreach($users as $index => $user)
                                         <tr>
-                                            <td>{{$user->id}}</td>
+                                            <td>{{$index + 1}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
                                             <td>{{$user->address}}</td>
                                             <td>{{$user->created_at}}</td>
                                             <td id="status" style="color: orange">{{$user->order_status}}</td>
                                             <td width="100">
-                                                @include('admin.elements.button.view', ['url' => 'admin/orders/', 'id' => $user->id])
-                                                @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->id])
+                                                @include('admin.elements.button.view', ['url' => 'admin/orders/', 'id' => $user->order_id])
+                                                @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->order_id])
                                             </td>
                                         </tr>
                                     @endforeach

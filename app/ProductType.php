@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class ProductType extends Model
 {
     protected $table = 'product_types';
-    public $timestamps = false;
     protected $primaryKey = 'id';
     protected $fillable = array('type_name', 'category_id');
 
@@ -30,5 +29,10 @@ class ProductType extends Model
     public function categories()
     {
         return $this->belongsTo('App\Category', 'category_id', 'id');
+    }
+
+    public function products()
+    {
+        return $this->hasMany('App\Product', 'product_type_id', 'id');
     }
 }

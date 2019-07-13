@@ -52,11 +52,11 @@ class AdminUserController extends Controller
 
     public function login(Request $request)
     {
-        $arr = [
+        $login = [
             'email' => $request->input('email'),
             'password' => $request->input('password'),
         ];
-        if (Auth::guard('admin_users')->attempt($arr)) {
+        if (Auth::guard('admin_users')->attempt($login)) {
             return redirect('/admin')->with(Controller::notification(LOGIN));
         }
         return redirect('/');

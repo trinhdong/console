@@ -24,7 +24,7 @@ class ProductController extends Controller
     {
         $step = intval($request->input('step')) ?? 1;
         if ($step <= 2) {
-            $this->validate($request, ['pet_id' => 'required',],['pet_id.required' => 'Vui lòng chọn thú cưng',]);
+            $this->validate($request, ['pet_id' => 'required',], ['pet_id.required' => 'Vui lòng chọn thú cưng',]);
             $petId = $request->input('pet_id');
             return redirect("admin/products/add?step=" . $step . "&pet_id=" . $petId);
         }
@@ -35,7 +35,7 @@ class ProductController extends Controller
             'product_type_id' => 'required',
             'quantity' => 'required',
             'price' => 'required'
-        ],[
+        ], [
             'category_id.required' => 'Vui lòng chọn danh mục',
             'product_type_id.required' => 'Vui lòng chọn loại sản phẩm',
             'product_name.required' => 'Vui lòng nhập tên sản phẩm!',
@@ -47,8 +47,8 @@ class ProductController extends Controller
         ]);
 
         $products = new Product;
-        $products->product_name =  $request->input('product_name');
-        $products->product_type_id =  $request->input('product_type_id');
+        $products->product_name = $request->input('product_name');
+        $products->product_type_id = $request->input('product_type_id');
         $products->quantity = $request->input('quantity');
         $products->price = $request->input('price');
         $products->promotion_price = $request->input('promotion_price');
@@ -95,8 +95,8 @@ class ProductController extends Controller
 
     public function view($id)
     {
-        $products = Product::find($id);
-        return view('admin.products.view', ['products' => $products]);
+        $product = Product::find($id);
+        return view('admin.products.view', ['product' => $product]);
     }
 
     public function delete($id)

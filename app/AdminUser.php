@@ -18,8 +18,6 @@ class AdminUser extends Authenticatable
     use Notifiable;
 
     protected $table = 'admin_users';
-    public $timestamps = false;
-    protected $dateFormat = 'd.m.Y';
     protected $primaryKey = 'id';
     protected $fillable = array('name', 'email', 'password', 'crated_at', 'updated_at');
     protected $hidden = array('password', 'remember_token');

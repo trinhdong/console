@@ -10,7 +10,7 @@
                 <small>View</small>
             </h1>
             <ol class="breadcrumb">
-                @include('admin.elements.button.back', ['url' => 'admin/orders?status=confirmed'])
+                @include('admin.elements.button.back', ['url' => 'admin/orders?status=processed'])
             </ol>
         </section>
         <section class="content">

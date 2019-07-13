@@ -2,13 +2,22 @@
 
 namespace App;
 
+use Carbon\Traits\Timestamp;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Class User
+ * @package App
+ * @property int $id;
+ * @property int $user_id;
+ * @property string $note;
+ * @property Timestamp $created_at;
+ * @property float $total_price;
+ */
 class Order extends Model
 {
     protected $table = 'orders';
-    public $timestamps = false;
     protected $primaryKey = 'id';
 
     public static function getOrderInfoByUserId($id)
