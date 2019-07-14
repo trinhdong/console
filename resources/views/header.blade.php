@@ -31,7 +31,8 @@
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp">
                     <form role="search" method="" id="searchform" action="{{url('search')}}">
-                        <input type="text" value="" name="product_name" id="product_name" placeholder="Nhập từ khóa..."/>
+                        <input type="text" value="" name="product_name" id="product_name"
+                               placeholder="Nhập từ khóa..."/>
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                     </form>
                 </div>
@@ -68,6 +69,14 @@
 @section('search_ajax')
     <script>
         $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 150) {
+                    $(".header-bottom").addClass('fixNav')
+                } else {
+                    $(".header-bottom").removeClass('fixNav')
+                }
+            }
+
             $('#product_name').keyup(function () {
                 var query = $(this).val();
                 if (query != '') {

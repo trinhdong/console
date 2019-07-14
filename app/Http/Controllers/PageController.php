@@ -18,22 +18,22 @@ class PageController extends Controller
     public function index()
     {
         $slides = Slide::all();
-        $newProducts = Product::orderBy('created_at', 'desc')->paginate(4);
-        $promotionProducts = Product::orderBy('created_at', 'desc')->where('promotion_price', '!=', null)->paginate(4);
+        $newProducts = Product::query()->orderBy('created_at', 'desc')->paginate(4);
+        $promotionProducts = Product::query()->orderBy('created_at', 'desc')->where('promotion_price', '!=', null)->paginate(4);
         return view('page.index', ['slides' => $slides, 'newProducts' => $newProducts, 'promotionProducts' => $promotionProducts]);
     }
 
     public function categories($id)
     {
-        $categories = Category::find($id);
+        $categories = Category::query()->find($id);
         return view('page.category', compact('categories'));
     }
 
-    public function productTypes($id)
+    public function productTypes($idCategory, $idProductType)
     {
-        $productTypes = ProductType::query()->find($id);
-        $allProductTypes = ProductType::all()->take(15);
-        return view('page.product_type', compact('productTypes', 'allProductTypes'));
+        $categories = Category::query()->find($idCategory);
+        $products = Product::query()->where('product_type_id', $idProductType)->get();
+        return view('page.product_type', compact('products', 'categories', 'idProductType'));
     }
 
     public function productDetail($id)
@@ -167,7 +167,7 @@ class PageController extends Controller
 
     public function getSearch(Request $request)
     {
-        $products = Product::where('product_name', $request->input('product_name'))->get();
+        $products = Product::query()->where('product_name', $request->input('product_name'))->get();
         return view('page.search', compact('products'));
     }
 

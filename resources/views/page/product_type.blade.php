@@ -20,10 +20,15 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <ul class="aside-menu">
-                            @foreach($allProductTypes as $productType)
-                                <li>
-                                    <a href="{!! url('loai-san-pham', [$productType->id, $productType->type_name]) !!}">{{$productType->type_name}} </a>
-                                </li>
+                            @foreach($categories->productTypes as $productType)
+
+                                @if($productType->id == $idProductType)
+                                    {{null}}
+                                @else
+                                    <li>
+                                        <a href="{!! url('loai-san-pham', [$categories->id, $productType->id, $productType->type_name]) !!}">{{$productType->type_name}} </a>
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
                     </div>
@@ -35,12 +40,13 @@
                             </div>
 
                             <div class="row">
-                                @foreach($productTypes->products as $product)
+                                @foreach($products as $product)
                                     <div class="col-sm-3">
                                         <div class="single-item">
                                             <div class="single-item-header">
                                                 <a href="{!! url('chi-tiet-san-pham', [$product->id, $product->product_name]) !!}">
-                                                    <img height="200px" src="source/images/products/{{$product->image}}" alt=""></a>
+                                                    <img height="200px" src="source/images/products/{{$product->image}}"
+                                                         alt=""></a>
                                             </div>
                                             <div class="single-item-body">
                                                 <p class="single-item-title">{{$product->product_name}}</p>

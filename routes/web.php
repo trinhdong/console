@@ -18,7 +18,7 @@ Route::get('dang-xuat', 'PageController@getLogout');
 
 Route::get('/' , 'PageController@index');
 Route::get('danh-muc/{id}/{categoryName}', 'PageController@categories');
-Route::get('loai-san-pham/{id}/{productTypeName}', 'PageController@productTypes');
+Route::get('loai-san-pham/{idCategory}/{idProductType}/{productTypeName}', 'PageController@productTypes');
 Route::get('chi-tiet-san-pham/{id}/{productName}', 'PageController@productDetail');
 Route::get('lien-he', 'PageController@getContact');
 Route::post('login-checkout', 'PageController@loginCheckout');

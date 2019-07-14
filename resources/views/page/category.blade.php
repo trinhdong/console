@@ -22,7 +22,7 @@
                         <ul class="aside-menu">
                             @foreach($categories->productTypes as $productType)
                                 <li>
-                                    <a href="{!! url('loai-san-pham', [$productType->id, $productType->type_name]) !!}">{{$productType->type_name}} </a>
+                                    <a href="{!! url('loai-san-pham', [$categories->id, $productType->id, $productType->type_name]) !!}">{{$productType->type_name}} </a>
                                 </li>
                             @endforeach
                         </ul>

@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-
     <div class="fullwidthbanner-container">
         <div class="fullwidthbanner">
             <div class="bannercontainer">
@@ -23,7 +22,6 @@
                                          style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('../source/assets/dest/images/slide/{{$slide->image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
                                     </div>
                                 </div>
-
                             </li>
                         @endforeach
                     </ul>
@@ -36,6 +34,7 @@
         <div id="content" class="space-top-none">
             <div class="main-content">
                 <div class="row">
+                    <div class="space50">&nbsp;</div>
                     <div class="col-sm-12">
                         <div class="beta-products-list">
                             <h4>Sản Phẩm Mới</h4>
@@ -43,14 +42,14 @@
                                 <p class="pull-left">Tìm thấy {{count($newProducts)}} sản phẩm</p>
                                 <div class="clearfix"></div>
                             </div>
-
                             <div class="row">
                                 @foreach($newProducts as $newProduct)
                                     <div class="col-sm-3">
                                         <div class="single-item">
                                             <div class="single-item-header">
                                                 <a href="{!! url('chi-tiet-san-pham', [$newProduct->id, $newProduct->product_name]) !!}">
-                                                    <img height="250px" src="source/images/products/{{$newProduct->image}}" alt=""></a>
+                                                    <img height="250px"
+                                                         src="source/images/products/{{$newProduct->image}}" alt=""></a>
                                             </div>
                                             <div class="single-item-body">
                                                 <p class="single-item-title">{{$newProduct->product_name}}</p>
@@ -94,7 +93,8 @@
 
                                     <div class="single-item-header">
                                         <a href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, $promotionProduct->product_name]) !!}">
-                                            <img height="250px" src="source/images/products/{{$promotionProduct->image}}" alt="">
+                                            <img height="250px"
+                                                 src="source/images/products/{{$promotionProduct->image}}" alt="">
                                         </a>
                                     </div>
                                     <div class="single-item-body">
@@ -118,14 +118,10 @@
                             </div>
                         @endforeach
                     </div>
-                    {{-- phân trang --}}
                     {!!$promotionProducts->links()!!}
                     <div class="space40">&nbsp;</div>
-                </div> <!-- .beta-products-list -->
+                </div>
             </div>
         </div>
-
-
     </div>
-
 @endsection
