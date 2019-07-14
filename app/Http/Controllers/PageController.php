@@ -10,8 +10,8 @@ use App\Slide;
 use App\Product;
 use App\ProductType;
 use Cart;
-use Hash;
-use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -59,9 +59,9 @@ class PageController extends Controller
         $login = array('email' => $request->input('email'), 'password' => $request->input('password'));
         if (Auth::attempt($login)) {
             return redirect('/')->with(['flag' => 'success', 'message' => 'Đăng nhập thành công']);
-        } else {
-            return redirect()->back()->with(['flag' => 'danger', 'message' => 'Đăng nhập thất bại']);
         }
+        return redirect()->back()->with(['flag' => 'danger', 'message' => 'Đăng nhập thất bại']);
+
     }
 
     public function getSignUp()
@@ -117,9 +117,8 @@ class PageController extends Controller
         $login = array('email' => $email, 'password' => $password);
         if (Auth::attempt($login)) {
             return redirect('dat-hang')->with(['flag' => 'success', 'message' => 'Đăng nhập thành công']);
-        } else {
-            return redirect('dat-hang')->with(['flag' => 'danger', 'message' => 'Đăng nhập thất bại']);
         }
+        return redirect('dat-hang')->with(['flag' => 'danger', 'message' => 'Đăng nhập thất bại']);
     }
 
     public function signUpCheckout(Request $request)
@@ -154,8 +153,8 @@ class PageController extends Controller
         $customer->phone = intval($request->input('phone'));
         $customer->sex = intval($request->input('gender'));
         $customer->save();
-        if ($customer !== '') {
-            $login = array('email' => $customer->email, 'password' => $customer->password);
+        if ($customer !== null) {
+            $login = array('email' => $request->input('email'), 'password' => $request->input('password'));
             if (Auth::attempt($login)) {
                 return redirect('dat-hang')->with(['flag' => 'success', 'message' => 'Đăng nhập thành công']);
             } else {

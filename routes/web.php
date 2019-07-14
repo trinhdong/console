@@ -27,10 +27,6 @@ Route::post('sign-up', 'PageController@signUpCheckout');
 Route::get('search', 'PageController@getSearch');
 Route::post('search', 'PageController@getSearchAjax')->name('search');
 
-Route::get('/login', function () {
-    return view('admin.login');
-});
-
 Route::get('mua-hang/{id}/{productName}','CartController@addProductCart');
 Route::get('delete/{id}', 'CartController@deleteProductCart');
 Route::get('update', 'CartController@updateProductCart');
@@ -39,10 +35,13 @@ Route::get('gio-hang', 'CartController@Cart');
 Route::get('dat-hang', 'CartController@getCheckOut');
 Route::post('dat-hang', 'CartController@postCheckOut');
 
-Route::post('/login', 'AdminUserController@login');
-Route::get('/logout', 'AdminUserController@logout');
+Route::get('admin/login', function () {
+    return view('admin.login');
+});
+Route::post('admin/login', 'AdminUserController@login');
+Route::get('admin/logout', 'AdminUserController@logout');
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
     Route::get('/', function () {
         return view('admin.home');
     });

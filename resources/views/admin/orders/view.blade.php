@@ -33,38 +33,6 @@
                 </div>
                 <div class="box box-body">
                     <div class="col-md-3">
-                        {!! Form::label('Email') !!}
-                    </div>
-                    <div class="col-md-9">
-                        <p>{{$userInfo->email}}</p>
-                    </div>
-                </div>
-                <div class="box box-body">
-                    <div class="col-md-3">
-                        {!! Form::label('Ngày sinh') !!}
-                    </div>
-                    <div class="col-md-9">
-                        <p>{{$userInfo->birthday}}</p>
-                    </div>
-                </div>
-                <div class="box box-body">
-                    <div class="col-md-3">
-                        {!! Form::label('Giới tính') !!}
-                    </div>
-                    <div class="col-md-9">
-                        <p>{{$userInfo->sex == 0 ? "Nam" : "Nữ"}}</p>
-                    </div>
-                </div>
-                <div class="box box-body">
-                    <div class="col-md-3">
-                        {!! Form::label('Số điện thoại') !!}
-                    </div>
-                    <div class="col-md-9">
-                        <p>{{$userInfo->phone}}</p>
-                    </div>
-                </div>
-                <div class="box box-body">
-                    <div class="col-md-3">
                         {!! Form::label('Trạng thái đơn hàng') !!}
                     </div>
                     <div class="col-md-9">
@@ -103,7 +71,7 @@
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="4"><b>Tổng tiền</b></td>
+                            <td colspan="3"><b>Tổng tiền</b></td>
                             <td colspan="1"><b class="text-red">{{ number_format($userInfo->order_total) }} VNĐ</b></td>
                         </tr>
                         </tbody>
