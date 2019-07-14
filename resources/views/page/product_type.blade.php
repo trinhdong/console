@@ -3,11 +3,11 @@
     <div class="inner-header">
         <div class="container">
             <div class="pull-left">
-                <h6 class="inner-title">Sản phẩm</h6>
+                <h6 class="inner-title">Loại sản phẩm</h6>
             </div>
             <div class="pull-right">
                 <div class="beta-breadcrumb font-large">
-                    <a href="/">Home</a> / <span>Sản phẩm</span>
+                    <a href="/">Home</a> / <span>Loại sản phẩm</span>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -20,9 +20,11 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <ul class="aside-menu">
+                            @foreach($allProductTypes as $productType)
                                 <li>
-                                    <a href="{!! url('loai-san-pham', [$productTypes->id, $productTypes->type_name]) !!}">{{$productTypes->type_name}} </a>
+                                    <a href="{!! url('loai-san-pham', [$productType->id, $productType->type_name]) !!}">{{$productType->type_name}} </a>
                                 </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-sm-9">
@@ -37,9 +39,8 @@
                                     <div class="col-sm-3">
                                         <div class="single-item">
                                             <div class="single-item-header">
-                                                <a href="{!! url('chi-tiet-san-pham', [$product->id, $product->product_name]) !!}"><img
-                                                            src="source/images/products/{{$product->image}}"
-                                                            alt=""></a>
+                                                <a href="{!! url('chi-tiet-san-pham', [$product->id, $product->product_name]) !!}">
+                                                    <img height="200px" src="source/images/products/{{$product->image}}" alt=""></a>
                                             </div>
                                             <div class="single-item-body">
                                                 <p class="single-item-title">{{$product->product_name}}</p>

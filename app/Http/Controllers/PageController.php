@@ -18,8 +18,8 @@ class PageController extends Controller
     public function index()
     {
         $slides = Slide::all();
-        $newProducts = Product::orderBy('product_name', 'desc')->paginate(4);
-        $promotionProducts = Product::orderBy('product_name', 'desc')->where('promotion_price', '!=', null)->paginate(4);
+        $newProducts = Product::orderBy('created_at', 'desc')->paginate(4);
+        $promotionProducts = Product::orderBy('created_at', 'desc')->where('promotion_price', '!=', null)->paginate(4);
         return view('page.index', ['slides' => $slides, 'newProducts' => $newProducts, 'promotionProducts' => $promotionProducts]);
     }
 
@@ -31,16 +31,17 @@ class PageController extends Controller
 
     public function productTypes($id)
     {
-        $productTypes = ProductType::find($id);
-        return view('page.product_type', compact('productTypes'));
+        $productTypes = ProductType::query()->find($id);
+        $allProductTypes = ProductType::all()->take(15);
+        return view('page.product_type', compact('productTypes', 'allProductTypes'));
     }
 
-    public function productDetail(Request $request)
+    public function productDetail($id)
     {
-        $productDetail = Product::where('id', $request->id)->first();
-        $newProducts = Product::orderBy('product_name', 'desc')->paginate(4);
-        $productSames = Product::where('product_type_id', $productDetail->product_type_id)->paginate(3);
-        $randProducts = Product::inRandomOrder()->take(100)->get();
+        $productDetail = Product::query()->where('id', $id)->first();
+        $newProducts = Product::query()->orderBy('created_at', 'desc')->paginate(4);
+        $productSames = Product::query()->where('product_type_id', $productDetail->product_type_id)->paginate(3);
+        $randProducts = Product::query()->orderBy('created_at', 'desc')->take(100)->take(4)->get();
         return view('page.products_details', compact('productDetail', 'newProducts', 'productSames', 'randProducts'));
     }
 

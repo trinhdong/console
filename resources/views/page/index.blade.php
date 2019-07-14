@@ -35,7 +35,6 @@
     <div class="container">
         <div id="content" class="space-top-none">
             <div class="main-content">
-                <div class="space60">&nbsp;</div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="beta-products-list">
@@ -50,9 +49,8 @@
                                     <div class="col-sm-3">
                                         <div class="single-item">
                                             <div class="single-item-header">
-                                                <a href="{!! url('chi-tiet-san-pham', [$newProduct->id, $newProduct->product_name]) !!}"><img
-                                                            src="source/images/products/{{$newProduct->image}}"
-                                                            alt=""></a>
+                                                <a href="{!! url('chi-tiet-san-pham', [$newProduct->id, $newProduct->product_name]) !!}">
+                                                    <img height="250px" src="source/images/products/{{$newProduct->image}}" alt=""></a>
                                             </div>
                                             <div class="single-item-body">
                                                 <p class="single-item-title">{{$newProduct->product_name}}</p>
@@ -61,11 +59,13 @@
                                                 </p>
                                             </div>
                                             <div class="single-item-caption">
-                                                <a class="add-to-cart pull-left" href="{!! url('mua-hang', [$newProduct->id, $newProduct->product_name]) !!}"><i
+                                                <a class="add-to-cart pull-left"
+                                                   href="{!! url('mua-hang', [$newProduct->id, $newProduct->product_name]) !!}"><i
                                                             class="fa fa-shopping-cart"></i></a>
                                                 <a class="beta-btn primary"
-                                                   href="{!! url('chi-tiet-san-pham', [$newProduct->id, $newProduct->product_name]) !!}">Chi tiết <i
-                                                            class="fa fa-chevron-right"></i></a>
+                                                   href="{!! url('chi-tiet-san-pham', [$newProduct->id, $newProduct->product_name]) !!}">
+                                                    Chi tiết
+                                                    <i class="fa fa-chevron-right"></i></a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>
@@ -75,7 +75,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- phân trang --}}
                 {!!$newProducts->links()!!}
                 <div class="space50">&nbsp;</div>
 
@@ -94,9 +93,9 @@
                                     </div>
 
                                     <div class="single-item-header">
-                                        <a href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, $promotionProduct->product_name]) !!}"><img
-                                                    src="source/images/products/{{$promotionProduct->image}}"
-                                                    alt=""></a>
+                                        <a href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, $promotionProduct->product_name]) !!}">
+                                            <img height="250px" src="source/images/products/{{$promotionProduct->image}}" alt="">
+                                        </a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$promotionProduct->product_name}}</p>
@@ -106,10 +105,12 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{!! url('mua-hang', [$promotionProduct->id, $promotionProduct->product_name]) !!}"><i
+                                        <a class="add-to-cart pull-left"
+                                           href="{!! url('mua-hang', [$promotionProduct->id, $promotionProduct->product_name]) !!}"><i
                                                     class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary"
-                                           href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, $promotionProduct->product_name]) !!}">Chi tiết <i
+                                           href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, $promotionProduct->product_name]) !!}">Chi
+                                            tiết <i
                                                     class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
