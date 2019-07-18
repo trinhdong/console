@@ -25,7 +25,10 @@ Route::post('login-checkout', 'PageController@loginCheckout');
 Route::post('sign-up', 'PageController@signUpCheckout');
 
 Route::get('search', 'PageController@getSearch');
-Route::post('search', 'PageController@getSearchAjax')->name('search');
+/*Route::post('search', 'PageController@getSearchAjax')->name('search');*/
+
+Route::get('viewinfo/{id}', 'PageController@getviewInfo');
+Route::post('viewinfo/{id}', 'PageController@postviewInfo');
 
 Route::get('mua-hang/{id}/{productName}','CartController@addProductCart');
 Route::get('delete/{id}', 'CartController@deleteProductCart');

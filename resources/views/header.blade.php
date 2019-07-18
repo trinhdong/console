@@ -11,11 +11,11 @@
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
                     @if(Auth::check())
-                        <li><a href="">Chào bạn {{Auth::User()->name}}</a></li>
-                        <li><a href="{{url('dang-xuat')}}">Đăng xuất</a></li>
+                    <li><a href="viewinfo/{{Auth::User()->id}}">Chào bạn {{Auth::User()->name}}</a></li>
+                    <li><a href="{{url('dang-xuat')}}">Đăng xuất</a></li>
                     @else
-                        <li><a href="{{url('dang-ky')}}">Đăng kí</a></li>
-                        <li><a href="{{url('dang-nhap')}}">Đăng nhập</a></li>
+                    <li><a href="{{url('dang-ky')}}">Đăng kí</a></li>
+                    <li><a href="{{url('dang-nhap')}}">Đăng nhập</a></li>
                     @endif
                 </ul>
             </div>
@@ -32,10 +32,14 @@
                 <div class="beta-comp">
                     <form role="search" method="" id="searchform" action="{{url('search')}}">
                         <input type="text" value="" name="product_name" id="product_name"
-                               placeholder="Nhập từ khóa..."/>
+                        placeholder="Nhập từ khóa..."  autocomplete="off" />
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+
                     </form>
+                    <div id="countryList">
+                    </div>
                 </div>
+                {{ csrf_field() }}
                 @include('page.cart')
             </div>
             <div class="clearfix"></div>
@@ -45,57 +49,25 @@
         <div class="container">
             <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span>
                 <i class="fa fa-bars"></i></a>
-            <div class="visible-xs clearfix"></div>
-            <nav class="main-menu">
-                <ul class="l-inline ov">
-                    <li><a href="/">Trang chủ</a></li>
-                    <li><a href="javascript:">Mua Hàng Online</a>
-                        <ul class="sub-menu">
-                            @foreach($categoryMenu as $category)
+                <div class="visible-xs clearfix"></div>
+                <nav class="main-menu">
+                    <ul class="l-inline ov">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li><a href="javascript:">Mua Hàng Online</a>
+                            <ul class="sub-menu">
+                                @foreach($categoryMenu as $category)
                                 <li>
                                     <a href="{!! url('danh-muc', [$category->id, $category->category_name]) !!}">{{$category->category_name}} </a>
                                 </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                </ul>
-                <div class="clearfix"></div>
-            </nav>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
         </div>
     </div>
-</div>
-@section('search_ajax')
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 150) {
-                    $(".header-bottom").addClass('fixNav')
-                } else {
-                    $(".header-bottom").removeClass('fixNav')
-                }
-            }
-
-            $('#product_name').keyup(function () {
-                var query = $(this).val();
-                if (query != '') {
-                    var _token = $('input[name="_token"]').val();
-                    $.ajax({
-                        url: "{{ url('search') }}",
-                        method: "POST",
-                        data: {query: query, _token: _token},
-                        success: function (data) {
-                            $('#countryList').fadeIn();
-                            $('#countryList').html(data);
-                        }
-                    });
-                }
-            });
-            $(document).on('click', 'li', function () {
-                $('#product_name').val($(this).text());
-                $('#countryList').fadeOut();
-            });
-        });
-    </script>
-@endsection
+   

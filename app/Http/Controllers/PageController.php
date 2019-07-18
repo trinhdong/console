@@ -18,8 +18,8 @@ class PageController extends Controller
     public function index()
     {
         $slides = Slide::all();
-        $newProducts = Product::query()->orderBy('created_at', 'desc')->paginate(4);
-        $promotionProducts = Product::query()->orderBy('created_at', 'desc')->where('promotion_price', '!=', null)->paginate(4);
+        $newProducts = Product::query()->orderBy('created_at', 'desc')->paginate(8);
+        $promotionProducts = Product::query()->orderBy('created_at', 'desc')->where('promotion_price', '!=', null)->paginate(8);
         return view('page.index', ['slides' => $slides, 'newProducts' => $newProducts, 'promotionProducts' => $promotionProducts]);
     }
 
@@ -87,7 +87,7 @@ class PageController extends Controller
                 'email.unique' => 'Email đã tồn tại, mời nhập lại',
                 'password.required' => 'Vui lòng nhập password',
                 'fullname.required' => 'Vui lòng nhập họ tên',
-                'password2.same' => 'Mật khẩu không trùng khớp, mời nhập lại',
+                'password_same.same' => 'Mật khẩu không trùng khớp, mời nhập lại',
                 'password.min' => 'Mật khẩu phải chứa ít nhất 6 kí tự',
                 'adress.required' => 'Vui lòng nhập địa chỉ',
                 'name.required' => 'Vui lòng nhập họ tên',
@@ -167,23 +167,69 @@ class PageController extends Controller
 
     public function getSearch(Request $request)
     {
-        $products = Product::query()->where('product_name', $request->input('product_name'))->get();
+        $products = Product::query()->where('product_name','like' ,'%'.$request->input('product_name'.'%'))->get();
         return view('page.search', compact('products'));
     }
 
-    public function getSearchAjax(Request $request)
+    /* function getSearchAjax(Request $request)
     {
         if ($request->get('query')) {
             $query = $request->get('query');
-            $data = DB::table('products')
-                ->where('product_name', 'LIKE', "%{$query}%")
+            $data = Product::where('product_name', 'LIKE', "%{$query}%")
                 ->get();
             $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
             foreach ($data as $row) {
-                $output .= '<li><a href="data/' . $row->id . '">' . $row->product_name . '</a></li>';
+                $output .= '<li><a href="search/' . $row->id . '">' . $row->product_name . '</a></li>';
             }
             $output .= '</ul>';
             echo $output;
         }
+    }*/
+    public function getviewInfo($id)
+    {
+        $users = User::find($id);
+        return view('page.view_info', compact('users'));
+    }
+    public function postviewInfo(Request $request ,$id)
+    {
+        $this->validate($request,
+            [
+                'name' => 'required',
+                'address' => 'required',
+                'phone' => 'required|min:9|max:10'
+            ],
+            [
+                'name.required' => 'Vui lòng nhập họ tên',
+                'adress.required' => 'Vui lòng nhập địa chỉ',
+                'name.required' => 'Vui lòng nhập họ tên',
+                'phone.min' => 'Số điện thoại không hợp lệ',
+                'phone.max' => 'Số điện thoại không hợp lệ'
+            ]);
+        $users = User::find($id);
+        $users->name = $request->input('name');
+        $users->phone = intval($request->input('phone'));
+        if($request->changePass == "on")
+        {
+            $this->validate($request,
+                [
+                    'password'=>'required|min:3|max:32',
+                    'password_same'=>'required|same:password',
+                    'password_same'=>'required'
+                ],
+                [
+                    'password.required'=>'Bạn chưa nhập mật khẩu',
+                    'password.min'=>'Mật khẩu phải có ít nhất 3 kí tự',
+                    'password.max'=>'Mật khẩu phải chứ tối đa 32 kí tự',
+                    'password_same.same'=>'Mật khẩu không trùng khớp',
+                    'password_same.required'=>'Mời nhập lại mật khẩu'
+                ]);
+            $users->password = Hash::make($request->input('password'));
+        }
+        $users->address = $request->input('address');
+        $users->sex = intval($request->input('gender'));
+        $users->save();
+        return redirect('viewinfo'.'/'.$id)->with('success', 'Cập nhật thành công');
     }
 }
+
+

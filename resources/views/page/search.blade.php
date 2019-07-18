@@ -18,8 +18,7 @@
                                     <div class="col-sm-3">
                                         <div class="single-item">
                                             <div class="single-item-header">
-                                                <a href="{{url('chi-tiet-san-pham', [$product->id, $product->product_name])}}"><img
-                                                            src="source/images/products/{{$product->image}}"
+                                                <a href="{{url('chi-tiet-san-pham', [$product->id, $product->product_name])}}"><img width="250px" height="250px" src="source/images/products/{{$product->image}}"
                                                             alt=""></a>
                                             </div>
                                             <div class="single-item-body">
