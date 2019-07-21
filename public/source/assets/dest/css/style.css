@@ -815,7 +815,7 @@ margin-bottom:10px
 }
 
 input[type="checkbox"] {
-display:none
+
 }
 
 input[type="checkbox"]+label {
@@ -1878,7 +1878,9 @@ margin-bottom:20px
 
 .single-item-title {
 font-size:15px;
-margin-bottom:5px
+margin-bottom:5px;
+overflow:hidden;
+height:22px;
 }
 
 .single-item-price {

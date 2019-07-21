@@ -45,7 +45,7 @@
                                         <div class="single-item">
                                             <div class="single-item-header">
                                                 <a href="{!! url('chi-tiet-san-pham', [$product->id, $product->product_name]) !!}">
-                                                    <img height="200px" src="source/images/products/{{$product->image}}"
+                                                    <img width="250px" height="250px" src="source/images/products/{{$product->image}}"
                                                          alt=""></a>
                                             </div>
                                             <div class="single-item-body">
