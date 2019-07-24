@@ -27,7 +27,8 @@
 
 @include('footer')
 
-
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="../source/assets/dest/js/jquery.js"></script>
 <script src="../source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -41,7 +42,8 @@
 <script src="../source/assets/dest/js/waypoints.min.js"></script>
 <script src="../source/assets/dest/js/wow.min.js"></script>
 <script src="../source/assets/dest/js/custom2.js"></script>
+
 @yield('script')
-@yield('search_ajax')
+<!-- @yield('search_ajax') -->
 </body>
 </html>
