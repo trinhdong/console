@@ -7,6 +7,7 @@ const SCREEN_OPTIONS = [
         'categories' => ['Danh mục', 'book'],
         'product-types' => ['Loại sản phẩm', 'th-list'],
         'products' => ['Sản phẩm', 'th'],
+        'comments' => ['Bình luận', 'comment']
     ]
 ];
 const SCREEN_TYPE_CONSOLE = 'CONSOLE';

@@ -35,6 +35,9 @@ Route::get('gio-hang', 'CartController@Cart');
 Route::get('dat-hang', 'CartController@getCheckOut');
 Route::post('dat-hang', 'CartController@postCheckOut');
 
+Route::post('binh-luan', 'CommentController@comments');
+Route::get('delete/{id}', 'CommentController@delete');
+
 Route::get('admin/login', function () {
     return view('admin.login');
 });
@@ -120,6 +123,11 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
         Route::post('edit/{id}' , 'ProductController@edit');
         Route::get('view/{id}', 'ProductController@view');
         Route::get('delete/{id}', 'ProductController@delete');
+    });
+    Route::group(['prefix' => 'comments'], function () {
+        Route::get('/', 'CommentController@index');
+        Route::get('delete/{id}', 'CommentController@delete');
+        Route::get('view/{id}', 'CommentController@view');
     });
     Route::group(['prefix' => 'admin-users'], function () {
         Route::get('/', 'AdminUserController@index');

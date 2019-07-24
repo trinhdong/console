@@ -26,6 +26,11 @@ class Product extends Model
     	return $this->belongsTo('App\ProductType','product_type_id','id');
     }
 
+    public function comments ()
+    {
+        return $this->hasMany('App\Comment','product_id','id');
+    }
+
     public static function searchQuery($id = '', $productName = '', $typeId = '')
     {
         $query = Product::query();

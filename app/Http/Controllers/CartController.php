@@ -59,7 +59,7 @@ class CartController extends Controller
         $cartContent = Cart::getContent();
         $order = new Order();
         $order->user_id = intval($request->input('user_id'));
-        $order->total_price = str_replace(',', '', Cart::getTotal());
+        $order->total_price = Cart::getTotal();
         $order->note = $request->input('note');
         $order->save();
 

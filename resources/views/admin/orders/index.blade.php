@@ -11,7 +11,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li class="active"></i>Đơn hàng</li>
+                <li class="active"></i>Đơn hàng chưa xử lý</li>
             </ol>
         </section>
 
@@ -44,18 +44,17 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($users as $user)
+                                    @foreach($users as $index => $user)
                                         <tr>
-                                            <td>{{$user->id}}</td>
+                                            <td>{{$index + 1}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
                                             <td>{{$user->address}}</td>
                                             <td>{{$user->created_at}}</td>
-                                            <td id="status"
-                                                style="color: orange">{{ $user->status == 0 ? 'Chưa xử lý' : '' }}</td>
+                                            <td id="status" style="color: orange">{{ $user->status == 0 ? 'Chưa xử lý' : '' }}</td>
                                             <td width="100">
                                                 @include('admin.elements.button.view', ['url' => 'admin/orders/', 'id' => $user->id])
-                                                @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->id])
+                                                @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->order_id])
                                             </td>
                                         </tr>
                                     @endforeach

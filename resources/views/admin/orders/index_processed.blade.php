@@ -11,7 +11,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li class="active"></i>Đơn hàng</li>
+                <li class="active"></i>Đơn hàng đã xử lý</li>
             </ol>
         </section>
 
@@ -53,7 +53,7 @@
                                             <td>{{$user->created_at}}</td>
                                             <td id="status" style="color: orange">{{$user->order_status}}</td>
                                             <td width="100">
-                                                @include('admin.elements.button.view', ['url' => 'admin/orders/', 'id' => $user->order_id])
+                                                @include('admin.elements.button.view', ['url' => 'admin/orders/', 'id' => $user->id])
                                                 @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->order_id])
                                             </td>
                                         </tr>

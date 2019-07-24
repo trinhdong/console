@@ -66,51 +66,88 @@
                             <p>{!!$productDetail->description!!}</p>
                         </div>
                     </div>
-                    <div class="woocommerce-tabs">
-                        <ul class="tabs">
-                            <li><a href="#tab-reviews">Reviews (0)</a></li>
-                        </ul>
-                        <div class="panel" id="tab-reviews">
-                            <p>No Reviews</p>
+                    <div class="space40">&nbsp;
+                        <div class="woocommerce-tabs">
+                            <ul class="tabs">
+                                <li><a href="#tab-reviews">Bình luận sản phẩm</a></li>
+                            </ul>
+                            <div class="panel" id="tab-reviews">
+                                @if(Auth::check())
+                                    {!! Form::open(['method' => 'POST', 'url' => 'binh-luan', 'enctype' => 'multipart/form-data']) !!}
+                                        <div class="form-group ">
+                                            <input name="user_id" type="hidden" value="{{\Illuminate\Support\Facades\Auth::User()->id}}">
+                                            <input name="product_id" type="hidden" value="{{$productDetail->id}}">
+                                            <label for="comment">Bình luận:</label>
+                                            <textarea name="content" class="form-control" rows="5" id="comment"
+                                                      placeholder="nhập bình luận..."></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-success right">Gửi bình luận</button>
+                                    {!! Form::close() !!}
+                                    <div class="page-header">
+                                        <h1>{{empty($productDetail->comments) ? count($productDetail->comments) . ' Bình luận' : 'Chưa có bình luận'}}</h1>
+                                    </div>
+                                    <div class="comments-list">
+                                        @foreach($productDetail->comments as $comment)
+                                            <div class="media">
+                                                <p class="pull-right">
+                                                    <small>{!!$comment->created_at !!}</small>
+                                                </p>
+                                                {{--<a class="media-left" href="#">--}}
+                                                {{--<img src="http://lorempixel.com/40/40/people/1/">--}}
+                                                {{--</a>--}}
+                                                <div class="media-body">
+                                                    <h6 class="media-heading user_name">{{$comment->users->name}}</h6>
+                                                    {{$comment->content}}
+                                                    <p>
+                                                        <small><a href="delete/{{$comment->id}}">Delete</a></small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        @else
+                                            <a href="dang-nhap"><p class="center">Vui lòng đăng nhập để bình luận</p>
+                                            </a>
+                                        @endif
+                                    </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="space50">&nbsp;</div>
-                    <div class="beta-products-list">
-                        <h4>Sản Phẩm Tương Tự </h4>
-
-                        <div class="row">
-                            @foreach($productSames as $productSame)
-                                <div class="col-sm-4">
-                                    <div class="single-item">
-                                        <div class="single-item-header">
-                                            <a href="{!! url('chi-tiet-san-pham', [$productSame->id, $productSame->product_name]) !!}"><img
-                                                        src="source/images/products/{{$productSame->image}}" alt=""></a>
-                                        </div>
-                                        <div class="single-item-body">
-                                            <p class="single-item-title">{{$productSame->product_name}}</p>
-                                            <p class="single-item-price">
-                                                @if($productSame->promotion_price==0)
-                                                    <span>{{number_format($productSame->price)}} ₫</span>
-                                                @else
-                                                    <span class="flash-del">{{number_format($productSame->price)}} ₫</span>
-                                                    <span class="flash-sale">{{number_format($productSame->promotion_price)}} ₫</span>
-                                                @endif
-                                            </p>
-                                        </div>
-                                        <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="#"><i
-                                                        class="fa fa-shopping-cart"></i></a>
-                                            <a class="beta-btn primary"
-                                               href="{!! url('chi-tiet-san-pham', [$productSame->id, $productSame->product_name]) !!}">Details
-                                                <i class="fa fa-chevron-right"></i></a>
-                                            <div class="clearfix"></div>
+                        <div class="space50">&nbsp;</div>
+                        <div class="beta-products-list">
+                            <h4>Sản Phẩm Tương Tự </h4>
+                            <div class="row">
+                                @foreach($productSames as $productSame)
+                                    <div class="col-sm-4">
+                                        <div class="single-item">
+                                            <div class="single-item-header">
+                                                <a href="{!! url('chi-tiet-san-pham', [$productSame->id, $productSame->product_name]) !!}"><img
+                                                            src="source/images/products/{{$productSame->image}}" alt=""></a>
+                                            </div>
+                                            <div class="single-item-body">
+                                                <p class="single-item-title">{{$productSame->product_name}}</p>
+                                                <p class="single-item-price">
+                                                    @if($productSame->promotion_price==0)
+                                                        <span>{{number_format($productSame->price)}} ₫</span>
+                                                    @else
+                                                        <span class="flash-del">{{number_format($productSame->price)}} ₫</span>
+                                                        <span class="flash-sale">{{number_format($productSame->promotion_price)}} ₫</span>
+                                                    @endif
+                                                </p>
+                                            </div>
+                                            <div class="single-item-caption">
+                                                <a class="add-to-cart pull-left" href="#"><i
+                                                            class="fa fa-shopping-cart"></i></a>
+                                                <a class="beta-btn primary"
+                                                   href="{!! url('chi-tiet-san-pham', [$productSame->id, $productSame->product_name]) !!}">Details
+                                                    <i class="fa fa-chevron-right"></i></a>
+                                                <div class="clearfix"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
+                        {!!$newProducts->links()!!}
                     </div>
-                    {!!$newProducts->links()!!}
                 </div>
                 <div class="col-sm-3 aside">
                     <div class="widget">
@@ -134,7 +171,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- best sellers widget -->
                 <div class="col-sm-3 aside">
                     <div class="widget">
                         <h3 class="widget-title">Sản Phẩm Mới</h3>
