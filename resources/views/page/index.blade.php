@@ -89,7 +89,6 @@
                 <div class="beta-products-list">
                     <h4>Sản Phẩm Khuyến Mãi</h4>
                     <div class="beta-products-details">
-                        <p class="pull-left">Tìm thấy {{count($promotionProducts)}} sản phẩm</p>
                         <div class="clearfix"></div>
                     </div>
                     <div class="row">
