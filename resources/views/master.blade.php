@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="../source/assets/dest/css/animate.css">
     <link rel="stylesheet" title="style" href="../source/assets/dest/css/huong-style.css">
     <link rel="shortcut icon" type="image/jpg" href="../source/assets/dest/images/logo.jpg"/>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../source/assets/dest/owl.carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+    <link href="../source/assets/dest/owl.carousel/owl.theme.default.css" rel="stylesheet" type="text/css" />
     @yield('css')
 </head>
 <body>
@@ -42,7 +45,8 @@
 <script src="../source/assets/dest/js/waypoints.min.js"></script>
 <script src="../source/assets/dest/js/wow.min.js"></script>
 <script src="../source/assets/dest/js/custom2.js"></script>
-
+<script src="../source/assets/dest/owl.carousel/owl.carousel.min.js"></script>
+<script src="../source/assets/dest/owl.carousel/owl.custom.js"></script>
 @yield('script')
 <!-- @yield('search_ajax') -->
 </body>

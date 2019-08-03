@@ -18,8 +18,8 @@ class PageController extends Controller
     public function index()
     {
         $slides = Slide::all();
-        $newProducts = Product::query()->orderBy('created_at', 'desc')->paginate(8);
-        $promotionProducts = Product::query()->orderBy('created_at', 'desc')->where('promotion_price', '!=', null)->paginate(8);
+        $newProducts = Product::query()->orderBy('created_at', 'desc')->take(100)->get();
+        $promotionProducts = Product::query()->orderBy('created_at', 'desc')->where('promotion_price', '!=', null)->get();
         return view('page.index', ['slides' => $slides, 'newProducts' => $newProducts, 'promotionProducts' => $promotionProducts]);
     }
 
