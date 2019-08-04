@@ -59,7 +59,7 @@
 <script>
     $(document).ready(function () {
         $(function () {
-            $('#example1').DataTable()
+            $('#example1').DataTable({"order": []})
         });
         @if(Session::has('message'))
         $(function () {

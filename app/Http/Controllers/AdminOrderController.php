@@ -29,35 +29,6 @@ class AdminOrderController extends Controller
         return view('admin.orders.index', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     */
-    public function show($id)
-    {
-        //
-    }
-
     public function view($id)
     {
         $userInfo = User::getUserInfoByUserId($id);

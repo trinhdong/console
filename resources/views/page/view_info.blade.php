@@ -66,7 +66,7 @@
 					</div>
 					<div class="form-group">
 						
-						<label for="password"><input type="checkbox" name="changePass" id="changePass">Đổi mật khẩu*</label>
+						<label for="password"><input type="checkbox" name="changePassword" id="changePassword">Đổi mật khẩu*</label>
 						<input type="password" class="form-control password" name="password"  disabled="" value="password">
 					</div>
 					<div class="form-group">
@@ -86,7 +86,7 @@
 @section('script') 
 <script>
 	$(document).ready(function(){
-		$("#changePass").change(function(){
+		$("#changePassword").change(function(){
 			if($(this).is(":checked"))
 			{
 				alert("Bạn có muốn đổi mật khẩu");

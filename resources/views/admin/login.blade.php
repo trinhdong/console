@@ -44,7 +44,6 @@
             <div class="col-xs-8">
                 <div class="checkbox icheck">
                     <label>
-                        <input type="checkbox"> Nhớ mật khẩu
                     </label>
                 </div>
             </div>

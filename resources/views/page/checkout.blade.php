@@ -6,6 +6,7 @@
                 <div>
                     <div class="col-sm-6">
                         <h4>Đặt hàng</h4>
+                        <div class="space20">&nbsp;</div>
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{session('success')}}
@@ -14,9 +15,17 @@
                         @endif
                         @if(Auth::check())
                             @if(!session('success'))
-                                <li><a href="">Chào bạn {{Auth::User()->name}}</a></li>
-                                <p>Địa chỉ giao hàng</p>
-                                <li>Đơn hàng sẽ đưuọc giao đến địa chỉ {{Auth::User()->address}}</li>
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="">Chào bạn {{Auth::User()->name}}</a></h5>
+                                        <div class="space20">&nbsp;</div>
+                                        <p class="card-text">Hàng sẽ được giao đến địa chỉ: </p>
+                                        <div class="space20">&nbsp;</div>
+                                        <p class="card-text text-danger font-italic">{{Auth::User()->address}}</p>
+                                        <div class="space20">&nbsp;</div>
+                                        <p class="cart-text font-italic">Vui lòng chọn đặt hàng để chúng tôi giao hàng đến cho bạn</p>
+                                    </div>
+                                </div>
                             @else {{null}}
                             @endif
                         @else
@@ -57,19 +66,19 @@
                                         </button>
                                     </div>
                                     {!! Form::close() !!}
-                                    <div class="social-auth-links text-center mb-3">
-                                        <p>- HOẶC -</p>
-                                        <a href="#" class="btn btn-primary btn-block btn-social-facebook">
-                                            <i class="fab fa-facebook-f"></i> Đăng nhập với Facebook
-                                        </a>
-                                        <a href="#" class="btn btn-primary btn-block btn-social-zalo">
-                                            <i class="zalo"></i> Đăng nhập với Zalo
-                                        </a>
-                                    </div>
+                                        {{--<div class="social-auth-links text-center mb-3">--}}
+                                            {{--<p>- HOẶC -</p>--}}
+                                            {{--<a href="#" class="btn btn-primary btn-block btn-social-facebook">--}}
+                                                {{--<i class="fab fa-facebook-f"></i> Đăng nhập với Facebook--}}
+                                            {{--</a>--}}
+                                            {{--<a href="#" class="btn btn-primary btn-block btn-social-zalo">--}}
+                                                {{--<i class="zalo"></i> Đăng nhập với Zalo--}}
+                                            {{--</a>--}}
+                                        {{--</div>--}}
                                 </div>
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                                      aria-labelledby="pills-profile-tab">
-                                    {!! Form::open(['method' => 'POST', 'url' => 'sign-up', 'id' => 'my_form', 'class' => 'beta-form-checkout']) !!}
+                                    {!! Form::open(['method' => 'POST', 'url' => 'sign-up', 'id' => 'my_form', 'class' => 'beta-form-checkout'      ]) !!}
                                     <div class="form-block">
                                         <label for="name">Họ tên*</label>
                                         <input type="text" id="name" name="name" placeholder="Họ tên" required>

@@ -8,7 +8,6 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Slide;
 use App\Product;
-use App\ProductType;
 use Cart;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -102,6 +101,12 @@ class PageController extends Controller
         $users->address = $request->input('address');
         $users->sex = intval($request->input('gender'));
         $users->save();
+        if ($users !== null) {
+            $login = array('email' => $request->input('email'), 'password' => $request->input('password'));
+            if (Auth::attempt($login)) {
+                return redirect('/')->with(['flag' => 'success', 'message' => 'Đăng nhập thành công']);
+            }
+        }
         return redirect('/')->with('success', 'Đăng kí thành công');
     }
 
@@ -185,36 +190,34 @@ class PageController extends Controller
             echo $output;
         }
     }*/
-    public function getviewInfo($id)
+    public function getProfile($id)
     {
         $users = User::find($id);
         return view('page.view_info', compact('users'));
     }
-    public function postviewInfo(Request $request ,$id)
+    public function postProfile(Request $request ,$id)
     {
         $this->validate($request,
             [
                 'name' => 'required',
                 'address' => 'required',
-                'phone' => 'required|min:9|max:10'
+                'phone' => 'required|min:11|numeric'
             ],
             [
                 'name.required' => 'Vui lòng nhập họ tên',
-                'adress.required' => 'Vui lòng nhập địa chỉ',
-                'name.required' => 'Vui lòng nhập họ tên',
-                'phone.min' => 'Số điện thoại không hợp lệ',
-                'phone.max' => 'Số điện thoại không hợp lệ'
+                'address.required' => 'Vui lòng nhập địa chỉ',
+                'phone.require' => 'Vui lòng nhập số điện thoại',
+                'phone.min' => 'Số điện thoại không hợp lệ'
             ]);
         $users = User::find($id);
         $users->name = $request->input('name');
         $users->phone = intval($request->input('phone'));
-        if($request->changePass == "on")
+        if($request->input('changePassword') == "on")
         {
             $this->validate($request,
                 [
                     'password'=>'required|min:3|max:32',
                     'password_same'=>'required|same:password',
-                    'password_same'=>'required'
                 ],
                 [
                     'password.required'=>'Bạn chưa nhập mật khẩu',
@@ -228,8 +231,6 @@ class PageController extends Controller
         $users->address = $request->input('address');
         $users->sex = intval($request->input('gender'));
         $users->save();
-        return redirect('viewinfo'.'/'.$id)->with('success', 'Cập nhật thành công');
+        return redirect('thong-tin-khach-hang'.'/'.$id)->with('success', 'Cập nhật thành công');
     }
 }
-
-
