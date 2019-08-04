@@ -6,13 +6,13 @@
     <title>Admin | PetShop</title>
     <base href="{{asset('')}}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="dist/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="dist/css/_all-skins.min.css">
-    <link rel="stylesheet" href="dist/toastr/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="{{ asset('dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/css/_all-skins.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" >
     @yield('css')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -30,6 +30,13 @@
 <script src="dist/js/adminlte.min.js"></script>
 <script src="dist/toastr/toastr.min.js"></script>
 <script src="dist/js/jquery.validate.min.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace("editor1",
+        {
+            height: 500
+        });
+</script>
 <script>
     toastr.options = {
         "closeButton": false,
@@ -52,7 +59,7 @@
 <script>
     $(document).ready(function () {
         $(function () {
-            $('#example1').DataTable()
+            $('#example1').DataTable({"order": []})
         });
         @if(Session::has('message'))
         $(function () {

@@ -10,36 +10,44 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/' ,[
-    'as' => 'home',
-    'uses' => 'PageController@getIndex'
-]);
+Route::get('dang-nhap', 'PageController@getLogin');
+Route::post('dang-nhap', 'PageController@postLogin');
+Route::get('dang-ky', 'PageController@getSignUp');
+Route::post('dang-ky', 'PageController@postSignUp');
+Route::get('dang-xuat', 'PageController@getLogout');
 
-Route::get('producttype/{id}', [
-    'as' =>'producttype',
-    'uses' => 'PageController@getProductstype'
-]);
-Route::get('productsbytype/{category_id}/{id}', [
-    'as' =>'productsbytype',
-    'uses' => 'PageController@getProductsByType'
-]);
-Route::get('productdetails/{id}' , [
-    'as' => 'productdetails',
-    'uses' => 'PageController@getProductDetails'
-]);
-Route::get('contact' , [
-    'as' => 'contact',
-    'uses' => 'PageController@getContact'
-]);
+Route::get('/' , 'PageController@index');
+Route::get('danh-muc/{id}/{categoryName}', 'PageController@categories');
+Route::get('loai-san-pham/{idCategory}/{idProductType}/{productTypeName}', 'PageController@productTypes');
+Route::get('chi-tiet-san-pham/{id}/{productName}', 'PageController@productDetail');
+Route::get('lien-he', 'PageController@getContact');
+Route::post('login-checkout', 'PageController@loginCheckout');
+Route::post('sign-up', 'PageController@signUpCheckout');
 
-Route::get('/login', function () {
+Route::get('search', 'PageController@getSearch');
+/*Route::post('search', 'PageController@getSearchAjax')->name('search');*/
+
+Route::get('thong-tin-khach-hang/{id}', 'PageController@getProfile');
+Route::post('thong-tin-khach-hang/{id}', 'PageController@postProfile');
+
+Route::get('mua-hang/{id}/{productName}','CartController@addProductCart');
+Route::get('delete/{id}', 'CartController@deleteProductCart');
+Route::get('update', 'CartController@updateProductCart');
+Route::get('gio-hang', 'CartController@Cart');
+
+Route::get('dat-hang', 'CartController@getCheckOut');
+Route::post('dat-hang', 'CartController@postCheckOut');
+
+Route::post('binh-luan', 'CommentController@comments');
+Route::get('delete/{id}', 'CommentController@delete');
+
+Route::get('admin/login', function () {
     return view('admin.login');
 });
+Route::post('admin/login', 'AdminUserController@login');
+Route::get('admin/logout', 'AdminUserController@logout');
 
-Route::post('/login', 'AdminUserController@login');
-Route::get('/logout', 'AdminUserController@logout');
-
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
     Route::get('/', function () {
         return view('admin.home');
     });
@@ -119,6 +127,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('view/{id}', 'ProductController@view');
         Route::get('delete/{id}', 'ProductController@delete');
     });
+    Route::group(['prefix' => 'comments'], function () {
+        Route::get('/', 'CommentController@index');
+        Route::get('delete/{id}', 'CommentController@delete');
+        Route::get('view/{id}', 'CommentController@view');
+    });
     Route::group(['prefix' => 'admin-users'], function () {
         Route::get('/', 'AdminUserController@index');
         Route::get('add', function () {
@@ -136,6 +149,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'AdminOrderController@index');
         Route::get('view/{id}', 'AdminOrderController@view');
         Route::post('update/{id}', 'AdminOrderController@update');
+        Route::get('delete/{id}', 'AdminOrderController@delete');
     });
     Route::group(['prefix' => 'ajax'], function () {
         Route::get('categories/{petId}', 'AjaxController@getCategoriesByPetId');

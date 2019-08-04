@@ -19,7 +19,7 @@ class AdminUser extends Authenticatable
 
     protected $table = 'admin_users';
     protected $primaryKey = 'id';
-    protected $fillable = array('name', 'email', 'password');
+    protected $fillable = array('name', 'email', 'password', 'crated_at', 'updated_at');
     protected $hidden = array('password', 'remember_token');
 
     public static function searchQuery($id = '', $name = '', $email = '')

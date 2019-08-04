@@ -7,6 +7,18 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Class User
+ * @package App
+ * @property int $id;
+ * @property string $name;
+ * @property string $email;
+ * @property string $password;
+ * @property string $address;
+ * @property string $phone;
+ * @property string $note;
+ * @property bool $sex;
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -52,5 +64,10 @@ class User extends Authenticatable
     public function orders()
     {
         return $this->hasMany('App\Order', 'user_id', 'id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment', 'user_id', 'id');
     }
 }

@@ -45,7 +45,7 @@ class CategoryController extends Controller
     {
         $productType = ProductType::query()->where('category_id', '=', $id)->first();
         if (empty($productType)) {
-            Pet::destroy($id);
+            Category::destroy($id);
             return back()->with(Controller::notification(DELETE));
         }
         return back()->with(Controller::notification(DELETE_ERROR));

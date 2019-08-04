@@ -6,6 +6,7 @@ use App\Http\Requests\AdminUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\AdminUser;
+use Illuminate\Support\Facades\Hash;
 
 class AdminUserController extends Controller
 {
@@ -22,7 +23,7 @@ class AdminUserController extends Controller
         $adminUser = new AdminUser();
         $adminUser->name = $request->input('name');
         $adminUser->email = $request->input('email');
-        $adminUser->password = md5($request->input('password'));
+        $adminUser->password = Hash::make($request->input('password'));
         $adminUser->save();
         return redirect('admin/admin-users')->with(Controller::notification(ADD));
     }
@@ -52,19 +53,29 @@ class AdminUserController extends Controller
 
     public function login(Request $request)
     {
-        $arr = [
+        $this->validate($request,
+        [
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:20',
+        ],
+        [
+            'email.required' => 'Vui lòng nhập email',
+            'email.email' => 'Không đúng định dạng email',
+            'password.required' => 'Vui lòng nhập password',
+        ]);
+        $login = [
             'email' => $request->input('email'),
             'password' => $request->input('password'),
         ];
-        if (Auth::guard('admin_users')->attempt($arr)) {
-            return redirect('/admin')->with(Controller::notification(LOGIN));
+        if (Auth::guard('admin_users')->attempt($login)) {
+            return redirect('admin')->with(Controller::notification(LOGIN));
         }
-        return redirect('/');
+        return redirect('admin/login')->with(Controller::notification(LOGIN_FAIL));
     }
 
     public function logout()
     {
-        Auth::logout();
-        return redirect('/');
+        Auth::guard('admin_users')->logout();
+        return redirect('admin/login');
     }
 }

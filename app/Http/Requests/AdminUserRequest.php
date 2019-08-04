@@ -25,7 +25,7 @@ class AdminUserRequest extends FormRequest
     {
         return [
             'name' => 'required|min:1|max:20|unique:admin_users,id',
-            'email' => 'required|min:6|max:50',
+            'email' => 'required|min:6|max:50||unique:admin_users',
             'password' => 'required|min:3|max:32',
             'password_again' => 'required|same:password',
         ];
@@ -40,6 +40,7 @@ class AdminUserRequest extends FormRequest
             'email.min' => 'Tên không gồm tối thiểu 6 ký tự',
             'email.max' => 'Tên không gồm tối đa 50 ký tự',
             'email.required' => 'Vui lòng nhập email!',
+            'email.unique' => 'Email đã tồn tại!',
             'password.required' => 'Vui lòng nhập mật khẩu!',
             'password.min' => 'Mật Khẩu gồm tối thiểu 3 ký tự!',
             'password.max' => 'Mật Khẩu gồm tối đa 32 ký tự!',

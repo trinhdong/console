@@ -27,7 +27,7 @@ class Controller extends BaseController
         }
         if ($notification === DELETE_ERROR) {
             return array(
-                'message' => 'Không thể xóa!',
+                'message' => 'Không được phép xóa!',
                 'alert-type' => 'error'
             );
         }
@@ -55,6 +55,12 @@ class Controller extends BaseController
                 'alert-type' => 'success'
             );
         }
+        if ($notification === LOGIN_FAIL) {
+            return array(
+                'message' => 'Tài khoản hoặc mật khẩu không chính xác!',
+                'alert-type' => 'error'
+            );
+        }
         if ($notification === PASSWORD_ERROR) {
             return array(
                 'message' => 'Vui lòng nhập chính xác mật khẩu hiện tại!',
@@ -65,6 +71,18 @@ class Controller extends BaseController
             return array(
                 'message' => 'Cập nhật thành công!',
                 'alert-type' => 'success'
+            );
+        }
+        if ($notification === LOGIN_FAIL_CHECK) {
+            return array(
+                'message' => 'Bạn không được phép truy cập!',
+                'alert-type' => 'error'
+            );
+        }
+        if ($notification === LOGIN_FAIL_MIDDLEWARE) {
+            return array(
+                'message' => 'Vui lòng đăng nhập!',
+                'alert-type' => 'error'
             );
         }
     }

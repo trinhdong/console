@@ -17,39 +17,16 @@ class AdminOrderController extends Controller
     public function index()
     {
         $users = User::query()
-            ->orderBy('id', 'desc')
-            ->get();
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.*',  'orders.id as order_id', 'orders.status as order_status')
+            ->orderBy('id', 'desc');
+        if ($_GET['status'] == 'processed') {
+            $users = $users->where('orders.status', '<>', 0)->get();
+            return view('admin.orders.index_processed', compact('users'));
+        }
 
+        $users = $users->where('orders.status', '==', 0)->get();
         return view('admin.orders.index', compact('users'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     */
-    public function show($id)
-    {
-        //
     }
 
     public function view($id)
@@ -67,13 +44,9 @@ class AdminOrderController extends Controller
         return back()->with(Controller::notification(ORDER_SUCCESS));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        Order::destroy($id);
+        return back()->with(Controller::notification(DELETE));
     }
 }

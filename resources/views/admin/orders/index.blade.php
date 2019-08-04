@@ -11,7 +11,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li class="active"></i>Đơn hàng</li>
+                <li class="active"></i>Đơn hàng chưa xử lý</li>
             </ol>
         </section>
 
@@ -44,17 +44,17 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($users as $user)
+                                    @foreach($users as $index => $user)
                                         <tr>
-                                            <td>{{$user->id}}</td>
+                                            <td>{{$index + 1}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
                                             <td>{{$user->address}}</td>
                                             <td>{{$user->created_at}}</td>
-                                            <td id="status" style="color: orange">{{$user->orders[0]->status}}</td>
+                                            <td id="status" style="color: orange">{{ $user->status == 0 ? 'Chưa xử lý' : '' }}</td>
                                             <td width="100">
                                                 @include('admin.elements.button.view', ['url' => 'admin/orders/', 'id' => $user->id])
-                                                @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->id])
+                                                @include('admin.elements.button.delete', ['url' => 'admin/orders/', 'id' => $user->order_id])
                                             </td>
                                         </tr>
                                     @endforeach
@@ -67,22 +67,4 @@
             @endif
         </section>
     </div>
-@endsection
-@section('script_order')
-    <script>
-        $(document).ready(function () {
-            switch ($("#status").text()) {
-                case "1" :
-                    return $("#status").text("Đã giao");
-                case "2" :
-                    return $("#status").text("Đang giao");
-                case "3" :
-                    return $("#status").text("Bị trả lại");
-                case "4" :
-                    return $("#status").text("Bị từ chối");
-                default :
-                    return $("#status").text("Chưa xử lý");
-            }
-        })
-    </script>
 @endsection

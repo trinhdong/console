@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AdminLTE 2 | Log in</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="dist/css/ionicons.min.css">
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="iCheck/blue.css">
-    <link rel="stylesheet" href="dist/toastr/toastr.min.css">
+    <base href="{{asset('')}}">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="{{ asset('dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/css/_all-skins.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('dist/css/ionicons.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('iCheck/blue.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -21,7 +25,7 @@
     <div class="login-box-body">
         <h2 class="login-box-msg">Đăng nhập</h2>
 
-        {!! Form::open(['method' => 'POST', 'url' => '/login', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::open(['method' => 'POST', 'url' => 'admin/login', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group has-feedback">
             {!! Form::email('email', '', ['class' => 'form-control', 'placeholder' => 'Email']) !!}
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -40,7 +44,6 @@
             <div class="col-xs-8">
                 <div class="checkbox icheck">
                     <label>
-                        <input type="checkbox"> Nhớ mật khẩu
                     </label>
                 </div>
             </div>
@@ -66,11 +69,29 @@
 </script>
 @include('admin.elements.script.error')
 <script>
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "500",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+</script>
+<script>
     $(document).ready(function () {
         @if(Session::has('message'))
         $(function () {
-            var type = "{{ Session::get('alert-type', 'info') }}";
-
+            let type = "{{ Session::get('alert-type', 'info') }}";
             switch (type) {
                 case 'error':
                     toastr.error("{{ Session::get('message') }}");
