@@ -34,7 +34,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>Mã hóa đơn:</th>
                                         <th>Tên khách hàng</th>
                                         <th>Email</th>
                                         <th>Địa chỉ</th>
@@ -47,6 +47,7 @@
                                     @foreach($users as $index => $user)
                                         <tr>
                                             <td>{{$index + 1}}</td>
+                                            <td>0214{{$user->id}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
                                             <td>{{$user->address}}</td>

@@ -68,7 +68,6 @@
                                         <th>ID</th>
                                         <th>Tên</th>
                                         <th>Email</th>
-                                        <th>Ngày tạo</th>
                                         <th>Tác vụ</th>
                                     </tr>
                                     </thead>
@@ -78,7 +77,6 @@
                                             <td>{{$adminUser->id}}</td>
                                             <td>{{$adminUser->name}}</td>
                                             <td>{{$adminUser->email}}</td>
-                                            <td>{{$adminUser->created_at}}</td>
                                             <td width="150">
                                                 @include('admin.elements.button.view', ['url' => 'admin/admin-users/', 'id' => $adminUser->id])
                                                 @include('admin.elements.button.edit', ['url' => 'admin/admin-users/', 'id' => $adminUser->id])

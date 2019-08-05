@@ -17,10 +17,10 @@
             <div class="row col-xs-12">
                 <div class="box box-body">
                     <div class="col-md-3">
-                        {!! Form::label('ID') !!}
+                        {!! Form::label('Mã sản phẩm') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$userInfo->id}}</p>
+                        <p>0214{{$userInfo->id}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -44,7 +44,7 @@
                         {!! Form::label('Ngày đặt hàng') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$userInfo->created_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($userInfo->created_at))}}</p>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class AdminOrderController extends Controller
 {
@@ -27,35 +26,6 @@ class AdminOrderController extends Controller
 
         $users = $users->where('orders.status', '==', 0)->get();
         return view('admin.orders.index', compact('users'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     */
-    public function show($id)
-    {
-        //
     }
 
     public function view($id)

@@ -45,7 +45,7 @@
                         {!! Form::label('Ngày tạo') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$category->created_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($category->created_at))}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -53,7 +53,7 @@
                         {!! Form::label('Ngày cập nhật') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$category->updated_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($category->updated_at))}}</p>
                     </div>
                 </div>
             </div>

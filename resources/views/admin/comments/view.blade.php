@@ -54,6 +54,7 @@
                     </div>
                     <div class="col-md-9">
                         <p>{{$comment->created_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($comment->created))}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -62,6 +63,7 @@
                     </div>
                     <div class="col-md-9">
                         <p>{{$comment->updated_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($comment->updated_at))}}</p>
                     </div>
                 </div>
             </div>
