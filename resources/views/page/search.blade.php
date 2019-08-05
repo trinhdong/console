@@ -41,6 +41,9 @@
                                 @endforeach
                             </div>
                         </div>
+                        <div class="center">
+                            {{$products->links()}}
+                        </div>
                     </div>
                 </div>
                 <div class="space50">&nbsp;</div>

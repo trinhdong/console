@@ -47,6 +47,8 @@ Route::get('admin/login', function () {
 Route::post('admin/login', 'AdminUserController@login');
 Route::get('admin/logout', 'AdminUserController@logout');
 
+Route::get('/lich-su-don-hang/{userId}', 'PageController@getHistory');
+
 Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
     Route::get('/', function () {
         return view('admin.home');

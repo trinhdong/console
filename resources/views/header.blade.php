@@ -39,6 +39,13 @@
                     </div>
                 </div>
                 {{ csrf_field() }}
+                <div class="beta-comp">
+                    @if(Auth::check())
+                        <div class="cart">
+                            <a href="/lich-su-don-hang/{{Auth::User()->id}}">Lịch sử đơn hàng</a>
+                        </div>
+                    @endif
+                </div>
                 @include('page.cart')
             </div>
             <div class="clearfix"></div>

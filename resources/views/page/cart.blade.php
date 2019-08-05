@@ -23,11 +23,13 @@
                             class="cart-total-value">{{number_format ($cartTotal)}}</span></div>
                 <div class="clearfix"></div>
 
-                <div class="center">
-                    <div class="space10">&nbsp;</div>
-                    <a href="dat-hang" class="beta-btn primary text-center">Đặt hàng <i
-                                class="fa fa-chevron-right"></i></a>
-                </div>
+                @if(count($cartContent) !== 0)
+                    <div class="center">
+                        <div class="space10">&nbsp;</div>
+                        <a href="dat-hang" class="beta-btn primary text-center">Đặt hàng <i
+                                    class="fa fa-chevron-right"></i></a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
