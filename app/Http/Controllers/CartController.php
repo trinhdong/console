@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckOutRequest;
+use App\Mail\SendMail;
 use App\Order;
 use App\OrderDetail;
 use App\Product;
 use App\User;
 use Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
@@ -73,6 +75,13 @@ class CartController extends Controller
                 $orderDetail->save();
             }
         }
+
+        $data = array(
+            'email' => $request->input('email')
+        );
+
+        Mail::to($request->input('email'), 'PetShop')->send(new SendMail($data));
+
         Cart::clear();
 
         return redirect('dat-hang')->with('success', 'Đặt hàng thành công');

@@ -22,7 +22,7 @@
                         <ul class="aside-menu">
                             @foreach($categories->productTypes as $productType)
                                 <li>
-                                    <a href="{!! url('loai-san-pham', [$categories->id, $productType->id, $productType->type_name]) !!}">{{$productType->type_name}} </a>
+                                    <a href="{!! url('loai-san-pham', [$categories->id, $productType->id, Str::slug($productType->type_name)]) !!}">{{$productType->type_name}} </a>
                                 </li>
                             @endforeach
                         </ul>
@@ -52,10 +52,10 @@
                                             </div>
                                             <div class="single-item-caption">
                                                 <a class="add-to-cart pull-left"
-                                                   href="{!! url('mua-hang', [$product->id, $product->product_name]) !!}"><i
+                                                   href="{!! url('mua-hang', [$product->id, Str::slug($product->product_name)]) !!}"><i
                                                             class="fa fa-shopping-cart"></i></a>
                                                 <a class="beta-btn primary"
-                                                   href="{!! url('chi-tiet-san-pham', [$product->id, $product->product_name]) !!}">Details
+                                                   href="{!! url('chi-tiet-san-pham', [$product->id, Str::slug($product->product_name)]) !!}">Details
                                                     <i
                                                             class="fa fa-chevron-right"></i></a>
                                                 <div class="clearfix"></div>

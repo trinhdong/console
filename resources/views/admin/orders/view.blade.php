@@ -44,7 +44,7 @@
                         {!! Form::label('Ngày đặt hàng') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$userInfo->created_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($userInfo->created_at))}}</p>
                     </div>
                 </div>
             </div>

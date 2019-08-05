@@ -34,7 +34,6 @@
                         <input type="text" value="" name="product_name" id="product_name"
                                placeholder="Nhập từ khóa..." autocomplete="off"/>
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-
                     </form>
                     <div id="countryList">
                     </div>
@@ -57,7 +56,7 @@
                         <ul class="sub-menu">
                             @foreach($categoryMenu as $category)
                                 <li>
-                                    <a href="{!! url('danh-muc', [$category->id, $category->category_name]) !!}">{{$category->category_name}} </a>
+                                    <a href="{!! url('danh-muc', [$category->id, Str::slug($category->category_name)]) !!}">{{$category->category_name}} </a>
                                 </li>
                             @endforeach
                         </ul>

@@ -172,11 +172,11 @@ class PageController extends Controller
 
     public function getSearch(Request $request)
     {
-        $products = Product::query()->where('product_name','like' ,'%'.$request->input('product_name'.'%'))->get();
+        $products = Product::query()->where('product_name','like' ,'%' . $request->input('product_name') . '%')->get();
         return view('page.search', compact('products'));
     }
 
-    /* function getSearchAjax(Request $request)
+    function getSearchAjax(Request $request)
     {
         if ($request->get('query')) {
             $query = $request->get('query');
@@ -189,7 +189,8 @@ class PageController extends Controller
             $output .= '</ul>';
             echo $output;
         }
-    }*/
+    }
+
     public function getProfile($id)
     {
         $users = User::find($id);

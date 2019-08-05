@@ -187,6 +187,7 @@
                             @if(!session('success'))
                                 @if(Auth::check())
                                     <input type="hidden" name="user_id" value="{{Auth::User()->id}}">
+                                    <input type="hidden" name="email" value="{{Auth::User()->email}}">
                                     <div class="text-center">
                                         <button type="submit" class="beta-btn primary">Đặt hàng
                                             <i class="fa fa-chevron-right"></i></button>

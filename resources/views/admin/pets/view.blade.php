@@ -36,7 +36,7 @@
                         {!! Form::label('Ngày tạo') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$pet->created_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($pet->created_at))}}</p>
                     </div>
                 </div>
                 <div class="box box-body">
@@ -44,7 +44,7 @@
                         {!! Form::label('Ngày cập nhật') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$pet->updated_at}}</p>
+                        <p>{{date("d/m/Y", strtotime($pet->updated_at))}}</p>
                     </div>
                 </div>
             </div>
