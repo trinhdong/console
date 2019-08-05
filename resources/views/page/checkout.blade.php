@@ -6,27 +6,31 @@
                 <div>
                     <div class="col-sm-6">
                         <h4>Đặt hàng</h4>
-                        <div class="space20">&nbsp;</div>
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{session('success')}}
-                                <p>Quý khách vui lòng kiểm tra mail để xác nhận đơn hàng</p>
                                 <a  style="font-weight: bold" href="/">Quay lại trang chủ</a>
                             </div>
                         @endif
                         @if(Auth::check())
                             @if(!session('success'))
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><a href="">Chào bạn {{Auth::User()->name}}</a></h5>
-                                        <div class="space20">&nbsp;</div>
-                                        <p class="card-text">Hàng sẽ được giao đến địa chỉ: </p>
-                                        <div class="space20">&nbsp;</div>
-                                        <p class="card-text text-danger font-italic">{{Auth::User()->address}}</p>
-                                        <div class="space20">&nbsp;</div>
-                                        <p class="cart-text font-italic">Vui lòng chọn đặt hàng để chúng tôi giao hàng đến cho bạn</p>
-                                    </div>
-                                </div>
+                            <div class="cart-item">
+                                <label for="text">Họ và tên:</label>
+                                <p><a href="">{{Auth::User()->name}}</a></p>
+                            </div>
+                            <div class="cart-item">
+                                <label for="text">Địa chỉ:</label>
+                                <p>{{Auth::User()->address}}</p>
+                            </div>
+                            <div class="cart-item">
+                                <label for="text">Số điện thoại:</label>
+                                <p>{{Auth::User()->phone}}</p>
+                            </div>
+                            <div class="cart-item">
+                                <label for="text">Email:</label>
+                                <p>{{Auth::User()->email}}</p>
+                            </div>
+                                
                             @else {{null}}
                             @endif
                         @else
@@ -67,19 +71,19 @@
                                         </button>
                                     </div>
                                     {!! Form::close() !!}
-                                        {{--<div class="social-auth-links text-center mb-3">--}}
-                                            {{--<p>- HOẶC -</p>--}}
-                                            {{--<a href="#" class="btn btn-primary btn-block btn-social-facebook">--}}
-                                                {{--<i class="fab fa-facebook-f"></i> Đăng nhập với Facebook--}}
-                                            {{--</a>--}}
-                                            {{--<a href="#" class="btn btn-primary btn-block btn-social-zalo">--}}
-                                                {{--<i class="zalo"></i> Đăng nhập với Zalo--}}
-                                            {{--</a>--}}
-                                        {{--</div>--}}
+                                    <div class="social-auth-links text-center mb-3">
+                                        <p>- HOẶC -</p>
+                                        <a href="#" class="btn btn-primary btn-block btn-social-facebook">
+                                            <i class="fab fa-facebook-f"></i> Đăng nhập với Facebook
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-block btn-social-zalo">
+                                            <i class="zalo"></i> Đăng nhập với Zalo
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                                      aria-labelledby="pills-profile-tab">
-                                    {!! Form::open(['method' => 'POST', 'url' => 'sign-up', 'id' => 'my_form', 'class' => 'beta-form-checkout'      ]) !!}
+                                    {!! Form::open(['method' => 'POST', 'url' => 'sign-up', 'id' => 'my_form', 'class' => 'beta-form-checkout']) !!}
                                     <div class="form-block">
                                         <label for="name">Họ tên*</label>
                                         <input type="text" id="name" name="name" placeholder="Họ tên" required>
@@ -170,24 +174,24 @@
                                         </div>
                                     </li>
 
-                                    {{--<li class="payment_method_cheque">--}}
-                                        {{--<input id="payment_method_cheque" type="radio" class="input-radio"--}}
-                                               {{--name="payment_method" value="ATM" data-order_button_text="">--}}
-                                        {{--<label for="payment_method_cheque">Chuyển khoản </label>--}}
-                                        {{--<div class="payment_box payment_method_cheque" style="display: none;">--}}
-                                            {{--Chuyển tiền đến tài khoản sau:--}}
-                                            {{--<br>- Số tài khoản: 123 456 789--}}
-                                            {{--<br>- Chủ TK: Nguyễn A--}}
-                                            {{--<br>- Ngân hàng ACB, Chi nhánh TPHCM--}}
-                                        {{--</div>--}}
-                                    {{--</li>--}}
+                                    <li class="payment_method_cheque">
+                                        <input id="payment_method_cheque" type="radio" class="input-radio"
+                                               name="payment_method" value="ATM" data-order_button_text="">
+                                        <label for="payment_method_cheque">Chuyển khoản </label>
+                                        <div class="payment_box payment_method_cheque" style="display: none;">
+                                            Chuyển tiền đến tài khoản sau:
+                                            <br>- Số tài khoản: 123 456 789
+                                            <br>- Chủ TK: Nguyễn A
+                                            <br>- Ngân hàng ACB, Chi nhánh TPHCM
+                                        </div>
+                                    </li>
+
                                 </ul>
                             </div>
                             {!! Form::open(['method' => 'POST', 'url' => 'dat-hang', 'id' => 'my_form', 'class' => 'beta-form-checkout']) !!}
                             @if(!session('success'))
                                 @if(Auth::check())
                                     <input type="hidden" name="user_id" value="{{Auth::User()->id}}">
-                                    <input type="hidden" name="email" value="{{Auth::User()->email}}">
                                     <div class="text-center">
                                         <button type="submit" class="beta-btn primary">Đặt hàng
                                             <i class="fa fa-chevron-right"></i></button>
