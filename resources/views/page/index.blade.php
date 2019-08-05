@@ -56,7 +56,11 @@
                                             @foreach($newProducts as $newProduct)
 
                                             <div class="single-item-header" id="itemCol" >
+
                                                 <a href="{!! url('chi-tiet-san-pham', [$newProduct->id, Str::slug($newProduct->product_name)]) !!}">
+
+                                                <a href="{!! url('chi-tiet-san-pham', [$newProduct->id, $newProduct->product_name]) !!}">
+
                                                     <img height="250px"
                                                     src="source/images/products/{{$newProduct->image}}" alt="" title="{{$newProduct->product_name}}"></a>
 
@@ -66,10 +70,17 @@
                                                     </p>
 
                                                     <a class="add-to-cart pull-left"
+
                                                     href="{!! url('mua-hang', [$newProduct->id, Str::slug($newProduct->product_name)]) !!}"><i
                                                     class="fa fa-shopping-cart"></i></a>
                                                     <a class="beta-btn primary"
                                                     href="{!! url('chi-tiet-san-pham', [$newProduct->id, Str::slug($newProduct->product_name)]) !!}">
+
+                                                    href="{!! url('mua-hang', [$newProduct->id, $newProduct->product_name]) !!}"><i
+                                                    class="fa fa-shopping-cart"></i></a>
+                                                    <a class="beta-btn primary"
+                                                    href="{!! url('chi-tiet-san-pham', [$newProduct->id, $newProduct->product_name]) !!}">
+
                                                     Chi tiết
                                                     <i class="fa fa-chevron-right"></i></a>
 
@@ -100,7 +111,11 @@
                                     @foreach($promotionProducts as $promotionProduct)
 
                                     <div class="single-item-header" id="itemCol" >
+
                                         <a href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, Str::slug($promotionProduct->product_name)]) !!}">
+
+                                        <a href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, $promotionProduct->product_name]) !!}">
+
                                             <img height="250px"
                                             src="source/images/products/{{$promotionProduct->image}}" alt="" title="{{$newProduct->product_name}}"></a>
 
@@ -111,10 +126,17 @@
                                             </p>
 
                                             <a class="add-to-cart pull-left"
+
                                             href="{!! url('mua-hang', [$promotionProduct->id, Str::slug($promotionProduct->product_name)]) !!}"><i
                                             class="fa fa-shopping-cart"></i></a>
                                             <a class="beta-btn primary"
                                             href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, Str::slug($promotionProduct->product_name)]) !!}">Chi
+
+                                            href="{!! url('mua-hang', [$promotionProduct->id, $promotionProduct->product_name]) !!}"><i
+                                            class="fa fa-shopping-cart"></i></a>
+                                            <a class="beta-btn primary"
+                                            href="{!! url('chi-tiet-san-pham', [$promotionProduct->id, $promotionProduct->product_name]) !!}">Chi
+
                                             tiết <i
                                             class="fa fa-chevron-right"></i></a>
 
