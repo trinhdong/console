@@ -17,10 +17,10 @@
             <div class="row col-xs-12">
                 <div class="box box-body">
                     <div class="col-md-3">
-                        {!! Form::label('ID') !!}
+                        {!! Form::label('Mã sản phẩm') !!}
                     </div>
                     <div class="col-md-9">
-                        <p>{{$userInfo->id}}</p>
+                        <p>0214{{$userInfo->id}}</p>
                     </div>
                 </div>
                 <div class="box box-body">

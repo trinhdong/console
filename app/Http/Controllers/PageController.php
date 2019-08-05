@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\UserRequest;
 use App\Order;
+use App\ProductType;
 use App\User;
 use Illuminate\Http\Request;
 use App\Slide;

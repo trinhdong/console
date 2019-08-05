@@ -34,7 +34,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>Mã hóa đơn</th>
                                         <th>Tên khách hàng</th>
                                         <th>Email</th>
                                         <th>Địa chỉ</th>
