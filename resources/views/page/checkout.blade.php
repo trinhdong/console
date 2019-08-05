@@ -16,17 +16,25 @@
                         @endif
                         @if(Auth::check())
                             @if(!session('success'))
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><a href="">Chào bạn {{Auth::User()->name}}</a></h5>
-                                        <div class="space20">&nbsp;</div>
-                                        <p class="card-text">Hàng sẽ được giao đến địa chỉ: </p>
-                                        <div class="space20">&nbsp;</div>
-                                        <p class="card-text text-danger font-italic">{{Auth::User()->address}}</p>
-                                        <div class="space20">&nbsp;</div>
-                                        <p class="cart-text font-italic">Vui lòng chọn đặt hàng để chúng tôi giao hàng đến cho bạn</p>
-                                    </div>
-                                </div>
+                               <div class="cart-item">
+                                 <label for="text">Họ và tên</label>
+                                 <p>{{Auth::User()->name}}</p>
+                             </div>
+                             <div class="cart-item">
+                                 <label for="text">Email</label>
+                                 <p>{{Auth::User()->email}}</p>
+                             </div>
+                             <div class="cart-item">
+                                 <label for="text">Địa chỉ</label>
+                                 <p>{{Auth::User()->address}}</p>
+                             </div>
+                             <div class="cart-item">
+                                 <label for="text">Số điện thoại</label>
+                                 <p>{{Auth::User()->phone}}</p>
+                             </div>
+                              <div class="cart-text font-italic">
+                                 <p>Vui lòng nhấn đặt hàng để chúng tôi giao hàng đến cho bạn </p>
+                             </div>
                             @else {{null}}
                             @endif
                         @else
