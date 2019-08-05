@@ -68,7 +68,6 @@
                                         <th>ID</th>
                                         <th>Tên danh mục</th>
                                         <th>Thú cưng</th>
-                                        <th>Ngày tạo</th>
                                         <th>Tác vụ</th>
                                     </tr>
                                     </thead>
@@ -79,7 +78,6 @@
                                             <td>{{$category->id}}</td>
                                             <td>{{$category->category_name}}</td>
                                             <td>{{$category->pets->pet_name}}</td>
-                                            <td>{{$category->created_at}}</td>
                                             <td width="150">
                                                 @include('admin.elements.button.view', ['url' => 'admin/categories/', 'id' => $category->id])
                                                 @include('admin.elements.button.edit', ['url' => 'admin/categories/', 'id' => $category->id])

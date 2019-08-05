@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\UserRequest;
+use App\Order;
+use App\ProductType;
 use App\User;
 use Illuminate\Http\Request;
 use App\Slide;
@@ -172,11 +174,11 @@ class PageController extends Controller
 
     public function getSearch(Request $request)
     {
-        $products = Product::query()->where('product_name','like' ,'%'.$request->input('product_name'.'%'))->get();
+        $products = Product::query()->where('product_name', 'like', '%' . $request->input('product_name') . '%')->paginate(12);
         return view('page.search', compact('products'));
     }
 
-    /* function getSearchAjax(Request $request)
+    function getSearchAjax(Request $request)
     {
         if ($request->get('query')) {
             $query = $request->get('query');
@@ -189,13 +191,15 @@ class PageController extends Controller
             $output .= '</ul>';
             echo $output;
         }
-    }*/
+    }
+
     public function getProfile($id)
     {
         $users = User::find($id);
         return view('page.view_info', compact('users'));
     }
-    public function postProfile(Request $request ,$id)
+
+    public function postProfile(Request $request, $id)
     {
         $this->validate($request,
             [
@@ -212,25 +216,30 @@ class PageController extends Controller
         $users = User::find($id);
         $users->name = $request->input('name');
         $users->phone = intval($request->input('phone'));
-        if($request->input('changePassword') == "on")
-        {
+        if ($request->input('changePassword') == "on") {
             $this->validate($request,
                 [
-                    'password'=>'required|min:3|max:32',
-                    'password_same'=>'required|same:password',
+                    'password' => 'required|min:3|max:32',
+                    'password_same' => 'required|same:password',
                 ],
                 [
-                    'password.required'=>'Bạn chưa nhập mật khẩu',
-                    'password.min'=>'Mật khẩu phải có ít nhất 3 kí tự',
-                    'password.max'=>'Mật khẩu phải chứ tối đa 32 kí tự',
-                    'password_same.same'=>'Mật khẩu không trùng khớp',
-                    'password_same.required'=>'Mời nhập lại mật khẩu'
+                    'password.required' => 'Bạn chưa nhập mật khẩu',
+                    'password.min' => 'Mật khẩu phải có ít nhất 3 kí tự',
+                    'password.max' => 'Mật khẩu phải chứ tối đa 32 kí tự',
+                    'password_same.same' => 'Mật khẩu không trùng khớp',
+                    'password_same.required' => 'Mời nhập lại mật khẩu'
                 ]);
             $users->password = Hash::make($request->input('password'));
         }
         $users->address = $request->input('address');
         $users->sex = intval($request->input('gender'));
         $users->save();
-        return redirect('thong-tin-khach-hang'.'/'.$id)->with('success', 'Cập nhật thành công');
+        return redirect('thong-tin-khach-hang' . '/' . $id)->with('success', 'Cập nhật thành công');
+    }
+
+    public function getHistory($userId) {
+        $userInfo = User::getUserInfoByUserId($userId);
+        $orderInfo = Order::getOrderInfoByUserId($userId);
+        return view('page.history', ['orderInfo' => $orderInfo, 'userInfo' => $userInfo]);
     }
 }

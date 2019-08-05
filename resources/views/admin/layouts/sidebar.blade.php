@@ -1,3 +1,6 @@
+<?php
+    $url = 'http://' . $_SERVER['HTTP_HOST'];
+?>
 <div class="control-sidebar-bg"></div>
 <aside class="main-sidebar">
     <section class="sidebar">

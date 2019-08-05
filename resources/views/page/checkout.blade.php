@@ -10,6 +10,7 @@
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{session('success')}}
+                                <p>Quý khách vui lòng kiểm tra mail để xác nhận đơn hàng</p>
                                 <a  style="font-weight: bold" href="/">Quay lại trang chủ</a>
                             </div>
                         @endif
@@ -169,24 +170,24 @@
                                         </div>
                                     </li>
 
-                                    <li class="payment_method_cheque">
-                                        <input id="payment_method_cheque" type="radio" class="input-radio"
-                                               name="payment_method" value="ATM" data-order_button_text="">
-                                        <label for="payment_method_cheque">Chuyển khoản </label>
-                                        <div class="payment_box payment_method_cheque" style="display: none;">
-                                            Chuyển tiền đến tài khoản sau:
-                                            <br>- Số tài khoản: 123 456 789
-                                            <br>- Chủ TK: Nguyễn A
-                                            <br>- Ngân hàng ACB, Chi nhánh TPHCM
-                                        </div>
-                                    </li>
-
+                                    {{--<li class="payment_method_cheque">--}}
+                                        {{--<input id="payment_method_cheque" type="radio" class="input-radio"--}}
+                                               {{--name="payment_method" value="ATM" data-order_button_text="">--}}
+                                        {{--<label for="payment_method_cheque">Chuyển khoản </label>--}}
+                                        {{--<div class="payment_box payment_method_cheque" style="display: none;">--}}
+                                            {{--Chuyển tiền đến tài khoản sau:--}}
+                                            {{--<br>- Số tài khoản: 123 456 789--}}
+                                            {{--<br>- Chủ TK: Nguyễn A--}}
+                                            {{--<br>- Ngân hàng ACB, Chi nhánh TPHCM--}}
+                                        {{--</div>--}}
+                                    {{--</li>--}}
                                 </ul>
                             </div>
                             {!! Form::open(['method' => 'POST', 'url' => 'dat-hang', 'id' => 'my_form', 'class' => 'beta-form-checkout']) !!}
                             @if(!session('success'))
                                 @if(Auth::check())
                                     <input type="hidden" name="user_id" value="{{Auth::User()->id}}">
+                                    <input type="hidden" name="email" value="{{Auth::User()->email}}">
                                     <div class="text-center">
                                         <button type="submit" class="beta-btn primary">Đặt hàng
                                             <i class="fa fa-chevron-right"></i></button>

@@ -34,12 +34,18 @@
                         <input type="text" value="" name="product_name" id="product_name"
                                placeholder="Nhập từ khóa..." autocomplete="off"/>
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-
                     </form>
                     <div id="countryList">
                     </div>
                 </div>
                 {{ csrf_field() }}
+                <div class="beta-comp">
+                    @if(Auth::check())
+                        <div class="cart">
+                            <a href="/lich-su-don-hang/{{Auth::User()->id}}">Lịch sử đơn hàng</a>
+                        </div>
+                    @endif
+                </div>
                 @include('page.cart')
             </div>
             <div class="clearfix"></div>
@@ -57,7 +63,7 @@
                         <ul class="sub-menu">
                             @foreach($categoryMenu as $category)
                                 <li>
-                                    <a href="{!! url('danh-muc', [$category->id, $category->category_name]) !!}">{{$category->category_name}} </a>
+                                    <a href="{!! url('danh-muc', [$category->id, Str::slug($category->category_name)]) !!}">{{$category->category_name}} </a>
                                 </li>
                             @endforeach
                         </ul>

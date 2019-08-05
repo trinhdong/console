@@ -63,10 +63,8 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tiêu đề</th>
                                         <th>Sản phẩm</th>
                                         <th>Nội dung</th>
-                                        <th>Ngày tạo</th>
                                         <th>Tác vụ</th>
                                     </tr>
                                     </thead>
@@ -75,10 +73,8 @@
                                     @foreach($comments as $comment)
                                         <tr>
                                             <td>{{$comment->id}}</td>
-                                            <td>{{$comment->title}}</td>
                                             <td>{{$comment->products->product_name}}</td>
                                             <td>{{$comment->content}}</td>
-                                            <td>{{$comment->created_at}}</td>
                                             <td width="150">
                                                 @include('admin.elements.button.view', ['url' => 'admin/comments/', 'id' => $comment->id])
                                                 @include('admin.elements.button.delete', ['url' => 'admin/comments/', 'id' => $comment->id])
