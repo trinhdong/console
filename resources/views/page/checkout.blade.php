@@ -14,9 +14,23 @@
                         @endif
                         @if(Auth::check())
                             @if(!session('success'))
-                                <li><a href="">Chào bạn {{Auth::User()->name}}</a></li>
-                                <p>Địa chỉ giao hàng</p>
-                                <li>Đơn hàng sẽ đưuọc giao đến địa chỉ {{Auth::User()->address}}</li>
+                            <div class="cart-item">
+                                <label for="text">Họ và tên:</label>
+                                <p><a href="">{{Auth::User()->name}}</a></p>
+                            </div>
+                            <div class="cart-item">
+                                <label for="text">Địa chỉ:</label>
+                                <p>{{Auth::User()->address}}</p>
+                            </div>
+                            <div class="cart-item">
+                                <label for="text">Số điện thoại:</label>
+                                <p>{{Auth::User()->phone}}</p>
+                            </div>
+                            <div class="cart-item">
+                                <label for="text">Email:</label>
+                                <p>{{Auth::User()->email}}</p>
+                            </div>
+                                
                             @else {{null}}
                             @endif
                         @else
